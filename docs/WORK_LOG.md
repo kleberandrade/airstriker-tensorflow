@@ -46,3 +46,8 @@
 - Crapper maximum 8, every source function below 10; dryer found no candidates at 0.8. Recorder mutation check reported all 24 selected mutants killed; this scope is distinct from the earlier preprocessing/target checks and is not a project-wide mutation score.
 - No long training, ROM redistribution, push, deployment or package publication was performed.
 - Final artifact checks: zero broken relative documentation/image links; all 106 recorded artifact hashes matched; manifest/trace totals matched 2,688 transitions and 90 PNGs. Installed the new wheel into a separate temporary target and successfully ran its synthetic train/save/load/evaluate smoke. Source archive includes the guide, manifest and all 90 screenshots, with no ROM or `.keras` files.
+
+## Publication and CI verification — 2026-11-16
+
+- User explicitly authorized pushing this project to its principal branch and following CI through completion. Confirmed through GitHub API that the default branch is `master`; fetched remote changes and found no divergence.
+- User correctly highlighted that the new screenshots depict another game. Made the README opening explicit: new emulator captures are Airstriker on Genesis; Super Mario World on SNES is still unvalidated. Corrected the Mario-specific asset paragraph so it does not incorrectly imply no game ROM was executed at all.

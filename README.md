@@ -8,14 +8,14 @@
 
 An educational experiment in teaching an agent to play **Super Mario World** with TensorFlow. It includes a small Keras Q-network, RGB preprocessing, bounded training, greedy evaluation, and an optional Stable Retro emulator adapter.
 
-**No trained Mario agent or gameplay performance is claimed.** The offline smoke environment is synthetic test data, not a Mario simulation. The original experiment captured Snes9x windows and pressed random keys; its TensorFlow/training sections were unfinished.
+**Super Mario World gameplay has not been validated. All new emulator captures in this repository show Airstriker (Sega Genesis), not Mario (SNES). No trained Mario agent or Mario performance is claimed.** The offline smoke environment is synthetic test data, not a Mario simulation. The original experiment captured Snes9x windows and pressed random keys; its TensorFlow/training sections were unfinished.
 
-## Real emulator test and detailed guide
+## Airstriker integration test and detailed guide
 
 A real **Airstriker** test now complements the synthetic smoke: three seeds, 2,688 recorded transitions, 90 captured PNGs, checkpoint reloads, and random/untrained/short-trained comparisons. Airstriker is the non-commercial test ROM included by Stable Retro; it is a different game from Mario. The 128-step training windows received no positive rewards, so the observed evaluation scores are exploratory integration results, not evidence of robust learning.
 
 - [Detailed project guide](docs/PROJECT_GUIDE.md): architecture, data shapes, model, API, toolchain, setup, recording, migration and limitations.
-- [Experiment report with real screenshots](docs/experiments/2026-11-16-airstriker/REPORT.md): method, per-seed results, raw traces, package updates and provenance.
+- [Airstriker report with real screenshots](docs/experiments/2026-11-16-airstriker/REPORT.md): method, per-seed results, raw traces, package updates and provenance.
 
 ```sh
 python examples/retro_experiment.py --output runs/airstriker-experiment
@@ -69,7 +69,7 @@ mario-tf evaluate --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7
 
 Use `--state NAME` for an installed integration savestate; otherwise Stable Retro uses its default. Rewards, termination rules, and savestates belong to the selected integration. Actions use its discrete filtered button combinations. No reward OCR or desktop-window detection is required. Missing ROM errors propagate; there is no automatic fallback to synthetic data.
 
-**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No game ROM was imported, downloaded, executed, or used for training. Adapter contract tests use a stub and do not validate emulation.
+**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No Super Mario World ROM was imported, downloaded, executed, or used for training. The separate Airstriker experiment below validates the shared adapter only. Adapter contract tests use a stub and do not validate emulation.
 
 ## Model, configuration, and API
 
