@@ -83,3 +83,49 @@ def test_nonfinite_reward_is_rejected():
         summarize_trace(
             [{"event": "step", "reward": float("nan"), "terminated": False, "truncated": False}]
         )
+
+
+def test_algorithm_comparison_requires_matching_protocol_and_discloses_control_changes():
+    from airstriker_tensorflow.analysis import compare_evaluations
+
+    config = {
+        "game": "Airstriker-Genesis-v0",
+        "seeds": [7, 13, 29],
+        "train_steps": 10000,
+        "evaluate_steps": 6000,
+    }
+
+    def summary(trained):
+        return {
+            "configuration": dict(config),
+            "groups": {
+                "random": {
+                    "seeds": [7, 13, 29],
+                    "rewards": [300.0, 140.0, 300.0],
+                    "mean_reward": 740 / 3,
+                },
+                "untrained": {
+                    "seeds": [7, 13, 29],
+                    "rewards": [460.0, 0.0, 180.0],
+                    "mean_reward": 640 / 3,
+                },
+                "trained": {
+                    "seeds": [7, 13, 29],
+                    "rewards": trained,
+                    "mean_reward": sum(trained) / 3,
+                },
+            },
+        }
+
+    old = summary([0.0, 520.0, 120.0])
+    new = summary([100.0, 600.0, 200.0])  # invented values; not a real result
+    result = compare_evaluations(new, old)
+    assert result["random_control_reproduced"] is True
+    assert result["untrained_control_reproduced"] is True
+    assert result["per_seed"][0]["dqn_minus_online"] == 100.0
+    assert result["mean_dqn_minus_random"] == pytest.approx(160 / 3)
+    new["groups"]["untrained"]["rewards"][0] = 0.0
+    assert compare_evaluations(new, old)["untrained_control_reproduced"] is False
+    new["configuration"]["evaluate_steps"] = 256
+    with pytest.raises(ValueError, match="protocol"):
+        compare_evaluations(new, old)

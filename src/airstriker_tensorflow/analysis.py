@@ -112,6 +112,7 @@ def analyze_experiment(directory, window=1000):
     manifest = json.loads((directory / "manifest.json").read_text())
     runs = [_checked_run(directory, row, window) for row in manifest["runs"]]
     return {
+        "algorithm": manifest.get("algorithm", "online-q-learning"),
         "configuration": manifest.get("configuration", {}),
         "source_manifest_sha256": hashlib.sha256(
             (directory / "manifest.json").read_bytes()
@@ -121,4 +122,41 @@ def analyze_experiment(directory, window=1000):
         "groups": _phase_statistics(runs),
         "checkpoint_minus_random": _paired_difference(runs),
         "runs": runs,
+    }
+
+
+def _rewards_by_seed(group):
+    return dict(zip(group["seeds"], group["rewards"], strict=True))
+
+
+def compare_evaluations(current, previous):
+    keys = ("game", "seeds", "train_steps", "evaluate_steps")
+    for key in keys:
+        if current["configuration"][key] != previous["configuration"][key]:
+            raise ValueError(f"Comparison requires the same protocol: {key}")
+    random = _rewards_by_seed(current["groups"]["random"])
+    untrained = _rewards_by_seed(current["groups"]["untrained"])
+    online = _rewards_by_seed(previous["groups"]["trained"])
+    dqn = _rewards_by_seed(current["groups"]["trained"])
+    return {
+        "protocol": {key: current["configuration"][key] for key in keys},
+        "random_control_reproduced": random == _rewards_by_seed(previous["groups"]["random"]),
+        "untrained_control_reproduced": untrained
+        == _rewards_by_seed(previous["groups"]["untrained"]),
+        "per_seed": [
+            {
+                "seed": seed,
+                "random": random[seed],
+                "untrained": untrained[seed],
+                "online": online[seed],
+                "dqn": dqn[seed],
+                "dqn_minus_random": dqn[seed] - random[seed],
+                "dqn_minus_online": dqn[seed] - online[seed],
+            }
+            for seed in current["configuration"]["seeds"]
+        ],
+        "mean_dqn_minus_random": current["groups"]["trained"]["mean_reward"]
+        - current["groups"]["random"]["mean_reward"],
+        "mean_dqn_minus_online": current["groups"]["trained"]["mean_reward"]
+        - previous["groups"]["trained"]["mean_reward"],
     }

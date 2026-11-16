@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from airstriker_tensorflow.analysis import analyze_experiment
+from airstriker_tensorflow.analysis import analyze_experiment, compare_evaluations
 
 
 def evaluation_figure(summary, output):
@@ -67,6 +67,29 @@ def save_figure(fig, path):
     fig.savefig(path.with_suffix(".svg"), metadata={"Date": None}, bbox_inches="tight")
 
 
+def algorithm_figure(comparison, output):
+    import matplotlib.pyplot as plt
+
+    phases = ["random", "untrained", "online", "dqn"]
+    labels = ["Random", "Untrained", "Online Q-learning", "Replay + target"]
+    fig, ax = plt.subplots(figsize=(9, 5), layout="constrained")
+    for index, phase in enumerate(phases):
+        rewards = [row[phase] for row in comparison["per_seed"]]
+        ax.bar(index, sum(rewards) / len(rewards), width=0.55, color="steelblue", alpha=0.65)
+        offsets = [index + (n - (len(rewards) - 1) / 2) * 0.11 for n in range(len(rewards))]
+        ax.scatter(offsets, rewards, color="black", zorder=3)
+    ax.set_xticks(range(len(phases)), labels)
+    ax.set_ylabel(f"Evaluation reward / {comparison['protocol']['evaluate_steps']:,} steps")
+    ax.set_title("Airstriker: same-seed algorithm comparison\nBars = mean; dots = individual seeds")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.grid(axis="y", alpha=0.2)
+    ax.set_axisbelow(True)
+    maximum = max(max(row[p] for p in phases) for row in comparison["per_seed"])
+    ax.set_ylim(bottom=-max(1.0, maximum * 0.05))
+    save_figure(fig, output / "algorithm-comparison")
+    plt.close(fig)
+
+
 def main(argv=None):
     import matplotlib
 
@@ -76,12 +99,19 @@ def main(argv=None):
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--window", type=int, default=1000)
+    parser.add_argument(
+        "--previous", type=Path, help="Earlier experiment with matching seed/step protocol"
+    )
     args = parser.parse_args(argv)
     summary = analyze_experiment(args.source, args.window)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "analysis.json").write_text(json.dumps(summary, indent=2) + "\n")
     evaluation_figure(summary, args.output)
     training_figure(summary, args.output)
+    if args.previous:
+        comparison = compare_evaluations(summary, analyze_experiment(args.previous, args.window))
+        (args.output / "comparison.json").write_text(json.dumps(comparison, indent=2) + "\n")
+        algorithm_figure(comparison, args.output)
     print(json.dumps(summary["groups"], indent=2))
 
 
