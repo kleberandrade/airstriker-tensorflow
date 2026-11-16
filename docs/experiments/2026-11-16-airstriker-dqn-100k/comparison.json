@@ -1,0 +1,55 @@
+{
+  "comparison_type": "training_budget",
+  "protocol": {
+    "game": "Airstriker-Genesis-v0",
+    "seeds": [
+      7,
+      13,
+      29
+    ],
+    "evaluate_steps": 6000,
+    "agent": {
+      "replay_capacity": 5000,
+      "batch_size": 32,
+      "learning_starts": 256,
+      "target_sync_interval": 250
+    }
+  },
+  "training_steps": {
+    "previous": 10000,
+    "current": 100000
+  },
+  "random_control_reproduced": true,
+  "untrained_control_reproduced": true,
+  "per_seed": [
+    {
+      "seed": 7,
+      "random": 300.0,
+      "untrained": 460.0,
+      "previous": 640.0,
+      "current": 180.0,
+      "current_minus_random": -120.0,
+      "current_minus_previous": -460.0
+    },
+    {
+      "seed": 13,
+      "random": 140.0,
+      "untrained": 0.0,
+      "previous": 0.0,
+      "current": 420.0,
+      "current_minus_random": 280.0,
+      "current_minus_previous": 420.0
+    },
+    {
+      "seed": 29,
+      "random": 300.0,
+      "untrained": 180.0,
+      "previous": 520.0,
+      "current": 1120.0,
+      "current_minus_random": 820.0,
+      "current_minus_previous": 600.0
+    }
+  ],
+  "mean_current_minus_random": 326.66666666666674,
+  "mean_current_minus_previous": 186.66666666666669
+}

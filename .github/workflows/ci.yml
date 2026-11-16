@@ -23,4 +23,5 @@ jobs:
       - run: python examples/smoke.py
       - run: python examples/analyze_experiment.py --source docs/experiments/2026-11-16-airstriker-long --output runs/ci-report --window 1000
       - run: python examples/analyze_experiment.py --source docs/experiments/2026-11-16-airstriker-dqn --previous docs/experiments/2026-11-16-airstriker-long --output runs/dqn-ci-report --window 1000
+      - run: python examples/analyze_experiment.py --source docs/experiments/2026-11-16-airstriker-dqn-100k --previous docs/experiments/2026-11-16-airstriker-dqn --comparison training-budget --output runs/dqn-100k-ci-report --window 5000
       - run: python -m build --no-isolation

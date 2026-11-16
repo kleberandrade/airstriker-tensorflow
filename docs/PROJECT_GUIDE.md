@@ -80,9 +80,9 @@ print(state.min() >= 0, state.max() <= 1)  # True True
 
 `frame` above is the observation obtained in lesson 1. This snippet performs no new emulator interaction. At reset, all four channels are filled with the first frame. The first new observation shifts the oldest channel out. Resetting clears history so an earlier episode cannot leak into the next.
 
-![Readable comparison of the game frame and actual 32 by 32 input](../images/airstriker-observation-comparison.png)
+![Readable comparison of the game frame and actual 32 by 32 input](../images/airstriker-100k-observation-comparison.png)
 
-[Open the exact 12× nearest-neighbor enlargement](../images/airstriker-observation-comparison-pixels.png). Pixel values are not brightened or contrast-adjusted.
+[Open the exact 12× nearest-neighbor enlargement](../images/airstriker-100k-observation-comparison-pixels.png). Pixel values are not brightened or contrast-adjusted.
 
 The right panel is one real processed channel, enlarged without smoothing; the left panel preserves the original game frame. The full stack contains four channels. The aggressive downsampling is a teaching simplification: an agent may struggle because useful visual detail is missing, even when its code is correct.
 
@@ -328,6 +328,32 @@ Batch metrics are reset before each optimizer update, so the new `loss` field av
 Online model/optimizer state is saved in `.keras`. Replay contents and the delayed target state are not saved: loading initializes fresh replay and a target copy of online weights. This supports evaluation, not exact training continuation. A model saved before its first optimizer update can emit a Keras optimizer-slot warning on load; checked inference weights remain intact, and no warning is suppressed.
 
 **Exercise:** predict the counters after 512 collection steps with default settings: 257 optimizer updates and one target copy. Explain why a target copied every 250 episodes would implement a different algorithm.
+
+## 13. Test a larger training budget without changing the evaluation
+
+A 100,000-step training run asks a different question from a new algorithm: does **more experience under the same DQN configuration** improve the final policy? Keep seeds 7/13/29, replay 5,000, batch 32, warmup 256, target sync every 250 updates, the same network/optimizer and the same default game state. Evaluate every policy for 6,000 steps.
+
+Start fresh seeded models for 100,000 **total** training transitions per seed. This is not 100,000 additional steps after an incomplete checkpoint restore: the saved inference checkpoint omits replay, delayed target and RNG state. Fresh deterministic runs let you audit whether the first 10,000 recorded transitions reproduce the earlier experiment.
+
+Expected counters per seed are `100000 - 256 + 1 = 99745` optimizer updates and `99745 // 250 = 398` target copies. The replay pixel allocation stays at 40,960,000 bytes when full; it does not grow to 100,000 transitions. This is a statement about stored pixel arrays, not measured process peak memory.
+
+```sh
+python examples/retro_experiment.py --output runs/airstriker-100k-reproduction \
+  --seeds 7 13 29 --train-steps 100000 --evaluate-steps 6000 --capture-every 1000 \
+  --replay-capacity 5000 --batch-size 32 --learning-starts 256 --target-sync-interval 250
+```
+
+The experiment has 300,000 training transitions and 54,000 evaluation/control transitions across 12 runs. Re-run random and untrained controls rather than assuming their old results. Compare the raw traces and the first 10,000-step training prefixes as reproducibility checks. A matching prefix verifies recorded behavior; it is not a direct hash of intermediate model parameters.
+
+For this comparison, use the analyzer's explicit training-budget mode. The default algorithm-comparison mode still requires equal training budgets, preventing accidental apples-to-oranges reports. Training-budget mode requires the same game, seeds, evaluation length, algorithm and replay configuration, and rejects incomplete seed cohorts.
+
+The primary endpoint is total reward per **6,000 evaluation steps**, including any unfinished tail. Total reward during 100,000 training steps is not comparable to the total during only 10,000 as a measure of policy quality. Training-window curves are exploratory diagnostics, not intermediate greedy evaluations. Only the earlier 10,000 endpoint and the new 100,000 endpoint are evaluated by this protocol.
+
+**Exercise:** if a seed gets more reward during longer epsilon-greedy training but less reward in its final greedy evaluation, which result answers whether the final policy improved? Use the matched greedy evaluation. Then inspect all seeds and the unfinished tails before explaining a possible cause. More steps alone are not a guarantee, and one high score is not evidence of reliable generalization.
+
+**Measured outcome:** the 100k DQN scored `[180, 420, 1120]`, mean **573.33**, versus 10k `[640, 0, 520]`, mean **386.67**, and random `[300, 140, 300]`, mean **246.67**. See [the full budget study](experiments/2026-11-16-airstriker-dqn-100k/REPORT.md) for all episodes, new images and plots. All six controls and three first-10k training prefixes reproduced byte-for-byte.
+
+**Exercise:** calculate each seed's 100k-minus-10k difference before looking at the mean. Does more total training reward imply a better greedy policy? Explain using the equal 6,000-step evaluation returns rather than unequal training totals. A low minibatch loss alone does not demonstrate a useful policy.
 
 ## Toolchain, troubleshooting and rights
 

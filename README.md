@@ -8,18 +8,18 @@
 
 **Learn how reinforcement learning connects images, actions, rewards and a neural network.** This educational project uses TensorFlow/Keras to control **Airstriker**, a Sega Genesis shooter included with Stable Retro for non-commercial testing.
 
-![Actual DQN evaluation frame, seed 7, step 4000](images/airstriker-dqn-gameplay.png)
+![Actual DQN evaluation frame, seed 7, step 4000](images/airstriker-100k-gameplay.png)
 
-*Real DQN capture: seed 7, evaluation step 4,000, current-episode score 120. The full 6,000-step evaluation accumulated 640 across resets. All seeds, including the zero-score failure, are reported below.*
+*Real 100k-DQN capture: seed 7, evaluation step 4,000, integration current-episode score 40. The full 6,000-step evaluation accumulated 180 across resets. All three seeds are reported below.*
 
-The project contains a working image pipeline, a small DQN with **uniform replay and a frozen target network**, bounded training, checkpoint evaluation, seeded comparisons and a recorder. **It is a learning baseline, not a solved-game agent.** The replay/target experiment trained three networks for 10,000 steps each. It improved the mean in this sample, while one seed still failed; the mixed outcomes are part of the lesson.
+The project contains a working image pipeline, a small DQN with **uniform replay and a frozen target network**, bounded training, checkpoint evaluation, seeded comparisons and a recorder. **It is a learning baseline, not a solved-game agent.** The latest study compares **100,000 versus 10,000 training steps per seed**, with the same DQN configuration and equal evaluation budgets. Mean returns were **573.33 versus 386.67**; the random baseline averaged **246.67**. Read the per-seed outcomes before judging the effect of more training.
 
 ## Start here
 
 1. [Run your first experiment](#install-and-run): install the tested environment and execute a short real-emulator run.
 2. [Understand one decision](#how-one-decision-works): follow a frame through the network and back to the game.
 3. [Work through the tutorial](docs/PROJECT_GUIDE.md): inspect real images, calculate a learning target and compare policies fairly.
-4. [Read the replay/target experiment](docs/experiments/2026-11-16-airstriker-dqn/REPORT.md): screenshots, per-seed results, raw traces, provenance and limitations.
+4. [Read the 100k training-budget experiment](docs/experiments/2026-11-16-airstriker-dqn-100k/REPORT.md): screenshots, per-seed results, raw traces, provenance and limitations.
 
 ## Install and run
 
@@ -73,9 +73,9 @@ That example uses an **explicitly synthetic test fixture** and a reduced four-tr
 
 The comparison below shows the actual game frame beside its 32×32 model channel. The pixels are enlarged with **nearest-neighbor rendering**, so they stay sharp instead of being blurred by the browser. Pixel intensities are unchanged; the dark, coarse appearance shows how much visual detail the model loses. It receives four consecutive channels.
 
-![Actual game frame beside a sharp enlarged model channel](images/airstriker-observation-comparison.png)
+![Actual game frame beside a sharp enlarged model channel](images/airstriker-100k-observation-comparison.png)
 
-[Open the exact 384×384 pixel enlargement](images/airstriker-observation-comparison-pixels.png). Its underlying data are still 32×32; enlargement does not recover missing detail.
+[Open the exact 384×384 pixel enlargement](images/airstriker-100k-observation-comparison-pixels.png). Its underlying data are still 32×32; enlargement does not recover missing detail.
 
 ### Where TensorFlow fits
 
@@ -92,40 +92,42 @@ target = reward                                # true terminal transition
 
 For a reward of 2 and best predicted next value of 5, the continuing target is `2 + 0.99 × 5 = 6.95`. If the game truly ends, the target is 2. A time-limit truncation still bootstraps from its final frame. The [tutorial](docs/PROJECT_GUIDE.md) explains why these cases differ and why a model can change weights even when reward is zero.
 
-## Replay + target network: measured comparison
+## Does 100,000-step DQN training improve the final policy?
 
-We repeated the exact **seeds 7/13/29**, **10,000 training transitions per seed**, and **6,000 evaluation transitions per policy**. The CNN, Adam rate, discount, epsilon, observations, savestate and action space stayed fixed. New replay settings are capacity 5,000, minibatch 32, warmup 256 and target sync every 250 optimizer updates.
+We trained **fresh models with seeds 7/13/29 for 100,000 total transitions each** and evaluated each checkpoint for **6,000 transitions**, matching the earlier 10,000-step DQN and random baseline. The CNN, Adam rate, discount, constant training epsilon, observations, savestate, actions and replay configuration stayed fixed. This is a larger training budget, not a new algorithm or an incomplete checkpoint resume.
 
 - Re-run random baseline: **300, 140, 300**; mean **246.67**.
 - Re-run untrained network: **460, 0, 180**; mean **213.33**.
-- Previous online learner: **0, 520, 120**; mean **213.33**.
-- New replay/target DQN: **640, 0, 520**; mean **386.67**.
+- Previous DQN, 10,000 training steps: **640, 0, 520**; mean **386.67**.
+- DQN, 100,000 training steps: **180, 420, 1120**; mean **573.33**.
 
-The new mean was **140 points above random** and **173.33 above the previous learner** in this three-seed sample. Two seeds beat random; seed 13 still earned zero and regressed from the previous learner. The re-run random and untrained traces matched the earlier controls byte-for-byte. These results show an improvement in this experiment, with substantial variation and no claim of statistical significance or unseen-level generalization.
+The mean changed by **+186.67 points versus 10k** and **+326.67 versus random**. The 100k checkpoint beat random in **2/3 seeds** and beat the 10k checkpoint in **2/3**. These three same-savestate seeds do not establish statistical significance, convergence or unseen-level performance. More training does not guarantee a better final policy.
 
-![Same-seed comparison: random, untrained, earlier online learner and DQN](docs/experiments/2026-11-16-airstriker-dqn/algorithm-comparison.png)
+![Matched 6000-step evaluations: random, untrained, 10k and 100k DQN](docs/experiments/2026-11-16-airstriker-dqn-100k/training-budget-comparison.png)
 
-[Read every result, failure, episode return, image and provenance record](docs/experiments/2026-11-16-airstriker-dqn/REPORT.md). The new run contains 84,000 real transitions, 312 native/processed gameplay PNGs, and complete/unfinished episode accounting. Historical evidence remains available for the [online learner](docs/experiments/2026-11-16-airstriker-long/REPORT.md) and [initial smoke](docs/experiments/2026-11-16-airstriker/REPORT.md).
+[Read every seed, complete/unfinished episode, new screenshot and provenance record](docs/experiments/2026-11-16-airstriker-dqn-100k/REPORT.md). The new study records **354,000 actual transitions**, all twelve compressed traces, training-window plots and fixed-step images from all three evaluated checkpoints. All six random/untrained control traces and the first 10,000 training transitions for all three seeds reproduced the previous experiment byte-for-byte.
+
+Earlier reports remain available: [10k replay/target DQN](docs/experiments/2026-11-16-airstriker-dqn/REPORT.md), [online learner](docs/experiments/2026-11-16-airstriker-long/REPORT.md) and [initial smoke](docs/experiments/2026-11-16-airstriker/REPORT.md). The first DQN study changed replay and targets together; the latest study changes only the training budget.
 
 Longer training is explicit and opt-in:
 
 ```sh
-python examples/retro_experiment.py --output runs/airstriker-dqn-reproduction \
-  --seeds 7 13 29 --train-steps 10000 --evaluate-steps 6000 --capture-every 1000 \
+python examples/retro_experiment.py --output runs/airstriker-100k-reproduction \
+  --seeds 7 13 29 --train-steps 100000 --evaluate-steps 6000 --capture-every 1000 \
   --replay-capacity 5000 --batch-size 32 --learning-starts 256 --target-sync-interval 250
 ```
 
-Regenerate the published analysis and algorithm comparison **without retraining**:
+Regenerate published plots and accounting **without retraining**:
 
 ```sh
 python -m pip install -e '.[report]'
 python examples/analyze_experiment.py \
-  --source docs/experiments/2026-11-16-airstriker-dqn \
-  --previous docs/experiments/2026-11-16-airstriker-long \
-  --output runs/dqn-report --window 1000
+  --source docs/experiments/2026-11-16-airstriker-dqn-100k \
+  --previous docs/experiments/2026-11-16-airstriker-dqn \
+  --comparison training-budget --output runs/100k-report --window 5000
 ```
 
-The protocol matches environment-step budgets, not compute: each new seed performs 9,745 minibatch updates (311,840 replay samples) and 38 target copies. The previous learner used 10,000 single-transition updates. Replay and target estimates changed together, so this experiment does not isolate their individual contributions.
+Each 100k training seed performs **99,745 minibatch updates**, **3,191,840 replay samples** and **398 target copies**; the 10k run performed 9,745 updates and 38 copies. Replay stays bounded at 5,000 entries. Training totals and training losses do not measure final policy quality: only the matched greedy evaluations support the comparison above.
 
 ## Python API
 

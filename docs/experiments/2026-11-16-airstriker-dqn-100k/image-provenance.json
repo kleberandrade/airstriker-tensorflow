@@ -1,0 +1,30 @@
+{
+  "images/airstriker-100k-gameplay.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn-100k/seed-7-trained/frame-004000-reset-002.png",
+    "sha256": "51be4129ed30217cd14368f7f568654c649e923abc63c4c04d5785d67701c455",
+    "seed": 7,
+    "step": 4000,
+    "current_episode_score": 40,
+    "total_evaluation_reward": 180.0
+  },
+  "images/airstriker-100k-input.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn-100k/seed-7-trained/frame-004000-reset-002-processed.png",
+    "sha256": "625aae24c62a10f948bda325c14f31d510c69f540efab510ed3109833ecc0826"
+  },
+  "images/airstriker-100k-seed13.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn-100k/seed-13-trained/frame-004000-reset-002.png",
+    "sha256": "15f5a42562bb5bb58728c5d6b62ddfbab43f9dca3cd484c8d8a88c40db68b13e",
+    "seed": 13,
+    "step": 4000,
+    "current_episode_score": 20,
+    "total_evaluation_reward": 420.0
+  },
+  "images/airstriker-100k-seed29.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn-100k/seed-29-trained/frame-004000-reset-003.png",
+    "sha256": "392e4fbf81fe8949af2b1d42afbf5ce27a0fb2a251f7d3d53dbb944e3c2b9fed",
+    "seed": 29,
+    "step": 4000,
+    "current_episode_score": 200,
+    "total_evaluation_reward": 1120.0
+  }
+}

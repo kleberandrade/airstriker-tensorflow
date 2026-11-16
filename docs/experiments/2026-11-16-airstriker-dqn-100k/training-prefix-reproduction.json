@@ -1,0 +1,20 @@
+{
+  "seed-7-train": {
+    "first_10000_transitions_byte_identical": true,
+    "previous_trace_sha256": "ad39d31018d7d0220b1a648a78662d829fd85d28b840552508636f3bc5fb99d2",
+    "current_prefix_sha256": "ad39d31018d7d0220b1a648a78662d829fd85d28b840552508636f3bc5fb99d2",
+    "prefix_bytes": 1522956
+  },
+  "seed-13-train": {
+    "first_10000_transitions_byte_identical": true,
+    "previous_trace_sha256": "cc8c42778b62e58b6be51239067f615a07d20dfedf9b77fb0756a0e8780e7474",
+    "current_prefix_sha256": "cc8c42778b62e58b6be51239067f615a07d20dfedf9b77fb0756a0e8780e7474",
+    "prefix_bytes": 1522759
+  },
+  "seed-29-train": {
+    "first_10000_transitions_byte_identical": true,
+    "previous_trace_sha256": "748a98a8603f61995958b2d4204b4b04dcfab3d6ec8b0608def5d1e729eb75da",
+    "current_prefix_sha256": "748a98a8603f61995958b2d4204b4b04dcfab3d6ec8b0608def5d1e729eb75da",
+    "prefix_bytes": 1522041
+  }
+}

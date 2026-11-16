@@ -1,0 +1,32 @@
+.....................................................                    [100%]
+=============================== warnings summary ===============================
+tests/test_cli.py: 12 warnings
+tests/test_experiment.py: 6 warnings
+tests/test_pipeline.py: 6 warnings
+  /Users/kleber/Projects/airstriker-tensorflow/.venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    return np.array(x)
+
+tests/test_cli.py::test_cli_train_evaluate_and_metadata
+  /Users/kleber/Projects/airstriker-tensorflow/.venv/lib/python3.13/site-packages/keras/src/saving/saving_lib.py:869: UserWarning: Skipping variable loading for optimizer 'adam', because it has 14 variables whereas the saved optimizer has 2 variables. 
+    saveable.load_own_variables(store)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.13.18-final-0 _______________
+
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src/airstriker_tensorflow/__init__.py            0      0   100%
+src/airstriker_tensorflow/agent.py              64      0   100%
+src/airstriker_tensorflow/analysis.py           90      0   100%
+src/airstriker_tensorflow/cli.py                51      1    98%   79
+src/airstriker_tensorflow/environments.py       23      0   100%
+src/airstriker_tensorflow/experiment.py         78      0   100%
+src/airstriker_tensorflow/preprocessing.py      19      0   100%
+src/airstriker_tensorflow/recording.py          50      0   100%
+src/airstriker_tensorflow/replay.py             32      0   100%
+src/airstriker_tensorflow/training.py           24      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          431      1    99%
+Coverage LCOV written to file target/coverage/python/lcov.info
+53 passed, 25 warnings in 7.08s

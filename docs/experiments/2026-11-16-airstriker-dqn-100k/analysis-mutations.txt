@@ -1,0 +1,65 @@
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.Agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.DQNConfig.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.analysis.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.RecordedEnvironment.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.ReplayBuffer.edn
+KILLED    src/airstriker_tensorflow/analysis.py:12 <= -> <
+KILLED    src/airstriker_tensorflow/analysis.py:12 0 -> 1
+KILLED    src/airstriker_tensorflow/analysis.py:14 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:19 + -> -
+KILLED    src/airstriker_tensorflow/analysis.py:19 1 -> 0
+KILLED    src/airstriker_tensorflow/analysis.py:20 + -> -
+KILLED    src/airstriker_tensorflow/analysis.py:21 + -> -
+KILLED    src/airstriker_tensorflow/analysis.py:22 + -> -
+KILLED    src/airstriker_tensorflow/analysis.py:24 0 -> 1
+KILLED    src/airstriker_tensorflow/analysis.py:37 delete not
+KILLED    src/airstriker_tensorflow/analysis.py:47 or -> and
+KILLED    src/airstriker_tensorflow/analysis.py:61 / -> *
+KILLED    src/airstriker_tensorflow/analysis.py:63 delete not
+KILLED    src/airstriker_tensorflow/analysis.py:64 / -> *
+KILLED    src/airstriker_tensorflow/analysis.py:71 / -> *
+KILLED    src/airstriker_tensorflow/analysis.py:72 != -> ==
+KILLED    src/airstriker_tensorflow/analysis.py:72 or -> and
+KILLED    src/airstriker_tensorflow/analysis.py:72 delete not
+KILLED    src/airstriker_tensorflow/analysis.py:87 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:102 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:104 - -> +
+KILLED    src/airstriker_tensorflow/analysis.py:106 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:106 and -> or
+KILLED    src/airstriker_tensorflow/analysis.py:112 / -> *
+KILLED    src/airstriker_tensorflow/analysis.py:118 / -> *
+KILLED    src/airstriker_tensorflow/analysis.py:129 True -> False
+KILLED    src/airstriker_tensorflow/analysis.py:134 != -> ==
+KILLED    src/airstriker_tensorflow/analysis.py:144 != -> ==
+KILLED    src/airstriker_tensorflow/analysis.py:144 or -> and
+KILLED    src/airstriker_tensorflow/analysis.py:144 != -> ==
+KILLED    src/airstriker_tensorflow/analysis.py:155 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:157 == -> !=
+KILLED    src/airstriker_tensorflow/analysis.py:165 - -> +
+KILLED    src/airstriker_tensorflow/analysis.py:166 - -> +
+KILLED    src/airstriker_tensorflow/analysis.py:171 - -> +
+KILLED    src/airstriker_tensorflow/analysis.py:173 - -> +
+KILLED    src/airstriker_tensorflow/analysis.py:189 != -> ==
+KILLED    src/airstriker_tensorflow/analysis.py:189 or -> and
+KILLED    src/airstriker_tensorflow/analysis.py:189 != -> ==
+Function                 Namespace                       Killed  Survived  Uncovered  Sites   Score
+---------------------------------------------------------------------------------------------------
+compare_evaluations      airstriker_tensorflow.analysis       0         0          0      0    n/a
+_check_cohorts           airstriker_tensorflow.analysis       3         0          0      3 100.0%
+_checked_run             airstriker_tensorflow.analysis       4         0          0      4 100.0%
+_comparison_values       airstriker_tensorflow.analysis       6         0          0      6 100.0%
+_episodes                airstriker_tensorflow.analysis       1         0          0      1 100.0%
+_matching_protocol       airstriker_tensorflow.analysis       1         0          0      1 100.0%
+_paired_difference       airstriker_tensorflow.analysis       4         0          0      4 100.0%
+_phase_statistics        airstriker_tensorflow.analysis       1         0          0      1 100.0%
+_reward                  airstriker_tensorflow.analysis       1         0          0      1 100.0%
+_rewards_by_seed         airstriker_tensorflow.analysis       1         0          0      1 100.0%
+_trace                   airstriker_tensorflow.analysis       3         0          0      3 100.0%
+analyze_experiment       airstriker_tensorflow.analysis       2         0          0      2 100.0%
+compare_training_budgets airstriker_tensorflow.analysis       3         0          0      3 100.0%
+summarize_trace          airstriker_tensorflow.analysis       9         0          0      9 100.0%
+---------------------------------------------------------------------------------------------------
+Total                                                        39         0          0     39  100.0%
