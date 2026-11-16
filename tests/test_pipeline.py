@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from airstriker_tensorflow.agent import Agent, bootstrap_targets
+from airstriker_tensorflow.agent import Agent, DQNConfig, bootstrap_targets
 from airstriker_tensorflow.environments import SyntheticEnvironment
 from airstriker_tensorflow.preprocessing import FrameStack
 from airstriker_tensorflow.training import run
@@ -48,7 +48,7 @@ def test_terminal_bootstrap_and_time_limit():
 
 
 def test_training_updates_weights_and_checkpoint_roundtrip(tmp_path):
-    agent = Agent(3, seed=7)
+    agent = Agent(3, seed=7, config=DQNConfig(batch_size=1, learning_starts=1))
     state = np.ones((32, 32, 4), dtype=np.float32)
     before = agent.values(state).copy()
     loss = agent.learn(state, 1, 5.0, state, True)
@@ -64,7 +64,7 @@ def test_training_updates_weights_and_checkpoint_roundtrip(tmp_path):
 
 
 def test_short_train_and_evaluation_have_explicit_limits():
-    agent = Agent(3, seed=1)
+    agent = Agent(3, seed=1, config=DQNConfig(batch_size=2, learning_starts=2))
     env = SyntheticEnvironment()
     result = run(env, agent, steps=10, seed=3, training=True)
     assert result["steps"] == 10
@@ -77,3 +77,10 @@ def test_short_train_and_evaluation_have_explicit_limits():
         np.testing.assert_array_equal(old, new)
     with pytest.raises(ValueError, match="positive"):
         run(env, agent, steps=0)
+
+
+def test_replay_warmup_records_steps_without_claiming_optimizer_updates():
+    agent = Agent(3, seed=7)
+    result = run(SyntheticEnvironment(), agent, steps=8, seed=3, training=True)
+    assert result["steps"] == 8 and result["loss"] is None
+    assert agent.updates == 0 and len(agent.replay) == 8

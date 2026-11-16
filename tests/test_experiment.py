@@ -4,6 +4,7 @@ import json
 
 import pytest
 
+from airstriker_tensorflow.agent import DQNConfig
 from airstriker_tensorflow.environments import SyntheticEnvironment
 from airstriker_tensorflow.experiment import ExperimentConfig, execute
 
@@ -11,7 +12,12 @@ from airstriker_tensorflow.experiment import ExperimentConfig, execute
 def test_experiment_saves_results_and_is_explicitly_injected_offline(tmp_path):
     output = tmp_path / "experiment"
     config = ExperimentConfig(
-        game="synthetic-fixture", seeds=(7,), train_steps=2, evaluate_steps=2, capture_every=2
+        game="synthetic-fixture",
+        seeds=(7,),
+        train_steps=2,
+        evaluate_steps=2,
+        capture_every=2,
+        agent=DQNConfig(batch_size=1, learning_starts=1),
     )
     manifest = execute(config, output, env_factory=lambda game: SyntheticEnvironment())
     assert manifest["configuration"]["game"] == "synthetic-fixture"

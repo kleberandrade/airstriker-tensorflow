@@ -54,3 +54,42 @@ def test_default_game_is_the_included_airstriker_integration():
 
     args = parse_args(["train", "--env", "retro", "--checkpoint", "agent.keras"])
     assert args.game == "Airstriker-Genesis-v0"
+
+
+def test_cli_records_replay_configuration_and_update_counts(tmp_path, capsys):
+    checkpoint = str(tmp_path / "replay.keras")
+    main(
+        [
+            "train",
+            "--env",
+            "synthetic",
+            "--steps",
+            "4",
+            "--checkpoint",
+            checkpoint,
+            "--batch-size",
+            "2",
+            "--learning-starts",
+            "2",
+            "--replay-capacity",
+            "4",
+            "--target-sync-interval",
+            "2",
+        ]
+    )
+    result = json.loads(capsys.readouterr().out)
+    assert result["optimizer_updates"] == 3
+    assert result["target_syncs"] == 1
+    assert result["agent_config"]["batch_size"] == 2
+    assert result["algorithm"] == "dqn-replay-target"
+
+
+def test_invalid_agent_configuration_is_rejected_before_environment_creation(monkeypatch):
+    from airstriker_tensorflow import cli
+
+    def must_not_open(*args, **kwargs):
+        raise AssertionError("environment should not open for invalid replay settings")
+
+    monkeypatch.setattr(cli, "make_retro", must_not_open)
+    with pytest.raises(SystemExit):
+        main(["train", "--env", "retro", "--checkpoint", "unused.keras", "--batch-size", "0"])

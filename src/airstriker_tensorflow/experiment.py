@@ -3,7 +3,7 @@
 import json
 import platform
 from collections import Counter
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
@@ -11,7 +11,7 @@ from time import perf_counter
 
 import numpy as np
 
-from .agent import Agent
+from .agent import ALGORITHM_NAME, Agent, DQNConfig
 from .environments import DEFAULT_GAME, make_retro
 from .recording import RecordedEnvironment
 from .training import run
@@ -21,9 +21,10 @@ from .training import run
 class ExperimentConfig:
     game: str = DEFAULT_GAME
     seeds: tuple[int, ...] = (7, 13, 29)
-    train_steps: int = 128
+    train_steps: int = 512
     evaluate_steps: int = 256
     capture_every: int = 128
+    agent: DQNConfig = field(default_factory=DQNConfig)
 
     def __post_init__(self):
         if min(self.train_steps, self.evaluate_steps, self.capture_every) <= 0:
@@ -50,7 +51,7 @@ def _trial(config, output, seed, phase, env_factory, checkpoint=None):
         env.close()
         raise
     try:
-        agent = _policy(phase, recorder.action_count, seed, checkpoint)
+        agent = _policy(phase, recorder.action_count, seed, checkpoint, config.agent)
         started = perf_counter()
         training = phase == "train"
         steps = config.train_steps if training else config.evaluate_steps
@@ -66,6 +67,12 @@ def _trial(config, output, seed, phase, env_factory, checkpoint=None):
         )
         if training:
             result["weight_change_l2"] = float(np.linalg.norm(_weights(agent) - before))
+            result.update(
+                optimizer_updates=agent.updates,
+                replay_size=len(agent.replay),
+                replay_storage_bytes=agent.replay.storage_bytes,
+                target_syncs=agent.target_syncs,
+            )
             agent.save(output / f"seed-{seed}.keras")
     finally:
         recorder.close()
@@ -73,10 +80,10 @@ def _trial(config, output, seed, phase, env_factory, checkpoint=None):
     return result
 
 
-def _policy(phase, action_count, seed, checkpoint):
+def _policy(phase, action_count, seed, checkpoint, config):
     if phase == "random":
         return RandomPolicy(action_count, seed)
-    return Agent(action_count, seed=seed, checkpoint=checkpoint)
+    return Agent(action_count, seed=seed, checkpoint=checkpoint, config=config)
 
 
 def _weights(agent):
@@ -102,6 +109,7 @@ def execute(config, output, env_factory=make_retro):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     manifest = {
+        "algorithm": ALGORITHM_NAME,
         "created_utc": datetime.now(UTC).isoformat(),
         "configuration": asdict(config),
         "platform": platform.platform(),

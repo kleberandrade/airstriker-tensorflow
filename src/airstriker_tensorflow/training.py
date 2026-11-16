@@ -18,7 +18,9 @@ def run(env, agent, steps, seed=0, training=False):
         image, reward, terminated, truncated, _ = env.step(action)
         next_state = stack.append(image)
         if training:
-            losses.append(agent.learn(state, action, reward, next_state, terminated))
+            loss = agent.learn(state, action, reward, next_state, terminated)
+            if loss is not None:
+                losses.append(loss)
         reward_sum += reward
         state = next_state
         if terminated or truncated:

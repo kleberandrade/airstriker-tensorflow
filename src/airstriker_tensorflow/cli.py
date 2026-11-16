@@ -2,11 +2,24 @@
 
 import argparse
 import json
+from dataclasses import asdict, fields
 from pathlib import Path
 
-from .agent import Agent
+from .agent import ALGORITHM_NAME, Agent, DQNConfig
 from .environments import DEFAULT_GAME, SyntheticEnvironment, make_retro
 from .training import run
+
+
+def add_agent_arguments(parser):
+    defaults = DQNConfig()
+    for field in fields(DQNConfig):
+        parser.add_argument(
+            "--" + field.name.replace("_", "-"), type=int, default=getattr(defaults, field.name)
+        )
+
+
+def agent_config_from_args(args):
+    return DQNConfig(**{field.name: getattr(args, field.name) for field in fields(DQNConfig)})
 
 
 def parse_args(argv=None):
@@ -18,6 +31,7 @@ def parse_args(argv=None):
     parser.add_argument("--steps", type=int, default=32)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--checkpoint", type=Path)
+    add_agent_arguments(parser)
     args = parser.parse_args(argv)
     if args.steps <= 0:
         parser.error("--steps must be positive")
@@ -25,6 +39,10 @@ def parse_args(argv=None):
         parser.error("evaluate requires --checkpoint")
     if args.mode == "train" and not args.checkpoint:
         parser.error("train requires --checkpoint output path")
+    try:
+        args.agent_config = agent_config_from_args(args)
+    except ValueError as error:
+        parser.error(str(error))
     return args
 
 
@@ -33,7 +51,9 @@ def main(argv=None):
     env = SyntheticEnvironment() if args.env == "synthetic" else make_retro(args.game, args.state)
     try:
         checkpoint = args.checkpoint if args.mode == "evaluate" else None
-        agent = Agent(env.action_count, seed=args.seed, checkpoint=checkpoint)
+        agent = Agent(
+            env.action_count, seed=args.seed, checkpoint=checkpoint, config=args.agent_config
+        )
         result = run(env, agent, steps=args.steps, seed=args.seed, training=args.mode == "train")
         metadata = {
             "environment": args.env,
@@ -41,6 +61,10 @@ def main(argv=None):
             "state": args.state,
             "seed": args.seed,
             "training": args.mode == "train",
+            "algorithm": ALGORITHM_NAME,
+            "agent_config": asdict(agent.config),
+            "optimizer_updates": agent.updates,
+            "target_syncs": agent.target_syncs,
         }
         result.update(metadata)
         if args.mode == "train":
