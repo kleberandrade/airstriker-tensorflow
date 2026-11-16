@@ -1,5 +1,7 @@
 # Airstriker real-emulator experiment — 2026-11-16
 
+> **Historical algorithm:** this report records the online learner from version 0.3.0. Current training uses replay and a target network. To reproduce the historical training algorithm, use commit `2be35cf` in a separate checkout/worktree. Current `examples/analyze_experiment.py` can still audit these committed traces without training. The numerical results and raw gameplay records below are preserved.
+
 ## Finding
 
 The TensorFlow pipeline ran successfully against a real Stable Retro emulator using the included Airstriker ROM. All 12 bounded runs completed, produced traceable images and rewards, and saved/loaded local checkpoints. This is an integration smoke experiment, not an established learning result.

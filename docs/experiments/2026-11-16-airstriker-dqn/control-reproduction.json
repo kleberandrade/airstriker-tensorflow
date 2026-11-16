@@ -1,0 +1,26 @@
+{
+  "seed-7-random": {
+    "byte_identical": true,
+    "sha256": "a555687d59639fd629eac009efcce01d5ff68366471b41123fc0fcc4f2a9b7f6"
+  },
+  "seed-7-untrained": {
+    "byte_identical": true,
+    "sha256": "b6bdf866c96fccfc099dd0bb85929e6192c23507fa2513aabea93e8cec102ea8"
+  },
+  "seed-13-random": {
+    "byte_identical": true,
+    "sha256": "03911209f96bb7ee52b57c84dd2a21d9e8840bc491cad1f07085ebaaf621e01e"
+  },
+  "seed-13-untrained": {
+    "byte_identical": true,
+    "sha256": "01b54b872685323f28f849737312a68fd0643b371a1bf3e22db56b21aff8f962"
+  },
+  "seed-29-random": {
+    "byte_identical": true,
+    "sha256": "7a3ab6a79e2413809d725ba1befca2fafce8d61ef6b714fd1011616d20814478"
+  },
+  "seed-29-untrained": {
+    "byte_identical": true,
+    "sha256": "687e9acc0695b540a7a1a0efcdf9ef25fc04fdad984dd48e78aea16aba0ac649"
+  }
+}

@@ -4,6 +4,12 @@ This guide is a practical walk through a complete loop: observe a real game, tur
 
 The game is **Airstriker by Electrokinesis**, a Sega Genesis shooter included with Stable Retro for non-commercial testing. The learning framework is **TensorFlow/Keras**. The recorded experiment establishes a working integration; it does not establish a strong playing policy.
 
+## The two loops at a glance
+
+![How TensorFlow acts and learns inside the Airstriker pipeline](../images/airstriker-dqn-flow.png)
+
+[Scalable SVG](../images/airstriker-dqn-flow.svg). The top loop advances the real game. The bottom loop learns from stored transitions. TensorFlow executes the online and target networks and differentiates the online loss; Stable Retro supplies game observations/rewards and Pillow/NumPy prepare pixels. A dashed arrow represents a periodic weight copy, not a gradient update to the target network.
+
 ## 1. Set up a reproducible lab
 
 Use Python 3.13 and follow the [README installation](../README.md#install-and-run). The complete development lock includes TensorFlow, Stable Retro, Pillow, NumPy and test/build tools.
@@ -74,9 +80,11 @@ print(state.min() >= 0, state.max() <= 1)  # True True
 
 `frame` above is the observation obtained in lesson 1. This snippet performs no new emulator interaction. At reset, all four channels are filled with the first frame. The first new observation shifts the oldest channel out. Resetting clears history so an earlier episode cannot leak into the next.
 
-<img src="../images/airstriker-model-input.png" alt="Actual grayscale 32 by 32 observation channel, enlarged for inspection" width="128" height="128">
+![Readable comparison of the game frame and actual 32 by 32 input](../images/airstriker-observation-comparison.png)
 
-This is one real processed channel, enlarged for viewing. The full stack contains four channels. The aggressive downsampling is a teaching simplification: an agent may struggle because useful visual detail is missing, even when its code is correct.
+[Open the exact 12× nearest-neighbor enlargement](../images/airstriker-observation-comparison-pixels.png). Pixel values are not brightened or contrast-adjusted.
+
+The right panel is one real processed channel, enlarged without smoothing; the left panel preserves the original game frame. The full stack contains four channels. The aggressive downsampling is a teaching simplification: an agent may struggle because useful visual detail is missing, even when its code is correct.
 
 **Try it:** inspect the raw and processed images side by side. Identify a small object that becomes harder to distinguish. Write down which information you would preserve before increasing model complexity.
 
@@ -105,7 +113,7 @@ Use the environment's actual `action_count` in application code; 126 is shown he
 
 ## 5. Calculate one learning target by hand
 
-Suppose the selected action earns reward 2 and the best next Q-value is 5. With discount factor gamma = 0.99:
+Suppose the selected action earns reward 2 and the best frozen-target next Q-value is 5. With discount factor gamma = 0.99:
 
 ```text
 continuing target = 2 + 0.99 × 5 = 6.95
@@ -125,16 +133,16 @@ Floating-point arithmetic may display the continuing result as `6.95000005`; it 
 
 A true terminal means there are no later game rewards to predict. A time-limit truncation means collection stopped even though the underlying game could continue, so the final observation still permits bootstrapping.
 
-The implementation copies current predictions, replaces the target for the chosen action and performs a Keras update with Huber loss and Adam learning rate 0.001. It uses one transition at a time. A decreasing loss can mean that the network is matching its own estimates more closely; it does not by itself mean better gameplay.
+The current implementation stores transitions and samples 32 of them uniformly for each update after warmup. It copies online predictions, replaces the chosen actions' targets using the frozen target network, and performs one Keras update with Huber loss and Adam learning rate 0.001. Lesson 12 explains the replay and target lifecycle. A decreasing loss can mean that the network is matching its own estimates more closely; it does not by itself mean better gameplay.
 
 **Important consequence:** if reward is zero, the target can still differ from the current prediction because the best next Q-value is nonzero. Weights can change without positive rewards. That happened in every recorded training window. Do not report a weight change as proof of successful reward-driven learning.
 
 ## 6. Separate exploration from evaluation
 
-Training uses epsilon = 0.1: approximately 10% of decisions select a random action, while the rest select the largest Q-value. Evaluation uses epsilon = 0 and is greedy. Randomness does not guarantee useful exploration, particularly with 126 actions and only 128 steps.
+Training uses epsilon = 0.1: approximately 10% of decisions select a random action, while the rest select the largest Q-value. Evaluation uses epsilon = 0 and is greedy. Randomness does not guarantee useful exploration, particularly with 126 actions and a short interaction budget.
 
 ```sh
-airstriker-tf train --env retro --steps 128 --seed 7 --checkpoint runs/airstriker.keras
+airstriker-tf train --env retro --steps 512 --seed 7 --checkpoint runs/airstriker.keras
 airstriker-tf evaluate --env retro --steps 256 --seed 7 --checkpoint runs/airstriker.keras
 ```
 
@@ -142,7 +150,7 @@ The CLI defaults to `Airstriker-Genesis-v0`. The Airstriker test ROM comes with 
 
 `--steps` is a positive hard limit. Training starts a new network and saves a `.keras` model plus neighboring JSON run record. Evaluation loads the checkpoint, verifies action count and does not change weights. JSON includes the seed, game/state, environment kind, step count, completed episodes, total reward and training loss (`null` for evaluation).
 
-Do not call a 128-step checkpoint a trained expert. In this project it means only that 128 optimizer-update opportunities were executed.
+A checkpoint is not a trained expert. With default settings, fewer than 256 collected steps perform no optimizer update; a 512-step training run performs 257 minibatch updates. Inspect the counters instead of inferring training progress from the filename.
 
 ## 7. Compare policies with controls
 
@@ -150,7 +158,7 @@ Do not call a 128-step checkpoint a trained expert. In this project it means onl
 python examples/retro_experiment.py \
   --output runs/airstriker-experiment \
   --seeds 7 13 29 \
-  --train-steps 128 \
+  --train-steps 512 \
   --evaluate-steps 256 \
   --capture-every 128
 ```
@@ -191,7 +199,8 @@ The [recorded report](experiments/2026-11-16-airstriker/REPORT.md) includes nati
 
 - `environments.py`: `DEFAULT_GAME`, explicit synthetic fixture, optional Stable Retro factory.
 - `preprocessing.py`: observation validation and temporal input representation.
-- `agent.py`: model, policy, targets, weight updates and checkpoints.
+- `agent.py`: DQN configuration, online/frozen networks, policy, targets, updates and checkpoints.
+- `replay.py`: seeded uniform replay, compact copied observations and minibatch reconstruction.
 - `training.py`: bounded interaction loop shared by training and evaluation.
 - `cli.py`: parsing, metadata and guaranteed environment cleanup.
 - `recording.py`: transparent wrapper that saves exact observations and trace events.
@@ -213,14 +222,14 @@ from airstriker_tensorflow.training import run
 env = make_retro(DEFAULT_GAME)
 try:
     agent = Agent(env.action_count, seed=7)
-    print(run(env, agent, steps=128, seed=7, training=True))
+    print(run(env, agent, steps=512, seed=7, training=True))
     agent.save("runs/api-airstriker.keras")
     print(run(env, agent, steps=256, seed=7, training=False))
 finally:
     env.close()
 ```
 
-No environment/RNG state or frame history is restored from a checkpoint. Use checkpoints for evaluation with the same game/action mapping, not exact interrupted-training recovery.
+No replay contents, delayed target weights, environment/RNG state or frame history are restored from a checkpoint. A loaded agent initializes a fresh target copy and empty replay; checkpoints support inference, not exact training resumption. Use checkpoints for evaluation with the same game/action mapping, not exact interrupted-training recovery.
 
 ## 10. Verify a change and plan the next experiment
 
@@ -237,7 +246,7 @@ Offline tests check normalized frame order/reset, seeds, terminal targets, real 
 
 [GitHub Actions](https://github.com/kleberandrade/airstriker-tensorflow/actions/workflows/ci.yml) runs offline tests, lint, formatting, synthetic smoke and package builds on Ubuntu/Python 3.13. Real-emulator validation took place on Apple Silicon CPU. GPU, native Windows and Intel macOS remain unverified. Seeds do not guarantee bit-identical outputs across hardware or package versions.
 
-Before adding complexity, state a hypothesis and change one factor. Useful follow-ups include preserving more visual detail, collecting longer episodes, testing a justified smaller action set, or introducing replay/target networks. Compare against the same baselines and record failures. Longer training is an explicit experiment, never a default command.
+Before adding complexity, state a hypothesis and change one factor. Useful follow-ups include preserving more visual detail, collecting longer episodes, testing a justified smaller action set, or running controlled ablations of replay capacity and target-update schedules. Compare against the same baselines and record failures. Longer training is an explicit experiment, never a default command.
 
 **Questions to answer before claiming improvement:**
 
@@ -274,7 +283,51 @@ The analyzer rejects mismatches between raw trace totals and the manifest. It re
 
 **Exercise:** compare all three differences, `[-300, +380, -180]`, before reading the mean. What happens to your conclusion if you publish only seed 13? You hide two losses and falsely imply consistency. Decide on the seed/budget protocol before looking at the results, then report failures alongside successes.
 
-The original smoke scores used only 256 evaluation steps; the new totals use 6,000. Comparing their raw totals as if they were equal-budget performance would be invalid. A useful next experiment should change one justified factor, such as replay, target estimates or visual detail, while keeping the evaluation protocol fixed. Do not quietly tune after seeing these results and label the new outcome as the same experiment.
+This lesson describes the recorded online baseline from version 0.3.0; current training uses the DQN lifecycle in lesson 12. The original smoke scores used only 256 evaluation steps; the new totals use 6,000. Comparing their raw totals as if they were equal-budget performance would be invalid. A useful next experiment should change one justified factor, such as replay, target estimates or visual detail, while keeping the evaluation protocol fixed. Do not quietly tune after seeing these results and label the new outcome as the same experiment.
+
+## 12. Why replay and a target network change the update
+
+The current agent uses the two mechanisms introduced in [Mnih et al., Human-level control through deep reinforcement learning (2015)](https://doi.org/10.1038/nature14236). This is a small educational DQN, with a different game, network and budget; it is not a reproduction of that paper's Atari results.
+
+**Replay buffer:** store `(state, action, reward, next_state, terminated)` after each game step, keeping the most recent 5,000 transitions. Observations are copied into uint8 pixel arrays so later frame changes cannot alter stored experience. Each state pair occupies 8,192 pixel bytes; a full buffer uses 40,960,000 pixel bytes (about 39.1 MiB), excluding Python/model/optimizer overhead. Sampling decodes float32 observations in [0, 1].
+
+A seeded sampler draws 32 distinct transitions uniformly within a minibatch. A transition can be sampled again in a later batch. Its random generator is separate from the action-selection generator. Replay reuses past experience and reduces immediate temporal correlation; it does not guarantee that stored experience is useful or unbiased.
+
+**Warmup:** no optimizer update occurs until 256 transitions are stored. The 256th transition permits the first update. A 10,000-step run therefore performs `10000 - 256 + 1 = 9745` updates. A short run below warmup collects experience, returns `loss = null`, and reports zero updates. The synthetic smoke uses smaller settings explicitly so eight collection steps actually exercise learning.
+
+**Target network:** initialize a frozen copy of the online network. Compute sampled next-state values with that frozen copy:
+
+```text
+y = reward + 0.99 × (1 − true_terminal) × max Q_target(next_state)
+loss = Huber(y, Q_online(sampled_state, sampled_action))
+```
+
+Adam changes only online weights. After every 250 optimizer updates, copy online weights to the target. This interval is measured in optimizer updates, not environment frames or episodes. The target stays unchanged between copies. A 9,745-update run makes 38 target copies; evaluation uses the final online checkpoint.
+
+The online network still has 17,542 trainable parameters for Airstriker. The target holds another 17,542 frozen parameters. We retain the original convolutional architecture, Adam rate 0.001, gamma 0.99, epsilon 0.1, image representation and 126-action mapping. This is standard max-target DQN, with no Double DQN or prioritized replay.
+
+Configuration is explicit:
+
+```python
+from airstriker_tensorflow.agent import Agent, DQNConfig
+
+config = DQNConfig(replay_capacity=5000, batch_size=32,
+                   learning_starts=256, target_sync_interval=250)
+agent = Agent(126, seed=7, config=config)
+print(agent.updates, agent.target_syncs, len(agent.replay))  # 0 0 0
+```
+
+The corresponding CLI options are `--replay-capacity`, `--batch-size`, `--learning-starts` and `--target-sync-interval`. Invalid settings fail before opening an emulator. Requirements are positive values and `batch_size <= learning_starts <= replay_capacity`.
+
+**What the controlled run found:** DQN evaluation rewards `[640, 0, 520]` averaged 386.67, compared with random `[300, 140, 300]` (246.67) and the earlier online learner `[0, 520, 120]` (213.33). Random and untrained controls were independently re-run and their raw traces reproduced exactly. Two DQN seeds improved against random; the other remained a zero-score failure. The [complete report](experiments/2026-11-16-airstriker-dqn/REPORT.md) includes every seed and new images.
+
+The environment budgets match, while optimizer compute does not: the new run samples 311,840 replay transitions per seed in 9,745 batches, versus 10,000 single-transition updates before. Replay and target networks were introduced together, so we cannot attribute the effect to one mechanism alone. There are only three training seeds and the same fixed savestate. Repeated deterministic episodes are not additional independent trials or unseen-level tests.
+
+Batch metrics are reset before each optimizer update, so the new `loss` field averages actual returned minibatch losses. The old learner averaged running Keras metric values. Reward comparisons use equal-budget evaluations; comparing the two loss fields as convergence measures would be invalid.
+
+Online model/optimizer state is saved in `.keras`. Replay contents and the delayed target state are not saved: loading initializes fresh replay and a target copy of online weights. This supports evaluation, not exact training continuation. A model saved before its first optimizer update can emit a Keras optimizer-slot warning on load; checked inference weights remain intact, and no warning is suppressed.
+
+**Exercise:** predict the counters after 512 collection steps with default settings: 257 optimizer updates and one target copy. Explain why a target copied every 250 episodes would implement a different algorithm.
 
 ## Toolchain, troubleshooting and rights
 

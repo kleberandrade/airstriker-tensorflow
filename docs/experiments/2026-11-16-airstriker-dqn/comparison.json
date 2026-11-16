@@ -1,0 +1,45 @@
+{
+  "protocol": {
+    "game": "Airstriker-Genesis-v0",
+    "seeds": [
+      7,
+      13,
+      29
+    ],
+    "train_steps": 10000,
+    "evaluate_steps": 6000
+  },
+  "random_control_reproduced": true,
+  "untrained_control_reproduced": true,
+  "per_seed": [
+    {
+      "seed": 7,
+      "random": 300.0,
+      "untrained": 460.0,
+      "online": 0.0,
+      "dqn": 640.0,
+      "dqn_minus_random": 340.0,
+      "dqn_minus_online": 640.0
+    },
+    {
+      "seed": 13,
+      "random": 140.0,
+      "untrained": 0.0,
+      "online": 520.0,
+      "dqn": 0.0,
+      "dqn_minus_random": -140.0,
+      "dqn_minus_online": -520.0
+    },
+    {
+      "seed": 29,
+      "random": 300.0,
+      "untrained": 180.0,
+      "online": 120.0,
+      "dqn": 520.0,
+      "dqn_minus_random": 220.0,
+      "dqn_minus_online": 400.0
+    }
+  ],
+  "mean_dqn_minus_random": 140.00000000000003,
+  "mean_dqn_minus_online": 173.33333333333334
+}

@@ -1,0 +1,79 @@
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.Agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.DQNConfig.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.analysis.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.RecordedEnvironment.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.ReplayBuffer.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.Agent.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.agent.DQNConfig.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.analysis.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.RecordedEnvironment.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.replay.ReplayBuffer.edn
+KILLED    src/airstriker_tensorflow/agent.py:29 <= -> <
+KILLED    src/airstriker_tensorflow/agent.py:29 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:32 delete not
+KILLED    src/airstriker_tensorflow/agent.py:32 <= -> <
+KILLED    src/airstriker_tensorflow/agent.py:32 <= -> <
+KILLED    src/airstriker_tensorflow/agent.py:37 + -> -
+KILLED    src/airstriker_tensorflow/agent.py:37 * -> /
+KILLED    src/airstriker_tensorflow/agent.py:37 1 -> 0
+KILLED    src/airstriker_tensorflow/agent.py:37 - -> +
+KILLED    src/airstriker_tensorflow/agent.py:37 * -> /
+KILLED    src/airstriker_tensorflow/agent.py:38 delete -
+KILLED    src/airstriker_tensorflow/agent.py:38 1 -> 0
+KILLED    src/airstriker_tensorflow/agent.py:43 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:47 or -> and
+KILLED    src/airstriker_tensorflow/agent.py:49 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:50 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:53 delete -
+KILLED    src/airstriker_tensorflow/agent.py:53 1 -> 0
+KILLED    src/airstriker_tensorflow/agent.py:53 != -> ==
+KILLED    src/airstriker_tensorflow/agent.py:68 False -> True
+KILLED    src/airstriker_tensorflow/agent.py:71 False -> True
+KILLED    src/airstriker_tensorflow/agent.py:71 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:74 < -> <=
+KILLED    src/airstriker_tensorflow/agent.py:80 < -> <=
+KILLED    src/airstriker_tensorflow/agent.py:83 False -> True
+KILLED    src/airstriker_tensorflow/agent.py:84 False -> True
+KILLED    src/airstriker_tensorflow/agent.py:90 1 -> 0
+KILLED    src/airstriker_tensorflow/agent.py:95 == -> !=
+KILLED    src/airstriker_tensorflow/agent.py:95 0 -> 1
+KILLED    src/airstriker_tensorflow/agent.py:97 1 -> 0
+KILLED    src/airstriker_tensorflow/agent.py:101 True -> False
+KILLED    src/airstriker_tensorflow/agent.py:101 True -> False
+KILLED    src/airstriker_tensorflow/replay.py:19 0 -> 1
+KILLED    src/airstriker_tensorflow/replay.py:20 <= -> <
+KILLED    src/airstriker_tensorflow/replay.py:20 0 -> 1
+KILLED    src/airstriker_tensorflow/replay.py:31 + -> -
+KILLED    src/airstriker_tensorflow/replay.py:40 delete not
+KILLED    src/airstriker_tensorflow/replay.py:40 0 -> 1
+KILLED    src/airstriker_tensorflow/replay.py:40 < -> <=
+KILLED    src/airstriker_tensorflow/replay.py:40 <= -> <
+KILLED    src/airstriker_tensorflow/replay.py:42 False -> True
+KILLED    src/airstriker_tensorflow/replay.py:44 True -> False
+KILLED    src/airstriker_tensorflow/replay.py:46 / -> *
+KILLED    src/airstriker_tensorflow/replay.py:49 / -> *
+KILLED    src/airstriker_tensorflow/replay.py:55 * -> /
+Function          Namespace                                  Killed  Survived  Uncovered  Sites   Score
+-------------------------------------------------------------------------------------------------------
+__len__           airstriker_tensorflow.replay.ReplayBuffer       0         0          0      0    n/a
+append            airstriker_tensorflow.replay.ReplayBuffer       0         0          0      0    n/a
+__init__          airstriker_tensorflow.agent.Agent               8         0          0      8 100.0%
+__init__          airstriker_tensorflow.replay.ReplayBuffer       3         0          0      3 100.0%
+__post_init__     airstriker_tensorflow.agent.DQNConfig           5         0          0      5 100.0%
+_pixels           airstriker_tensorflow.replay                    1         0          0      1 100.0%
+_sync_target      airstriker_tensorflow.agent.Agent               3         0          0      3 100.0%
+act               airstriker_tensorflow.agent.Agent               1         0          0      1 100.0%
+bootstrap_targets airstriker_tensorflow.agent                     7         0          0      7 100.0%
+learn             airstriker_tensorflow.agent.Agent               4         0          0      4 100.0%
+sample            airstriker_tensorflow.replay.ReplayBuffer       8         0          0      8 100.0%
+save              airstriker_tensorflow.agent.Agent               2         0          0      2 100.0%
+storage_bytes     airstriker_tensorflow.replay.ReplayBuffer       1         0          0      1 100.0%
+values            airstriker_tensorflow.agent.Agent               2         0          0      2 100.0%
+-------------------------------------------------------------------------------------------------------
+Total                                                            45         0          0     45  100.0%

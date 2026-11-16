@@ -1,0 +1,60 @@
+{
+  "base_git_revision": "3b23a681f3e72a50f0d60aaf2b9e8e4de86c316d",
+  "working_tree_clean": true,
+  "rom_sha1": "a8be7b0ca850119b167f9644e6a4a22e983d61a4",
+  "expected_rom_sha1": "a8be7b0ca850119b167f9644e6a4a22e983d61a4",
+  "integration_metadata": {
+    "default_state": "Level1",
+    "whitelist": {
+      "data.json": [
+        "suspicious type >u2 for lives"
+      ]
+    }
+  },
+  "scenario": {
+    "done": {
+      "condition": "all",
+      "variables": {
+        "gameover": {
+          "op": "equal",
+          "reference": 1
+        },
+        "lives": {
+          "op": "zero"
+        }
+      }
+    },
+    "reward": {
+      "variables": {
+        "score": {
+          "reward": 1.0
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "src/airstriker_tensorflow/__init__.py": "b64606cb7fb10890c2db0f39409cb506227f4ec78e62c0093e6e898b3e3749a6",
+    "src/airstriker_tensorflow/agent.py": "cb233b98ad0b2b215758c26ed5051dcaee1441c5df29bf6e9e56bcf5a0a51dcb",
+    "src/airstriker_tensorflow/analysis.py": "72d8787b85331c97fb1a2505405b85baf0280fc7d126edac06c4338dfd799fbf",
+    "src/airstriker_tensorflow/cli.py": "c1a073c9cfd3d9debac3738454b6005dea6a89b1f255edeba678ce9a6f15e9df",
+    "src/airstriker_tensorflow/environments.py": "639d3c9a3c983afc5bce7c8dd164abdb1153d8dc14a82117b631b056e31d265f",
+    "src/airstriker_tensorflow/experiment.py": "ad25aa2501ad14fee3364e82ce3794857b8861ed60ff73283d1966dda1ffb1ae",
+    "src/airstriker_tensorflow/preprocessing.py": "2135b749fca038e255ac66cdfe225a77ad1c718718a4d5f7d66410d8893ef2f5",
+    "src/airstriker_tensorflow/recording.py": "18c3e4ddc585eae918db7938d1e1e49d728ea1828b2a87db2d4368f0cce07bd1",
+    "src/airstriker_tensorflow/replay.py": "553efe5eae0cbe170256740197f3c6161eb76f0de84b7b22d1d588b7a751053f",
+    "src/airstriker_tensorflow/training.py": "bf593c6626b4922d879343d543948cd5ff9586d3bc4b9c10db2d9035ee7c6e8d"
+  },
+  "rom_source": "Airstriker by Electrokinesis, supplied by Stable Retro for non-commercial testing",
+  "local_checkpoint_sha256": {
+    "runs/airstriker-dqn-2026-11-16-10k/seed-7.keras": "dc4f916d9a70ae0899f92f21a9171b018f28c61ad2e44c2b1f0ace7f4122a17e",
+    "runs/airstriker-dqn-2026-11-16-10k/seed-13.keras": "0b37bca4df715f3391a12295564bbf1c8aa8b344a7e629cfef38741101436979",
+    "runs/airstriker-dqn-2026-11-16-10k/seed-29.keras": "200c0dd724faa475ebbf0fcebba7878a1c446f078a6042ae661643b79755e481"
+  },
+  "reporting_source_sha256": {
+    "src/airstriker_tensorflow/analysis.py": "278192ac0f127285649d26b5bffd5387a1d9648c0e4e0a83dbd394be8b19bcdd",
+    "examples/analyze_experiment.py": "697aad7442caa90df0760a7058972353341ca90107715166da77fe2ff7ffc4e4",
+    "examples/visualize_observation.py": "1770ccb336c7e4167fb3fa489d5b9b97e47742e28684bf9cdb68b3e334e267d4",
+    "examples/diagram_agent.py": "0cac9928d402fcf1169c60cd1a57fc598a1f3a6faa0500d88d0ae59b91670d3d"
+  },
+  "project_version": "0.4.0"
+}

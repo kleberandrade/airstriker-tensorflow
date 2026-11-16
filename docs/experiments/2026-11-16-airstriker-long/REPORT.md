@@ -1,5 +1,7 @@
 # Airstriker: longer training versus a random agent
 
+> **Historical algorithm:** this report records the online learner from version 0.3.0. Current training uses replay and a target network. To reproduce the historical training algorithm, use commit `2be35cf` in a separate checkout/worktree. Current `examples/analyze_experiment.py` can still audit these committed traces without training. The numerical results and raw gameplay records below are preserved.
+
 Experiment date: 2026-11-16. Game: `Airstriker-Genesis-v0`, default `Level1` savestate.
 
 ## Main result

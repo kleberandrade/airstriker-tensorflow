@@ -1,0 +1,18 @@
+{
+  "images/airstriker-dqn-gameplay.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn/seed-7-trained/frame-004000-reset-003.png",
+    "sha256": "71fdb817cbf486396234d3ac63c15198d67eccfefe018c18db22c13c4e398a92"
+  },
+  "images/airstriker-dqn-input.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn/seed-7-trained/frame-004000-reset-003-processed.png",
+    "sha256": "099ba027d94e5006a2ef5ed17c7e58fbad5971defb35faa4afaea9f97c96eaa3"
+  },
+  "images/airstriker-dqn-failure.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn/seed-13-trained/frame-006000-reset-005.png",
+    "sha256": "bfac2f7cc2195b508ee7abaaaa08df744a2dab61731be00599f53a261510af2c"
+  },
+  "images/airstriker-dqn-seed29.png": {
+    "source": "docs/experiments/2026-11-16-airstriker-dqn/seed-29-trained/frame-006000-reset-005.png",
+    "sha256": "e3d0f961d6ba6f22657b8dfff93feef190e9c8dd979254a80d961a73395ccde5"
+  }
+}
