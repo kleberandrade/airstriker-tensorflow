@@ -129,3 +129,119 @@ def test_algorithm_comparison_requires_matching_protocol_and_discloses_control_c
     new["configuration"]["evaluate_steps"] = 256
     with pytest.raises(ValueError, match="protocol"):
         compare_evaluations(new, old)
+
+
+def test_training_budget_comparison_keeps_dqn_and_evaluation_protocol_fixed():
+    from airstriker_tensorflow.analysis import compare_training_budgets
+
+    config = {
+        "game": "Airstriker-Genesis-v0",
+        "seeds": [7, 13, 29],
+        "train_steps": 10000,
+        "evaluate_steps": 6000,
+        "agent": {
+            "replay_capacity": 5000,
+            "batch_size": 32,
+            "learning_starts": 256,
+            "target_sync_interval": 250,
+        },
+    }
+
+    def result(train_steps, rewards):
+        cfg = dict(config, train_steps=train_steps)
+
+        def group(values):
+            return {
+                "seeds": [7, 13, 29],
+                "rewards": values,
+                "mean_reward": sum(values) / len(values),
+            }
+
+        return {
+            "algorithm": "dqn-replay-target",
+            "configuration": cfg,
+            "groups": {
+                "random": group([300.0, 140.0, 300.0]),
+                "untrained": group([460.0, 0.0, 180.0]),
+                "trained": group(rewards),
+            },
+        }
+
+    previous = result(10000, [640.0, 0.0, 520.0])
+    current = result(100000, [100.0, 200.0, 300.0])  # invented fixture, not measured results
+    comparison = compare_training_budgets(current, previous)
+    assert comparison["training_steps"] == {"previous": 10000, "current": 100000}
+    assert comparison["random_control_reproduced"] is True
+    assert comparison["untrained_control_reproduced"] is True
+    assert comparison["per_seed"][0]["current_minus_previous"] == -540.0
+    assert comparison["mean_current_minus_previous"] == pytest.approx(-560 / 3)
+    current["configuration"]["evaluate_steps"] = 256
+    with pytest.raises(ValueError, match="protocol"):
+        compare_training_budgets(current, previous)
+    current["configuration"]["evaluate_steps"] = 6000
+    current["configuration"]["agent"] = dict(config["agent"], batch_size=16)
+    with pytest.raises(ValueError, match="protocol"):
+        compare_training_budgets(current, previous)
+    current["configuration"]["agent"] = config["agent"]
+    current["algorithm"] = "online-q-learning"
+    with pytest.raises(ValueError, match="DQN"):
+        compare_training_budgets(current, previous)
+
+
+@pytest.mark.parametrize("changed", ["game", "seeds", "agent", "algorithm"])
+def test_budget_comparison_rejects_other_protocol_changes(changed):
+    from copy import deepcopy
+
+    from airstriker_tensorflow.analysis import compare_training_budgets
+
+    previous = {
+        "algorithm": "dqn-replay-target",
+        "configuration": {
+            "game": "Airstriker-Genesis-v0",
+            "seeds": [7, 13, 29],
+            "train_steps": 10000,
+            "evaluate_steps": 6000,
+            "agent": {
+                "replay_capacity": 5000,
+                "batch_size": 32,
+                "learning_starts": 256,
+                "target_sync_interval": 250,
+            },
+        },
+    }
+    current = deepcopy(previous)
+    current["configuration"]["train_steps"] = 100000
+    if changed == "algorithm":
+        current["algorithm"] = "online-q-learning"
+    elif changed == "agent":
+        current["configuration"]["agent"]["batch_size"] = 16
+    elif changed == "seeds":
+        current["configuration"]["seeds"] = [1, 2, 3]
+    else:
+        current["configuration"]["game"] = "different-game"
+    with pytest.raises(ValueError, match="protocol"):
+        compare_training_budgets(current, previous)
+
+
+def test_budget_comparison_rejects_an_incomplete_seed_cohort():
+    from copy import deepcopy
+
+    from airstriker_tensorflow.analysis import compare_training_budgets
+
+    group = {"seeds": [7, 13, 29], "rewards": [1.0, 2.0, 3.0], "mean_reward": 2.0}
+    previous = {
+        "algorithm": "dqn-replay-target",
+        "configuration": {
+            "game": "Airstriker-Genesis-v0",
+            "seeds": [7, 13, 29],
+            "train_steps": 10000,
+            "evaluate_steps": 6000,
+            "agent": {},
+        },
+        "groups": {name: deepcopy(group) for name in ("random", "untrained", "trained")},
+    }
+    current = deepcopy(previous)
+    current["configuration"]["train_steps"] = 100000
+    current["groups"]["trained"] = {"seeds": [7], "rewards": [1.0], "mean_reward": 1.0}
+    with pytest.raises(ValueError, match="cohort"):
+        compare_training_budgets(current, previous)

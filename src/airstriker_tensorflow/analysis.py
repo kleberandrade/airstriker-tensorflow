@@ -129,17 +129,29 @@ def _rewards_by_seed(group):
     return dict(zip(group["seeds"], group["rewards"], strict=True))
 
 
-def compare_evaluations(current, previous):
-    keys = ("game", "seeds", "train_steps", "evaluate_steps")
+def _matching_protocol(current, previous, keys):
     for key in keys:
         if current["configuration"][key] != previous["configuration"][key]:
             raise ValueError(f"Comparison requires the same protocol: {key}")
+    return {key: current["configuration"][key] for key in keys}
+
+
+def _check_cohorts(current, previous):
+    for experiment in (current, previous):
+        expected = set(experiment["configuration"]["seeds"])
+        for name in ("random", "untrained", "trained"):
+            group = experiment["groups"][name]
+            if len(group["seeds"]) != len(expected) or set(_rewards_by_seed(group)) != expected:
+                raise ValueError("Comparison seed cohorts must contain every protocol seed once")
+
+
+def _comparison_values(current, previous, before_label, after_label):
+    _check_cohorts(current, previous)
     random = _rewards_by_seed(current["groups"]["random"])
     untrained = _rewards_by_seed(current["groups"]["untrained"])
-    online = _rewards_by_seed(previous["groups"]["trained"])
-    dqn = _rewards_by_seed(current["groups"]["trained"])
+    before = _rewards_by_seed(previous["groups"]["trained"])
+    after = _rewards_by_seed(current["groups"]["trained"])
     return {
-        "protocol": {key: current["configuration"][key] for key in keys},
         "random_control_reproduced": random == _rewards_by_seed(previous["groups"]["random"]),
         "untrained_control_reproduced": untrained
         == _rewards_by_seed(previous["groups"]["untrained"]),
@@ -148,15 +160,40 @@ def compare_evaluations(current, previous):
                 "seed": seed,
                 "random": random[seed],
                 "untrained": untrained[seed],
-                "online": online[seed],
-                "dqn": dqn[seed],
-                "dqn_minus_random": dqn[seed] - random[seed],
-                "dqn_minus_online": dqn[seed] - online[seed],
+                before_label: before[seed],
+                after_label: after[seed],
+                f"{after_label}_minus_random": after[seed] - random[seed],
+                f"{after_label}_minus_{before_label}": after[seed] - before[seed],
             }
             for seed in current["configuration"]["seeds"]
         ],
-        "mean_dqn_minus_random": current["groups"]["trained"]["mean_reward"]
+        f"mean_{after_label}_minus_random": current["groups"]["trained"]["mean_reward"]
         - current["groups"]["random"]["mean_reward"],
-        "mean_dqn_minus_online": current["groups"]["trained"]["mean_reward"]
+        f"mean_{after_label}_minus_{before_label}": current["groups"]["trained"]["mean_reward"]
         - previous["groups"]["trained"]["mean_reward"],
+    }
+
+
+def compare_evaluations(current, previous):
+    keys = ("game", "seeds", "train_steps", "evaluate_steps")
+    return {
+        "protocol": _matching_protocol(current, previous, keys),
+        **_comparison_values(current, previous, "online", "dqn"),
+    }
+
+
+def compare_training_budgets(current, previous):
+    """Compare budgets while requiring the same DQN and evaluation settings."""
+    keys = ("game", "seeds", "evaluate_steps", "agent")
+    protocol = _matching_protocol(current, previous, keys)
+    if current["algorithm"] != previous["algorithm"] or current["algorithm"] != "dqn-replay-target":
+        raise ValueError("Training-budget comparison requires the same DQN protocol")
+    return {
+        "comparison_type": "training_budget",
+        "protocol": protocol,
+        "training_steps": {
+            "previous": previous["configuration"]["train_steps"],
+            "current": current["configuration"]["train_steps"],
+        },
+        **_comparison_values(current, previous, "previous", "current"),
     }
