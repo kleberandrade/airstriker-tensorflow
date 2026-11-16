@@ -1,6 +1,7 @@
 """Small online Q-learning baseline, without replay or a target network."""
 
 from pathlib import Path
+
 import numpy as np
 import tensorflow as tf
 

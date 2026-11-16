@@ -1,6 +1,7 @@
 """Bounded training and greedy evaluation on the same environment contract."""
 
 import numpy as np
+
 from .preprocessing import FrameStack
 
 

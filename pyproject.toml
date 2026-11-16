@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==82.0.1"]
+requires = ["setuptools==84.2.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,11 +10,11 @@ readme = "README.md"
 requires-python = ">=3.13,<3.14"
 license = "MIT"
 authors = [{name = "Kléber de Oliveira Andrade"}]
-dependencies = ["tensorflow==2.21.0", "numpy==2.4.3", "Pillow==12.2.0"]
+dependencies = ["tensorflow==2.21.0", "numpy==2.5.5", "Pillow==13.0.0"]
 
 [project.optional-dependencies]
 retro = ["stable-retro==1.0.1"]
-dev = ["pytest==9.0.2", "pytest-cov==7.1.0", "ruff==0.15.7", "build==1.4.0"]
+dev = ["pytest==9.2.0", "pytest-cov==7.1.0", "ruff==0.17.5", "build==1.6.1"]
 
 [project.scripts]
 mario-tf = "mario_tensorflow.cli:main"

@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-from mario_tensorflow.preprocessing import FrameStack
-from mario_tensorflow.environments import SyntheticEnvironment
 from mario_tensorflow.agent import Agent, bootstrap_targets
+from mario_tensorflow.environments import SyntheticEnvironment
+from mario_tensorflow.preprocessing import FrameStack
 from mario_tensorflow.training import run
 
 

@@ -1,5 +1,7 @@
 import json
+
 import pytest
+
 from mario_tensorflow.cli import main
 
 

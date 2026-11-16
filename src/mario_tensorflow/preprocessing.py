@@ -1,6 +1,7 @@
 """Convert emulator RGB frames to a small temporal observation."""
 
 from collections import deque
+
 import numpy as np
 from PIL import Image
 

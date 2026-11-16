@@ -1,7 +1,8 @@
 """Offline pipeline check. This synthetic fixture does not emulate Mario."""
 
-from tempfile import TemporaryDirectory
 from pathlib import Path
+from tempfile import TemporaryDirectory
+
 from mario_tensorflow.cli import main
 
 with TemporaryDirectory() as directory:
