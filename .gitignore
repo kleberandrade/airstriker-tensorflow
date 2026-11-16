@@ -103,3 +103,14 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Local experiment output and analysis tools
+runs/
+*.keras
+.metrics/
+.ruff_cache/
+*.sfc
+*.smc
+*.nes
+
+coverage.lcov

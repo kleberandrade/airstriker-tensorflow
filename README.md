@@ -1,221 +1,108 @@
-# Teaching Mario to play Super Mario World
+# Mario TensorFlow
 
-This is a very simple example using tensorflow to play super maior world.
+[![CI](https://github.com/kleberandrade/mario-tensorflow/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kleberandrade/mario-tensorflow/actions/workflows/ci.yml)
+![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?logo=python)
+![TensorFlow 2.21](https://img.shields.io/badge/TensorFlow-2.21-orange?logo=tensorflow)
+![Stable Retro 1.0.1](https://img.shields.io/badge/Stable_Retro-1.0.1-blue)
+[![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Materials
+An educational experiment in teaching an agent to play **Super Mario World** with TensorFlow. It includes a small Keras Q-network, RGB preprocessing, bounded training, greedy evaluation, and an optional Stable Retro emulator adapter.
 
-Emulator, game and libraries used in this project
+**No trained Mario agent or gameplay performance is claimed.** The offline smoke environment is synthetic test data, not a Mario simulation. The original experiment captured Snes9x windows and pressed random keys; its TensorFlow/training sections were unfinished.
 
-### Emulator and Rom
+## Requirements and installation
 
--   [Snes9x (emulator)](http://www.snes9x.com): Snes9x is a portable, freeware Super Nintendo Entertainment System (SNES) emulator. It basically allows you to play most games designed for the SNES and Super Famicom Nintendo game systems on your PC or Workstation; which includes some real gems that were only ever released in Japan.
+Python **3.13**, 64-bit Linux or macOS Apple Silicon, and a TensorFlow-compatible CPU. Local validation used macOS Apple Silicon; CI targets Ubuntu. Other Python versions, Intel macOS, GPU acceleration, and Windows have not been validated by this project.
 
--   [Super Mario World (rom)](https://romsmode.com/roms/super-nintendo/super-mario-world-404711): Super Mario World is a 1990 side-scrolling platform game developed and published by Nintendo for the Super Nintendo Entertainment System (SNES). The story follows Mario's quest to save Princess Toadstool and Dinosaur Land from the series antagonist Bowser and his minions, the Koopalings. The gameplay is similar to that of earlier Super Mario games: Players control Mario or his brother Luigi through a series of levels in which the goal is to reach the flagpole at the end. Super Mario World introduced Yoshi, a dinosaur who can eat enemies and gain abilities by eating the shells of Koopa Troopas.
-
-<p align="center">
-  <img height="320" src="images/emulator_rom.png">
-</p>
-
-### Python libraries
-
-As a prerequisite it is necessary to install [Python 3.8.0](https://www.python.org/downloads/) and the following libraries: . `pynput`, `opencv-python`, `pillow`, `pyscreenshot`, `numpy`, `pyautogui`
-
-```dos
+```sh
+python3.13 -m venv .venv
+source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install pynput
-python -m pip install opencv-python
-python -m pip install Pillow==2.2.2
-python -m pip install pyscreenshot
-python -m pip install numpy
-python -m pip install PyAutoGUI
-python -m pip install mss
+python -m pip install -r requirements-dev.lock
+python -m pip install --no-deps -e .
 ```
 
-Import libraries in yout project
+The lock records the complete development environment, including the optional emulator. For a smaller runtime installation, use `python -m pip install -e .`; add `'.[retro]'` for emulator support or `'.[dev,retro]'` for development. Direct requirements are pinned in `pyproject.toml`; the lock also pins transitive dependencies. No ROM is installed by this project.
+
+## Quick start without a ROM
+
+```sh
+python examples/smoke.py
+mario-tf train --env synthetic --steps 32 --seed 7 --checkpoint runs/synthetic.keras
+mario-tf evaluate --env synthetic --steps 16 --seed 7 --checkpoint runs/synthetic.keras
+```
+
+The smoke example creates a temporary checkpoint, performs eight updates, evaluates for eight steps, and removes its output. JSON output reports steps, completed episodes, total reward and training loss. Synthetic episodes truncate after eight actions; only action 1 earns reward. Results verify plumbing, not gameplay skill.
+
+## Real Super Mario World integration
+
+Stable Retro replaces platform-specific desktop capture and keyboard injection with synchronized observations, actions, rewards, and episode boundaries. This is an explicit environment migration; TensorFlow remains the learning framework. See [upstream setup](https://stable-retro.farama.org/getting_started/) and the [API](https://stable-retro.farama.org/python/).
+
+1. Obtain your own legally authorized Super Mario World ROM matching the integration hash. Owning a cartridge does not automatically establish copying rights in every jurisdiction. No ROM download service is recommended here.
+2. Install the optional adapter and import only your authorized local files:
+
+```sh
+python -m pip install -e '.[retro]'
+python -m stable_retro.import /absolute/path/to/your/authorized/roms
+```
+
+3. Confirm the integration and run a short experiment:
+
+```sh
+python -c "import stable_retro; print([g for g in stable_retro.data.list_games() if 'SuperMarioWorld' in g])"
+mario-tf train --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7 --checkpoint runs/mario.keras
+mario-tf evaluate --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7 --checkpoint runs/mario.keras
+```
+
+Use `--state NAME` for an installed integration savestate; otherwise Stable Retro uses its default. Rewards, termination rules, and savestates belong to the selected integration. Actions use its discrete filtered button combinations. No reward OCR or desktop-window detection is required. Missing ROM errors propagate; there is no automatic fallback to synthetic data.
+
+**Verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No game ROM was imported, downloaded, executed, or used for training. Adapter contract tests use a stub and do not validate emulation.
+
+## Model, configuration, and API
+
+RGB uint8 frames become normalized 32 × 32 grayscale images stacked across four observations. Reset fills the stack with the first frame to avoid mixing episodes. A small convolutional Keras model predicts one Q-value per discrete action. Online one-step Q-learning uses Adam (0.001), Huber loss, discount 0.99 and epsilon 0.1 during training; evaluation is greedy. True terminations stop bootstrapping; time-limit truncations retain it.
 
 ```python
-from pynput.keyboard import Key, Controller
-import pynput
-import time
-import random
-import cv2
-import pyscreenshot as ImageGrab
-import numpy
-import pyautogui
-import mss
+from mario_tensorflow.agent import Agent
+from mario_tensorflow.environments import SyntheticEnvironment
+from mario_tensorflow.training import run
+
+env = SyntheticEnvironment()  # Test fixture only
+try:
+    agent = Agent(env.action_count, seed=7)
+    print(run(env, agent, steps=8, seed=7, training=True))
+finally:
+    env.close()
 ```
 
-## Methods
+`--steps`, `--seed`, `--env`, `--game`, `--state`, and `--checkpoint` configure a run. `mario-tf --help` lists arguments. Training saves a `.keras` model with optimizer state and an adjacent `.json` run record. Training starts a new model; evaluation loads a checkpoint and checks its action count. Checkpoints are for evaluation, not exact training resumption: environment/RNG state is not restored. Use matching environment, game, and action mapping when evaluating.
 
-To teach Mario how to play Super Mario World, we will divide the problem into 4 steps.
+## Development and validation
 
-1. Detect emulator window space
-2. Agent's observation of the current environment 
-3. An action provided to the environment
-4. Amount of reward returned after previous action
-5. Back to `Step 2`
-
-### Step 1: Window detection
-
-Looking for the emulator window (dimension)
-
-```python
-# detect window name
-# print(pyautogui.getAllTitles())
-windows_name = 'Super Mario World - Snes9x 1.60'
-
-# mapping {title : PID}
-wins_named = dict(zip(pyautogui.getAllTitles(), pyautogui.getAllWindows()))
-
-# get window size
-x = wins_named[windows_name].left
-y = wins_named[windows_name].top
-w = wins_named[windows_name].width
-h = wins_named[windows_name].height
-
-# box used in step 2.1.2: (x1, y1, x2, y2)
-# add padding (8, 52, -8, -10)
-dimension = (x+8, y+52, x+w-8, y+h-10)
-
-# or, used in step 2.1.2 (x, y, w, h)
-dimension =  {"left": x + 8, "top":  y + 52, "width": w - 16, "height": h - 62}
+```sh
+ruff check src tests examples
+ruff format --check src tests examples
+pytest --cov=mario_tensorflow --cov-report=term-missing --cov-report=lcov
+python examples/smoke.py
+python -m build
+python -m pip check
 ```
 
-Window with original values and window by padding
+Offline tests cover frame semantics, seeds, terminal targets, real weight updates, checkpoint roundtrip, unchanged evaluation weights, CLI records, and episode resets. CI installs the lock on Python 3.13, runs these checks, executes the smoke example and builds distributions. The CI badge links to the workflow on `master`; a local pass does not imply GitHub Actions has run the unpublished changes.
 
-<p align="center">
-  <img height="320" src="images/window_capture_original.png">
-  <img height="320" src="images/window_capture_pad.png">
-</p>
+## Layout and migration
 
-Click on the window to select
+- `src/mario_tensorflow/`: environments, preprocessing, agent/model, train/evaluate loop, CLI.
+- `tests/`: offline behavioral and adapter contract tests.
+- `examples/smoke.py`: executable offline example.
+- `legacy/screen_capture.py`: unchanged historical `mario_bot_tensorflow.py`; archived desktop experiment, outside the supported toolchain.
+- `docs/legacy-experiment.md`: historical notes; [work log](docs/WORK_LOG.md) records modernization and validation.
+- `images/`: existing historical emulator/game screenshots.
 
-```python
-pyautogui.mouseDown(x + w / 2, y + h / 2)
-time.sleep(0.2)
-pyautogui.mouseUp()
-```
+Replace `python mario_bot_tensorflow.py` with the CLI commands above. The historical script remains available under `legacy/` for reference; its old GUI dependencies are intentionally excluded and it has not been revalidated. Historical screenshots and results are not evidence of the new agent's performance. Original random-key demonstration: [video](https://youtu.be/-JA13GCZLVQ). Thanks to Yuri Costa for recommending Snes9x.
 
-### Step 2.1: Screen capture 
+## Limitations and license
 
-### Step 2.1.1 Simple screen capture
+This minimal baseline has no replay buffer, target network, frame skipping, tuned reward shaping, benchmark, or solved-game claim. Correlated online updates can be unstable; many more environment steps and algorithm improvements would be needed to investigate gameplay learning. Seeds reproduce local initial conditions but do not guarantee identical results across TensorFlow hardware/platforms. Long training never runs by default.
 
-Example screenshot of game and applying filters
-
-```python
-dimension = get_screen_dimension()
-image = numpy.array(ImageGrab.grab(dimension))
-```
-
-### Step 2.1.2: Fast screen capture (Optimized)
-
-An ultra fast cross-platform multiple screenshots module in pure python using ctypes.
-
-```python
-dimension = get_screen_dimension()
-image = numpy.array(sct.grab(dimension))
-```
-
-### Step 2.1.3 Apply Filters
-
-```python
-image = cv2.resize(image, (0,0), fx = 0.25, fy = 0.25, interpolation=cv2.INTER_CUBIC)
-image = cv2.Canny(image, threshold1 = 100, threshold2 = 200)
-```
-
-The figures below show: original screen capture, resize and Canny filter
-
-<p align="center">
-  <img height="240" src="images/image_original.png">
-  <img height="240" src="images/image_before_filter.png">
-  <img height="240" src="images/image_after_filter.png">
-</p>
-
-### Step 2.2: Detect Text of the HUD
-
-Text...
-
-### Step 3: Simulate the keyboard
-
-Default play keys set in emulator
-
-<p align="center">
-  <img height="320" src="images/mario_inputs.png">
-</p>
-
-Key mapping in code
-
-```python
-keys = [
-    Key.up,                                 # UP
-    Key.down,                               # DOWN
-    Key.left,                               # LEFT
-    Key.right,                              # RIGHT
-    pynput.keyboard.KeyCode.from_char('x'),  # A
-    pynput.keyboard.KeyCode.from_char('z'),  # B
-    pynput.keyboard.KeyCode.from_char('s'),  # X
-    pynput.keyboard.KeyCode.from_char('a'),  # Y
-    pynput.keyboard.KeyCode.from_char('d'),  # L
-    pynput.keyboard.KeyCode.from_char('c'),  # R
-    Key.enter,                              # START
-    Key.shift_r,                            # SELECT
-]
-```
-
-Example of use key DOWN (index = 1)
-
-```python
-# Initialize keyboad
-keyboard = Controller()
-
-# Use keyboard
-keyboard.press(keys[1])
-time.sleep(0.2)
-keyboard.release(keys[1])
-```
-
-### Step 4.1: Tensorflow model
-
-Text ...
-
-### Step 4.2  : Training
-
-Text ...
-
-## Experiments and Results
-
--   **Test 1**: Random keys (keyboard input) - https://youtu.be/-JA13GCZLVQ
--   **Test 2**: Environment observation (log) - 
-
-## References
-
--   [How I built an AI to play Dino Run](https://medium.com/acing-ai/how-i-build-an-ai-to-play-dino-run-e37f37bdf153)
--   [How to Build a Python Bot That Can Play Web Games](https://code.tutsplus.com/tutorials/how-to-build-a-python-bot-that-can-play-web-games--active-11117)
--   [Playing Atari with Deep Reinforcement Learning](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf)
--   [Using Python to build an AI to play and win SNES StreetFighter II](https://www.youtube.com/watch?v=NyNUYYI-Pdg)
-
-## Acknowledgment
-
--   Yuri Costa (alumnus) for recommending using the snes9x emulator
-
-## Licença
-
-    Copyright 2019 Kleber de Oliveira Andrade
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+Project source code is [MIT licensed](LICENSE), retaining the original 2019 copyright. Nintendo game names, ROMs, and imagery retain their respective owners' rights and are not relicensed by this repository's MIT license. Stable Retro and emulator cores have [separate licenses](https://github.com/Farama-Foundation/stable-retro/blob/master/LICENSES.md). No ROM or pretrained weights are distributed.
