@@ -1,26 +1,26 @@
-........................                                                 [100%]
+.........................                                                [100%]
 =============================== warnings summary ===============================
 tests/test_cli.py: 6 warnings
 tests/test_experiment.py: 6 warnings
 tests/test_pipeline.py: 6 warnings
-  /Users/kleber/Projects/mario-tensorflow/.venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  /Users/kleber/Projects/airstriker-tensorflow/.venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
     return np.array(x)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ================================ tests coverage ================================
 ______________ coverage: platform darwin, python 3.13.18-final-0 _______________
 
-Name                                    Stmts   Miss  Cover   Missing
----------------------------------------------------------------------
-src/mario_tensorflow/__init__.py            0      0   100%
-src/mario_tensorflow/agent.py              30      0   100%
-src/mario_tensorflow/cli.py                39      1    97%   55
-src/mario_tensorflow/environments.py       22      0   100%
-src/mario_tensorflow/experiment.py         76      0   100%
-src/mario_tensorflow/preprocessing.py      19      0   100%
-src/mario_tensorflow/recording.py          50      0   100%
-src/mario_tensorflow/training.py           22      0   100%
----------------------------------------------------------------------
-TOTAL                                     258      1    99%
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src/airstriker_tensorflow/__init__.py            0      0   100%
+src/airstriker_tensorflow/agent.py              30      0   100%
+src/airstriker_tensorflow/cli.py                39      1    97%   55
+src/airstriker_tensorflow/environments.py       23      0   100%
+src/airstriker_tensorflow/experiment.py         76      0   100%
+src/airstriker_tensorflow/preprocessing.py      19      0   100%
+src/airstriker_tensorflow/recording.py          50      0   100%
+src/airstriker_tensorflow/training.py           22      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          259      1    99%
 Coverage LCOV written to file target/coverage/python/lcov.info
-24 passed, 18 warnings in 6.06s
+25 passed, 18 warnings in 4.33s

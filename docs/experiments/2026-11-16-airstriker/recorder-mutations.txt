@@ -1,40 +1,37 @@
-Wrote /Users/kleber/Projects/mario-tensorflow/.metrics/mutate/mario_tensorflow.agent.edn
-Wrote /Users/kleber/Projects/mario-tensorflow/.metrics/mutate/mario_tensorflow.agent.Agent.edn
-Wrote /Users/kleber/Projects/mario-tensorflow/.metrics/mutate/mario_tensorflow.preprocessing.FrameStack.edn
-Wrote /Users/kleber/Projects/mario-tensorflow/.metrics/mutate/mario_tensorflow.recording.edn
-Wrote /Users/kleber/Projects/mario-tensorflow/.metrics/mutate/mario_tensorflow.recording.RecordedEnvironment.edn
-KILLED    src/mario_tensorflow/recording.py:14 <= -> <
-KILLED    src/mario_tensorflow/recording.py:14 0 -> 1
-KILLED    src/mario_tensorflow/recording.py:19 True -> False
-KILLED    src/mario_tensorflow/recording.py:19 True -> False
-KILLED    src/mario_tensorflow/recording.py:20 / -> *
-KILLED    src/mario_tensorflow/recording.py:22 0 -> 1
-KILLED    src/mario_tensorflow/recording.py:23 0 -> 1
-KILLED    src/mario_tensorflow/recording.py:28 1 -> 0
-KILLED    src/mario_tensorflow/recording.py:29 0 -> 1
-KILLED    src/mario_tensorflow/recording.py:30 1 -> 0
-KILLED    src/mario_tensorflow/recording.py:35 1 -> 0
-KILLED    src/mario_tensorflow/recording.py:48 == -> !=
-KILLED    src/mario_tensorflow/recording.py:48 1 -> 0
-KILLED    src/mario_tensorflow/recording.py:48 or -> and
-KILLED    src/mario_tensorflow/recording.py:48 == -> !=
-KILLED    src/mario_tensorflow/recording.py:48 0 -> 1
-KILLED    src/mario_tensorflow/recording.py:53 + -> -
-KILLED    src/mario_tensorflow/recording.py:57 + -> -
-KILLED    src/mario_tensorflow/recording.py:58 + -> -
-KILLED    src/mario_tensorflow/recording.py:59 / -> *
-KILLED    src/mario_tensorflow/recording.py:60 delete -
-KILLED    src/mario_tensorflow/recording.py:60 1 -> 0
-KILLED    src/mario_tensorflow/recording.py:61 * -> /
-KILLED    src/mario_tensorflow/recording.py:61 / -> *
-Function      Namespace                                       Killed  Survived  Uncovered  Sites   Score
---------------------------------------------------------------------------------------------------------
-_numpy_scalar mario_tensorflow.recording                           0         0          0      0    n/a
-close         mario_tensorflow.recording.RecordedEnvironment       0         0          0      0    n/a
-__init__      mario_tensorflow.recording.RecordedEnvironment       7         0          0      7 100.0%
-_capture      mario_tensorflow.recording.RecordedEnvironment       7         0          0      7 100.0%
-_write        mario_tensorflow.recording.RecordedEnvironment       1         0          0      1 100.0%
-reset         mario_tensorflow.recording.RecordedEnvironment       3         0          0      3 100.0%
-step          mario_tensorflow.recording.RecordedEnvironment       6         0          0      6 100.0%
---------------------------------------------------------------------------------------------------------
-Total                                                             24         0          0     24  100.0%
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.edn
+Wrote /Users/kleber/Projects/airstriker-tensorflow/.metrics/mutate/airstriker_tensorflow.recording.RecordedEnvironment.edn
+KILLED    src/airstriker_tensorflow/recording.py:14 <= -> <
+KILLED    src/airstriker_tensorflow/recording.py:14 0 -> 1
+KILLED    src/airstriker_tensorflow/recording.py:19 True -> False
+KILLED    src/airstriker_tensorflow/recording.py:19 True -> False
+KILLED    src/airstriker_tensorflow/recording.py:20 / -> *
+KILLED    src/airstriker_tensorflow/recording.py:22 0 -> 1
+KILLED    src/airstriker_tensorflow/recording.py:23 0 -> 1
+KILLED    src/airstriker_tensorflow/recording.py:28 1 -> 0
+KILLED    src/airstriker_tensorflow/recording.py:29 0 -> 1
+KILLED    src/airstriker_tensorflow/recording.py:30 1 -> 0
+KILLED    src/airstriker_tensorflow/recording.py:35 1 -> 0
+KILLED    src/airstriker_tensorflow/recording.py:48 == -> !=
+KILLED    src/airstriker_tensorflow/recording.py:48 1 -> 0
+KILLED    src/airstriker_tensorflow/recording.py:48 or -> and
+KILLED    src/airstriker_tensorflow/recording.py:48 == -> !=
+KILLED    src/airstriker_tensorflow/recording.py:48 0 -> 1
+KILLED    src/airstriker_tensorflow/recording.py:53 + -> -
+KILLED    src/airstriker_tensorflow/recording.py:57 + -> -
+KILLED    src/airstriker_tensorflow/recording.py:58 + -> -
+KILLED    src/airstriker_tensorflow/recording.py:59 / -> *
+KILLED    src/airstriker_tensorflow/recording.py:60 delete -
+KILLED    src/airstriker_tensorflow/recording.py:60 1 -> 0
+KILLED    src/airstriker_tensorflow/recording.py:61 * -> /
+KILLED    src/airstriker_tensorflow/recording.py:61 / -> *
+Function      Namespace                                            Killed  Survived  Uncovered  Sites   Score
+-------------------------------------------------------------------------------------------------------------
+_numpy_scalar airstriker_tensorflow.recording                           0         0          0      0    n/a
+close         airstriker_tensorflow.recording.RecordedEnvironment       0         0          0      0    n/a
+__init__      airstriker_tensorflow.recording.RecordedEnvironment       7         0          0      7 100.0%
+_capture      airstriker_tensorflow.recording.RecordedEnvironment       7         0          0      7 100.0%
+_write        airstriker_tensorflow.recording.RecordedEnvironment       1         0          0      1 100.0%
+reset         airstriker_tensorflow.recording.RecordedEnvironment       3         0          0      3 100.0%
+step          airstriker_tensorflow.recording.RecordedEnvironment       6         0          0      6 100.0%
+-------------------------------------------------------------------------------------------------------------
+Total                                                                  24         0          0     24  100.0%

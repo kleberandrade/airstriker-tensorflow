@@ -2,7 +2,7 @@
 
 ## Finding
 
-The TensorFlow pipeline ran successfully against a real Stable Retro emulator using the included Airstriker ROM. All 12 bounded runs completed, produced traceable images and rewards, and saved/loaded local checkpoints. This is an integration smoke experiment, not a trained Mario demonstration or an established learning result.
+The TensorFlow pipeline ran successfully against a real Stable Retro emulator using the included Airstriker ROM. All 12 bounded runs completed, produced traceable images and rewards, and saved/loaded local checkpoints. This is an integration smoke experiment, not an established learning result.
 
 ## Game selection and provenance
 
@@ -10,7 +10,7 @@ Airstriker by Electrokinesis is a Sega Genesis shooter supplied by Stable Retro 
 
 The actual ROM SHA-1 matched the integration reference: `a8be7b0ca850119b167f9644e6a4a22e983d61a4`. The default savestate is `Level1`. The integration rewards increases in its `score` variable. Its terminal rule requires both `gameover == 1` and zero `lives`. No artificial time-limit wrapper was installed. A visible death message therefore does not necessarily represent a completed episode.
 
-Airstriker is a different game and platform from Super Mario World. Mario integration remains untested because no authorized Nintendo ROM was supplied. Screenshots below are actual emulator observations from this execution; historical Mario screenshots and synthetic fixtures are not used as evidence.
+Screenshots below are actual Airstriker emulator observations from this execution. Synthetic fixtures are used only for offline tests and are not presented as gameplay evidence.
 
 ## Configuration and method
 
@@ -99,7 +99,7 @@ This image is the latest grayscale channel, enlarged only by the document render
 From the repository root, after installing the lock, a local checkpoint can be evaluated using:
 
 ```sh
-mario-tf evaluate --env retro --game Airstriker-Genesis-v0 \
+airstriker-tf evaluate --env retro --game Airstriker-Genesis-v0 \
   --steps 256 --seed 13 \
   --checkpoint docs/experiments/2026-11-16-airstriker/run/seed-13.keras
 ```
@@ -108,14 +108,16 @@ Fresh clones should regenerate checkpoints with the experiment command. They are
 
 ## Validation and limitations
 
+The gameplay measurements below retain their original recording context. Test/build/tool reports in this directory are refreshed for the Airstriker-only package migration; they are separate from the preserved game traces. Source hashes in provenance identify the original recorded source bytes by module basename, not the current renamed source tree.
+
 - Before updates: 14 offline tests passed.
-- After dependency updates and new recording/orchestration tests: 24 offline tests passed, 97% statement coverage. The real emulator experiment is a separate manual integration validation, not part of that offline coverage claim.
-- Lint, formatting, dependency consistency and wheel/source-distribution builds passed locally. The experiment was initially validated locally; after publication, the offline suite, synthetic smoke and build also passed on Ubuntu in [GitHub Actions](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748). The real emulator experiment itself remains macOS-only.
+- At the original recording, 24 offline tests passed. The refreshed test log records the current migration validation and coverage. The real emulator experiment is a separate manual integration validation, not part of that offline coverage claim.
+- Lint, formatting, dependency consistency and wheel/source-distribution builds passed locally. The experiment was initially validated locally; after publication, the offline suite, synthetic smoke and build also passed on Ubuntu in [GitHub Actions](https://github.com/kleberandrade/airstriker-tensorflow/actions/runs/43800722748). The real emulator experiment itself remains macOS-only.
 - CRAP remained below 10 for every function; dryer found no source duplicate candidates at similarity 0.8. Mutation testing of the recorder reported 24 selected mutations killed, with no survivors; this is not a repository-wide mutation score.
 - Eighteen Keras/NumPy serialization deprecation warnings remain in the offline suite. TensorFlow CPU-profiling diagnostics remain in the real-run output. None were suppressed.
 - h5py 3.14.0 and pyglet 1.5.31 remain constrained by TensorFlow and Stable Retro. All other installed packages were current according to the index check made during this task.
-- No full episode finished. There are only three seeds, 128 training steps per seed and 256 evaluation steps per policy. No statistical significance, convergence, generalization or Mario performance is asserted.
-- After this experiment was recorded, the user authorized publication to `master`. The [offline GitHub Actions run passed](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748); no deployment was performed.
+- No full episode finished. There are only three seeds, 128 training steps per seed and 256 evaluation steps per policy. No statistical significance, convergence, generalization or reliable gameplay performance is asserted.
+- After this experiment was recorded, the user authorized publication to `master`. The [offline GitHub Actions run passed](https://github.com/kleberandrade/airstriker-tensorflow/actions/runs/43800722748); no deployment was performed.
 
 ## Asset notice
 

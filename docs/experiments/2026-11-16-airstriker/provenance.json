@@ -37,13 +37,14 @@
   "working_tree_was_modified": true,
   "gpu_devices": [],
   "source_sha256": {
-    "src/mario_tensorflow/__init__.py": "b94a6a697db26e451b78ddef734b852e41db0f16a3abe05de7a02e30fdc97305",
-    "src/mario_tensorflow/agent.py": "7e56c1bc5eb8476d818fc8be5096e774a92df32bcd3a8e74f496c8a567f38fe7",
-    "src/mario_tensorflow/cli.py": "1aad246863deb4a494e6437fac204798b615f64805493402b7ecd966cf41aba3",
-    "src/mario_tensorflow/environments.py": "c262281e74743e23a1ca264e386569c53876382d2a4298dc474531124d0cd7c6",
-    "src/mario_tensorflow/experiment.py": "3b324a44d8c993f0a1f0d74d5c719fce8c537db311b6b4e8f201547ff7314335",
-    "src/mario_tensorflow/preprocessing.py": "2135b749fca038e255ac66cdfe225a77ad1c718718a4d5f7d66410d8893ef2f5",
-    "src/mario_tensorflow/recording.py": "18c3e4ddc585eae918db7938d1e1e49d728ea1828b2a87db2d4368f0cce07bd1",
-    "src/mario_tensorflow/training.py": "2ee9d31090aaaeed76991519a411b5c32ed461fefeda7f5f71d51a6bc5f8e57f"
-  }
+    "__init__.py": "b94a6a697db26e451b78ddef734b852e41db0f16a3abe05de7a02e30fdc97305",
+    "agent.py": "7e56c1bc5eb8476d818fc8be5096e774a92df32bcd3a8e74f496c8a567f38fe7",
+    "cli.py": "1aad246863deb4a494e6437fac204798b615f64805493402b7ecd966cf41aba3",
+    "environments.py": "c262281e74743e23a1ca264e386569c53876382d2a4298dc474531124d0cd7c6",
+    "experiment.py": "3b324a44d8c993f0a1f0d74d5c719fce8c537db311b6b4e8f201547ff7314335",
+    "preprocessing.py": "2135b749fca038e255ac66cdfe225a77ad1c718718a4d5f7d66410d8893ef2f5",
+    "recording.py": "18c3e4ddc585eae918db7938d1e1e49d728ea1828b2a87db2d4368f0cce07bd1",
+    "training.py": "2ee9d31090aaaeed76991519a411b5c32ed461fefeda7f5f71d51a6bc5f8e57f"
+  },
+  "source_hash_note": "Module basenames identify original recorded source bytes at base_git_revision; package-directory labels were omitted during the Airstriker-only migration. These hashes do not claim to describe the current source tree."
 }

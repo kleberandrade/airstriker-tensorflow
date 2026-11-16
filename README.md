@@ -1,121 +1,141 @@
-# Mario TensorFlow
+# Airstriker TensorFlow
 
-[![CI](https://github.com/kleberandrade/mario-tensorflow/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kleberandrade/mario-tensorflow/actions/workflows/ci.yml)
+[![CI](https://github.com/kleberandrade/airstriker-tensorflow/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/kleberandrade/airstriker-tensorflow/actions/workflows/ci.yml)
 ![Python 3.13](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![TensorFlow 2.21](https://img.shields.io/badge/TensorFlow-2.21-orange?logo=tensorflow)
 ![Stable Retro 1.0.1](https://img.shields.io/badge/Stable_Retro-1.0.1-blue)
 [![MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-An educational experiment in teaching an agent to play **Super Mario World** with TensorFlow. It includes a small Keras Q-network, RGB preprocessing, bounded training, greedy evaluation, and an optional Stable Retro emulator adapter.
+**Learn how reinforcement learning connects images, actions, rewards and a neural network.** This educational project uses TensorFlow/Keras to control **Airstriker**, a Sega Genesis shooter included with Stable Retro for non-commercial testing.
 
-**Super Mario World gameplay has not been validated. All new emulator captures in this repository show Airstriker (Sega Genesis), not Mario (SNES). No trained Mario agent or Mario performance is claimed.** The offline smoke environment is synthetic test data, not a Mario simulation. The original experiment captured Snes9x windows and pressed random keys; its TensorFlow/training sections were unfinished.
+![Actual Airstriker gameplay captured during checkpoint evaluation](images/airstriker-gameplay.png)
 
-## Airstriker integration test and detailed guide
+*Actual emulator capture: seed 13, evaluation step 256, score 40. A screenshot shows a game state; it does not establish that a policy has learned to play well.*
 
-A real **Airstriker** test now complements the synthetic smoke: three seeds, 2,688 recorded transitions, 90 captured PNGs, checkpoint reloads, and random/untrained/short-trained comparisons. Airstriker is the non-commercial test ROM included by Stable Retro; it is a different game from Mario. The 128-step training windows received no positive rewards, so the observed evaluation scores are exploratory integration results, not evidence of robust learning.
+The project contains a working image pipeline, a small Q-network, bounded training, checkpoint evaluation, seeded comparisons and a recorder. **It is a learning baseline, not a solved-game agent.** The recorded 128-step training windows earned no positive rewards; later evaluation differences are exploratory.
 
-- [Detailed project guide](docs/PROJECT_GUIDE.md): architecture, data shapes, model, API, toolchain, setup, recording, migration and limitations.
-- [Airstriker report with real screenshots](docs/experiments/2026-11-16-airstriker/REPORT.md): method, per-seed results, raw traces, package updates and provenance.
+## Start here
 
-```sh
-python examples/retro_experiment.py --output runs/airstriker-experiment
-```
+1. [Run your first experiment](#install-and-run): install the tested environment and execute a short real-emulator run.
+2. [Understand one decision](#how-one-decision-works): follow a frame through the network and back to the game.
+3. [Work through the tutorial](docs/PROJECT_GUIDE.md): inspect real images, calculate a learning target and compare policies fairly.
+4. [Read the evidence](docs/experiments/2026-11-16-airstriker/REPORT.md): screenshots, per-seed results, raw traces, provenance and limitations.
 
-The experiment defaults to the included Airstriker ROM, seeds 7/13/29, 128 training steps and 256 evaluation steps per policy. It creates a new output directory and never silently switches to synthetic data. No ROM binary or checkpoint is committed.
+## Install and run
 
-## Requirements and installation
-
-Python **3.13**, 64-bit Linux or macOS Apple Silicon, and a TensorFlow-compatible CPU. Local validation used macOS Apple Silicon; CI targets Ubuntu. Other Python versions, Intel macOS, GPU acceleration, and Windows have not been validated by this project.
+Use **CPython 3.13**, a 64-bit Linux or macOS Apple Silicon system and a TensorFlow-compatible CPU. The offline suite/build passed on Ubuntu; the real emulator experiment ran on Apple Silicon CPU. GPU, Intel macOS and native Windows are unverified.
 
 ```sh
+git clone https://github.com/kleberandrade/airstriker-tensorflow.git
+cd airstriker-tensorflow
 python3.13 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.lock
 python -m pip install --no-deps -e .
+python -m pip check
 ```
 
-The lock records the complete development environment, including the optional emulator. For a smaller runtime installation, use `python -m pip install -e .`; add `'.[retro]'` for emulator support or `'.[dev,retro]'` for development. Direct requirements are pinned in `pyproject.toml`; the lock also pins transitive dependencies. No ROM is installed by this project.
+The lock installs the complete tested environment, including Stable Retro and development tools. **The Airstriker test ROM is already supplied by Stable Retro**; no separate ROM download/import is needed. No ROM binary is committed here. See [upstream asset information](https://github.com/Farama-Foundation/stable-retro).
 
-## Quick start without a ROM
+Run a short real experiment with random, untrained and checkpoint policies:
+
+```sh
+python examples/retro_experiment.py --output runs/first-airstriker-experiment
+```
+
+Default configuration: seeds 7/13/29, 128 training steps per seed, 256 evaluation steps per policy, RGB/processed captures every 128 steps. Choose a **new output directory** each time: existing evidence is protected from overwrite.
+
+For a single model:
+
+```sh
+airstriker-tf train --env retro --steps 128 --seed 7 --checkpoint runs/airstriker.keras
+airstriker-tf evaluate --env retro --steps 256 --seed 7 --checkpoint runs/airstriker.keras
+```
+
+The real environment defaults to `Airstriker-Genesis-v0`. Use `--state NAME` only when choosing an installed integration savestate. `airstriker-tf --help` lists all options.
+
+If you only want to check the software without emulation:
 
 ```sh
 python examples/smoke.py
-mario-tf train --env synthetic --steps 32 --seed 7 --checkpoint runs/synthetic.keras
-mario-tf evaluate --env synthetic --steps 16 --seed 7 --checkpoint runs/synthetic.keras
 ```
 
-The smoke example creates a temporary checkpoint, performs eight updates, evaluates for eight steps, and removes its output. JSON output reports steps, completed episodes, total reward and training loss. Synthetic episodes truncate after eight actions; only action 1 earns reward. Results verify plumbing, not gameplay skill.
+That example uses an **explicitly synthetic test fixture**, trains for eight steps, saves/reloads a temporary checkpoint and evaluates for eight steps. Its rewards are test data, not Airstriker results. For a smaller install without the emulator, use `python -m pip install -e .`; add `'.[retro]'` or `'.[dev,retro]'` as needed.
 
-## Real Super Mario World integration
+## How one decision works
 
-Stable Retro replaces platform-specific desktop capture and keyboard injection with synchronized observations, actions, rewards, and episode boundaries. This is an explicit environment migration; TensorFlow remains the learning framework. See [upstream setup](https://stable-retro.farama.org/getting_started/) and the [API](https://stable-retro.farama.org/python/).
+1. **Observe:** Stable Retro returns the game's RGB image. In the recorded experiment this is 224×320×3 unsigned bytes.
+2. **Prepare:** convert RGB to grayscale, resize to 32×32 and divide by 255. Stack four frames so movement can influence the decision.
+3. **Predict:** a Keras network turns the `(32, 32, 4)` tensor into one Q-value per discrete controller action. Airstriker exposes 126 filtered button combinations.
+4. **Act:** during training, choose a random action 10% of the time; otherwise choose the action with the largest predicted value. Evaluation always uses the largest value.
+5. **Learn:** the emulator returns a reward and episode flags. Update the selected action's prediction using the reward plus a discounted estimate of future value.
 
-1. Obtain your own legally authorized Super Mario World ROM matching the integration hash. Owning a cartridge does not automatically establish copying rights in every jurisdiction. No ROM download service is recommended here.
-2. Install the optional adapter and import only your authorized local files:
+The processed image below is one channel of the actual observation used for the gameplay capture above, enlarged by the browser. The model receives four consecutive channels, not this single image alone.
 
-```sh
-python -m pip install -e '.[retro]'
-python -m stable_retro.import /absolute/path/to/your/authorized/roms
+<img src="images/airstriker-model-input.png" alt="Actual 32 by 32 grayscale input channel" width="128" height="128">
+
+The Q-learning target is:
+
+```text
+target = reward + 0.99 × max(next Q-values)       # continuing transition
+target = reward                                # true terminal transition
 ```
 
-3. Confirm the integration and run a short experiment:
+For a reward of 2 and best predicted next value of 5, the continuing target is `2 + 0.99 × 5 = 6.95`. If the game truly ends, the target is 2. A time-limit truncation still bootstraps from its final frame. The [tutorial](docs/PROJECT_GUIDE.md) explains why these cases differ and why a model can change weights even when reward is zero.
 
-```sh
-python -c "import stable_retro; print([g for g in stable_retro.data.list_games() if 'SuperMarioWorld' in g])"
-mario-tf train --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7 --checkpoint runs/mario.keras
-mario-tf evaluate --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7 --checkpoint runs/mario.keras
-```
+## What the recorded experiment actually found
 
-Use `--state NAME` for an installed integration savestate; otherwise Stable Retro uses its default. Rewards, termination rules, and savestates belong to the selected integration. Actions use its discrete filtered button combinations. No reward OCR or desktop-window detection is required. Missing ROM errors propagate; there is no automatic fallback to synthetic data.
+Three seeds, 12 runs, **2,688 real transitions and 90 PNGs** were recorded:
 
-**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No Super Mario World ROM was imported, downloaded, executed, or used for training. The separate Airstriker experiment validates the shared adapter only. Adapter contract tests use a stub and do not validate emulation.
+- Random evaluation rewards: **0, 0, 0**.
+- Untrained greedy network: **20, 0, 0**.
+- Short training windows: **0, 0, 0**.
+- Saved/reloaded checkpoint evaluation: **20, 40, 40**.
 
-## Model, configuration, and API
+No complete episode finished. The sample is too small to establish a learning improvement, and the training windows received no positive reward. Treat this as evidence that the integration and measurement pipeline work. Inspect [the full report](docs/experiments/2026-11-16-airstriker/REPORT.md) before drawing performance conclusions.
 
-RGB uint8 frames become normalized 32 × 32 grayscale images stacked across four observations. Reset fills the stack with the first frame to avoid mixing episodes. A small convolutional Keras model predicts one Q-value per discrete action. Online one-step Q-learning uses Adam (0.001), Huber loss, discount 0.99 and epsilon 0.1 during training; evaluation is greedy. True terminations stop bootstrapping; time-limit truncations retain it.
+## Python API
 
 ```python
-from mario_tensorflow.agent import Agent
-from mario_tensorflow.environments import SyntheticEnvironment
-from mario_tensorflow.training import run
+from airstriker_tensorflow.agent import Agent
+from airstriker_tensorflow.environments import DEFAULT_GAME, make_retro
+from airstriker_tensorflow.training import run
 
-env = SyntheticEnvironment()  # Test fixture only
+env = make_retro(DEFAULT_GAME)
 try:
     agent = Agent(env.action_count, seed=7)
-    print(run(env, agent, steps=8, seed=7, training=True))
+    print(run(env, agent, steps=128, seed=7, training=True))
+    agent.save("runs/airstriker.keras")
 finally:
     env.close()
 ```
 
-`--steps`, `--seed`, `--env`, `--game`, `--state`, and `--checkpoint` configure a run. `mario-tf --help` lists arguments. Training saves a `.keras` model with optimizer state and an adjacent `.json` run record. Training starts a new model; evaluation loads a checkpoint and checks its action count. Checkpoints are for evaluation, not exact training resumption: environment/RNG state is not restored. Use matching environment, game, and action mapping when evaluating.
+Training writes a `.keras` checkpoint and the CLI writes an adjacent JSON run record. Evaluation checks action count and leaves model weights unchanged. Use the same game and integration/action mapping when loading a checkpoint. Model/optimizer state is saved; emulator state, RNG state and frame history are not, so exact interrupted-training resumption is not supported.
 
-## Development and validation
+## Project layout and checks
+
+- `src/airstriker_tensorflow/`: environment, preprocessing, agent/model, training/evaluation, recording, experiment orchestration and CLI.
+- `examples/`: executable synthetic smoke and real Airstriker comparison.
+- `tests/`: offline behavior, error paths and explicitly labeled adapter-contract tests.
+- `images/`: actual Airstriker screenshots and processed input used in this README.
+- `docs/PROJECT_GUIDE.md`: practical teaching guide, API and experiment methodology.
+- `docs/experiments/2026-11-16-airstriker/`: measured results, 90 PNGs, trace records and asset provenance.
 
 ```sh
 ruff check src tests examples
 ruff format --check src tests examples
-pytest --cov=mario_tensorflow --cov-report=term-missing --cov-report=lcov
+pytest --cov=airstriker_tensorflow --cov-report=term-missing --cov-report=lcov
 python examples/smoke.py
-python -m build
-python -m pip check
+python -m build --no-isolation
 ```
 
-Offline tests cover frame semantics, seeds, terminal targets, real weight updates, checkpoint roundtrip, unchanged evaluation weights, CLI records, and episode resets. CI installs the lock on Python 3.13, runs these checks, executes the smoke example and builds distributions. The CI badge links to the workflow on `master`. The published offline suite, smoke example and package build passed on Ubuntu with Python 3.13 ([verified run](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748)). This does not validate Mario gameplay.
+[CI](https://github.com/kleberandrade/airstriker-tensorflow/actions/workflows/ci.yml) runs those offline checks on Ubuntu/Python 3.13. Offline tests use synthetic data to check frame semantics, seeds, terminal targets, actual TensorFlow updates, checkpoint loading, recording and cleanup. They do not stand in for the separate real-emulator experiment.
 
-## Layout and migration
+## Limits and license
 
-- `src/mario_tensorflow/`: environments, preprocessing, agent/model, train/evaluate loop, CLI.
-- `tests/`: offline behavioral and adapter contract tests.
-- `examples/`: executable offline smoke and real-emulator recording examples.
-- `legacy/screen_capture.py`: unchanged historical `mario_bot_tensorflow.py`; archived desktop experiment, outside the supported toolchain.
-- `docs/legacy-experiment.md`: historical notes; [work log](docs/WORK_LOG.md) records modernization and validation.
-- `images/`: existing historical emulator/game screenshots.
+This online one-step Q-learning baseline has no replay buffer, target network, frame skipping or tuned reward shaping. Short, correlated updates can be unstable. There is no solved level, full-episode benchmark, convergence result or generalization claim. Long training never runs by default.
 
-Replace `python mario_bot_tensorflow.py` with the CLI commands above. The historical script remains available under `legacy/` for reference; its old GUI dependencies are intentionally excluded and it has not been revalidated. Historical screenshots and results are not evidence of the new agent's performance. Original random-key demonstration: [video](https://youtu.be/-JA13GCZLVQ). Thanks to Yuri Costa for recommending Snes9x.
+TensorFlow 2.21 requires `h5py<3.15`; Stable Retro 1.0.1 requires `pyglet<2`. The lock preserves those constraints. Upstream Keras/NumPy serialization deprecation warnings and TensorFlow CPU-profiling diagnostics are recorded rather than suppressed. See [dependency evidence](docs/experiments/2026-11-16-airstriker/dependency-updates.json).
 
-## Limitations and license
-
-This minimal baseline has no replay buffer, target network, frame skipping, tuned reward shaping, full-episode benchmark, or solved-game claim. Correlated online updates can be unstable; many more environment steps and algorithm improvements would be needed to investigate gameplay learning. Seeds reproduce local initial conditions but do not guarantee identical results across TensorFlow hardware/platforms. Long training never runs by default.
-
-Project source code is [MIT licensed](LICENSE), retaining the original 2019 copyright. Nintendo game names, ROMs, and imagery retain their respective owners' rights and are not relicensed by this repository's MIT license. Stable Retro and emulator cores have [separate licenses](https://github.com/Farama-Foundation/stable-retro/blob/master/LICENSES.md). No ROM or pretrained weights are distributed.
+Project code is [MIT licensed](LICENSE), retaining the original copyright. Airstriker by Electrokinesis is supplied upstream as a non-commercial test ROM; game imagery retains its owners' rights and is not relicensed under MIT. Screenshots here document actual tests. No ROM or checkpoint is distributed. Stable Retro and its emulator cores retain [their separate licenses](https://github.com/Farama-Foundation/stable-retro/blob/main/LICENSES.md).

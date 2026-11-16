@@ -1,56 +1,26 @@
-# Modernization log
+# Airstriker TensorFlow work log
 
-- Inspected clean `master` at `aaeabb6`; original author is Kléber de Oliveira Andrade. No local changes or applicable AGENTS.md found.
-- Applied ub-mode and test-master. Preserved MIT copyright and archived the original desktop experiment and notes; no third-party game files were present.
-- The original never implemented a TensorFlow model or training. Add a deliberately small online Q-learning baseline, not a claimed trained Mario agent.
-- Choose Python 3.13, TensorFlow 2.21 and optional Stable Retro 1.0.1 after checking upstream documentation and installing compatible Apple Silicon wheels. Replace brittle desktop title/key automation with an explicit Gymnasium emulator adapter; preserve history under legacy/.
-- Plan offline behavioral tests for preprocessing, seeds, terminal bootstrap, actual parameter updates, checkpoint roundtrip, evaluation immutability, and bounded runs. The synthetic fixture is not Mario integration.
+## Preserved experiment evidence
 
-## Executed validation
+- The real Stable Retro experiment uses the upstream non-commercial Airstriker test ROM; its installed SHA-1 matches `a8be7b0ca850119b167f9644e6a4a22e983d61a4`.
+- Three seeds (7, 13, 29), four phases per seed, 2,688 transitions and 90 PNGs are preserved under `docs/experiments/2026-11-16-airstriker/`.
+- Recorded reward vectors: random `[0,0,0]`, untrained `[20,0,0]`, train `[0,0,0]`, checkpoint evaluation `[20,40,40]`. No completed episode or robust-learning claim is made.
+- Raw transitions, manifest, images and checkpoint hashes are preserved. Source hashes describe the original recorded source bytes, identified by module basename after the package migration; they are not recomputed as though the current source produced historical measurements.
+- Earlier development history remains in Git. This current log focuses on the supported Airstriker project; original MIT copyright and third-party asset rights remain intact.
 
-- Tests were written before the new pipeline and CLI; observed import failures for missing modules, then passed after implementation. Expanded behavior coverage for terminal reset, deterministic initialization/actions, invalid CLI inputs and adapter options.
-- `pytest --cov=mario_tensorflow --cov-report=term-missing --cov-report=lcov:target/coverage/python/lcov.info`: **14 passed**, 99% statement coverage (the module `__main__` line is exercised separately through CLI use). Coverage is offline only, not an emulator or trained-agent claim.
-- `python examples/smoke.py`: eight synthetic train steps, checkpoint save/load, eight greedy evaluation steps. Parameter-update and evaluation-immutability tests use real TensorFlow.
-- `ruff check src tests examples` and `ruff format --check src tests examples`: passed.
-- `python -m build --no-isolation`: wheel and source distribution built; wheel installed under `/tmp/mario-wheel-check` and import resolved to that wheel. `pip check`: passed.
-- Lock resolution dry-run for CPython 3.13 / Linux x86-64 binary wheels: passed. This does not execute Linux tests; GitHub Actions has not run these unpublished changes.
-- `crapper --use-existing-coverage --threshold 9.99 src`: all functions below 10; maximum 8. Initially coverage was not found in pytest's default LCOV location; reran with the tool's supported `target/coverage/python/lcov.info` location. Split CLI parsing from resource lifecycle to reduce complexity.
-- `dryer --threshold 0.8 src`: no duplicate candidates.
-- `mutator --no-coverage --test-command '.venv/bin/python -m pytest tests/test_pipeline.py -q' --max-workers 2 src/mario_tensorflow/preprocessing.py`: all 11 selected mutants killed.
-- Same mutation command selecting line 9 of `agent.py`: all five selected bootstrap-arithmetic mutants killed. Mutation checking was deliberately scoped to preprocessing and bootstrap arithmetic; no repository-wide mutation score is claimed.
-- Stable Retro 1.0.1 imported and listed `SuperMarioWorld-Snes-v0`. Opening that integration returned `FileNotFoundError: Game not found ... import the ROM`. No ROM was obtained and no Mario integration/gameplay was executed. Adapter tests replace the factory only and are explicitly labeled contract tests.
-- README and archived-document relative links/images checked: none missing. Original MIT notice retained; third-party ROM-download link removed; historical screenshot rights explicitly excluded from MIT relicensing.
-- GitHub About updated successfully via authorized Git credential helper and confirmed by API readback. Exact applied text: **Educational TensorFlow Q-learning for Super Mario World, with reproducible offline tests and optional Stable Retro integration.**
+## Airstriker-only migration — 2026-11-16
 
-## Limits and ownership
-
-- Keras emits 12 NumPy `__array__(copy=...)` deprecation warnings during checkpoint serialization tests; tests pass. TensorFlow also reports CPU-frequency profiling warnings on this Mac. No warnings were suppressed.
-- There is no replay/target network, trained model, benchmark, GPU test, desktop GUI test, or exact training-resume support. Synthetic results are test plumbing only.
-- Unexpected edits to the historical-script path and packaging metadata were preserved. The user confirmed there is no other chat working on this project; inspected and adopted the final `legacy/screen_capture.py` and `pyproject.toml` contents into the final packaging commit. Historical script content matches the original exactly.
-- No push, deployment, package publication, or long training was performed.
-
-## Real emulator evidence and dependency refresh — 2026-11-16
-
-- User requested a new ROM, all library updates, a real test, screenshots, collected results and detailed project documentation. Reused ub-mode and test-master; no push authorization was added.
-- Searched upstream game/asset documentation. Selected Airstriker by Electrokinesis, already included in Stable Retro as a non-commercial test ROM. It is a Sega Genesis game, not Super Mario World. Verified its installed SHA-1 against the integration reference; copied no ROM into the project.
-- Confirmed a clean Git tree before this round. Baseline: 14 tests passed. Queried all installed package versions and upgraded compatible pins with eager transitive resolution: NumPy 2.5.5, Pillow 13.0.0, pytest 9.2.0, Ruff 0.17.5, build 1.6.1 and setuptools 84.2.1. TensorFlow 2.21.0 and Stable Retro 1.0.1 remain current. Regenerated the complete lock.
-- Preserved h5py 3.14.0 because TensorFlow requires `<3.15.0`, and pyglet 1.5.31 because Stable Retro requires `<2`. The remaining outdated-package report contains only these two constraints. Saved dependency metadata and before/after locks with the experiment evidence.
-- Wrote recording/orchestration tests first and observed missing-module collection failures. Implemented a transparent recorder plus bounded multi-seed runner; tests verify exact PNG pixels, processed shape, JSON traces, output protection and actual TensorFlow updates/checkpoint creation using explicitly injected synthetic fixtures.
-- Added resource/serialization error-path coverage. Ruff's newer diagnostics required import ordering and simple dict-literal cleanups; no algorithm rewrite was introduced.
-- First real-run command safely refused to overwrite the directory already containing dependency audit files. Kept those files and used a new `run/` child directory; evidence was not overwritten.
-- Executed 12 real emulator runs with seeds 7/13/29: random evaluation 256 steps, untrained evaluation 256, training 128, checkpoint evaluation 256 per seed. Total 2,688 transitions; 45 capture points and 90 native/processed PNGs. Visually inspected actual random and checkpoint-evaluation frames; screenshots show Airstriker game state and score, not synthetic observations.
-- Measured reward vectors: random `[0,0,0]`, untrained `[20,0,0]`, train `[0,0,0]`, checkpoint evaluation `[20,40,40]`. All training rewards were zero; weight changes therefore reflect bootstrap updates, and the small evaluation difference is not evidence of robust learning. No full episode completed. The report states those limits explicitly.
-- Saved raw per-step JSONL traces, manifest, source/artifact hashes, ROM/integration provenance, diagnostic logs and local ignored checkpoints. Added `docs/PROJECT_GUIDE.md` and `docs/experiments/2026-11-16-airstriker/REPORT.md`, and linked them from README. Preserved MIT code notices and explicitly retained third-party game-image rights.
-- Offline suite: 24 passed, 97% statement coverage, 18 unsuppressed upstream Keras/NumPy deprecation warnings. Real emulator execution is recorded separately; offline coverage is not claimed as ROM integration coverage.
-- Lint/format, pip consistency, package builds and Linux CPython 3.13 binary-resolution dry-run passed. No Linux runtime, GPU, Mario gameplay or remote CI execution is claimed. TensorFlow CPU-profiling diagnostics remain in the run log.
-- Crapper maximum 8, every source function below 10; dryer found no candidates at 0.8. Recorder mutation check reported all 24 selected mutants killed; this scope is distinct from the earlier preprocessing/target checks and is not a project-wide mutation score.
-- No long training, ROM redistribution, push, deployment or package publication was performed.
-- Final artifact checks: zero broken relative documentation/image links; all 106 recorded artifact hashes matched; manifest/trace totals matched 2,688 transitions and 90 PNGs. Installed the new wheel into a separate temporary target and successfully ran its synthetic train/save/load/evaluate smoke. Source archive includes the guide, manifest and all 90 screenshots, with no ROM or `.keras` files.
-
-## Publication and CI verification — 2026-11-16
-
-- User explicitly authorized pushing this project to its principal branch and following CI through completion. Confirmed through GitHub API that the default branch is `master`; fetched remote changes and found no divergence.
-- User correctly highlighted that the new screenshots depict another game. Made the README opening explicit: new emulator captures are Airstriker on Genesis; Super Mario World on SNES is still unvalidated. Corrected the Mario-specific asset paragraph so it does not incorrectly imply no game ROM was executed at all.
-- Confirmed GitHub default branch `master`; fetched before pushing and found no remote divergence. Pushed the six implementation commits plus the image-label clarification as `bb65d8e`.
-- Remote GitHub Actions run [43800722748](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748) passed on Ubuntu/Python 3.13: pinned install, editable install, lint, format, pytest, synthetic smoke, and wheel/source build. Dependency graph update also passed. No CI failure required a code fix.
-- Updated current documentation to reflect actual publication and remote offline validation while preserving the distinction from unvalidated Mario gameplay.
+- User requested a complete project conversion, educational documentation, game images and GitHub updates. Applied ub-mode and test-master.
+- Started from clean `ec0afc0`. Wrote a regression test that failed because the default CLI game differed from Airstriker, then changed the default to the included integration.
+- Renamed the distribution to `airstriker-tensorflow` (0.3.0), Python package to `airstriker_tensorflow`, CLI to `airstriker-tf`, and local directory to `/Users/kleber/Projects/airstriker-tensorflow`. Centralized the default integration in `DEFAULT_GAME`.
+- Migrated imports, examples, test coverage configuration and package metadata. Recreated the virtual environment at the new location from the existing pinned lock to avoid stale absolute paths.
+- Removed unsupported desktop code, obsolete game-specific notes and unrelated screenshots from the active tree. Their content remains recoverable from Git history; no history was rewritten.
+- Added README images copied byte-for-byte from the actual recorded Airstriker frames, with capture context and a processed-input preview. No generated imagery, ROM or checkpoint is committed.
+- Rewrote the README and teaching guide around ten practical lessons: environment inspection, terminology, pixel preprocessing, model shapes, numeric bootstrap targets, exploration/evaluation, controlled comparisons, trace inspection, code boundaries and experiment design. Included exercises, expected outputs and honest limits.
+- Retained original gameplay evidence and refreshed current test/build/tool reports rather than rewriting the meaning of old measurements. Corrected repository URLs and retained upstream licensing/provenance links.
+- GitHub repository was renamed to `kleberandrade/airstriker-tensorflow`; updated origin, About description and topics (Airstriker, TensorFlow, Keras, reinforcement learning, Q-learning, Stable Retro, Python and education). The default branch remains `master`.
+- Migration validation: 25 offline tests passed, 99% statement coverage; lint, formatting, pinned dependency consistency and package builds passed. The new CLI completed 16 real training steps and 32 evaluation steps without a game override, proving the Airstriker default.
+- Re-ran the complete default three-seed Airstriker experiment in an ignored output directory and executed all six Python tutorial blocks in order against the real emulator. Their shapes, API calls, trace analysis, target calculations and training/evaluation examples succeeded.
+- Checked all relative Markdown/image links, preserved original 106 artifact hashes, and verified that three README/tutorial images are byte-identical to their recorded source frames. Package archives contain 90 recorded PNGs plus three teaching images and exclude ROMs/checkpoints.
+- Refreshed test/build/complexity/mutation logs under the new package name. Cleared obsolete mutation snapshots before checking the renamed source: all 24 selected recorder mutations killed; maximum CRAP 8; dryer found no candidates at 0.8.
+- Searched the maintained source, examples, tests, configuration, docs and image names for superseded game/project references; no active reference remains. Git history and original recorded numerical/gameplay evidence were not rewritten.
