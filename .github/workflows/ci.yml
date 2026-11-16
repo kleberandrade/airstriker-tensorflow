@@ -21,4 +21,5 @@ jobs:
       - run: ruff format --check src tests examples
       - run: pytest --cov=airstriker_tensorflow --cov-report=term-missing --cov-report=lcov
       - run: python examples/smoke.py
+      - run: python examples/analyze_experiment.py --source docs/experiments/2026-11-16-airstriker-long --output runs/ci-report --window 1000
       - run: python -m build --no-isolation

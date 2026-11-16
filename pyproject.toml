@@ -14,6 +14,7 @@ dependencies = ["tensorflow==2.21.0", "numpy==2.5.5", "Pillow==13.0.0"]
 
 [project.optional-dependencies]
 retro = ["stable-retro==1.0.1"]
+report = ["matplotlib==3.11.2"]
 dev = ["pytest==9.2.0", "pytest-cov==7.1.0", "ruff==0.17.5", "build==1.6.1"]
 
 [project.scripts]

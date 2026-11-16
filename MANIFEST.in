@@ -1,4 +1,4 @@
 include requirements-dev.lock
 recursive-include examples *.py
-recursive-include docs *.md *.json *.jsonl *.png *.txt *.lock
+recursive-include docs *.md *.json *.jsonl *.jsonl.gz *.png *.svg *.txt *.lock
 recursive-include images *.png
