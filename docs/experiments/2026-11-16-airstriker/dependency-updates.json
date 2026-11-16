@@ -1,0 +1,42 @@
+{
+  "updated": {
+    "build": {
+      "before": "1.4.0",
+      "after": "1.6.1"
+    },
+    "numpy": {
+      "before": "2.4.3",
+      "after": "2.5.5"
+    },
+    "pillow": {
+      "before": "12.2.0",
+      "after": "13.0.0"
+    },
+    "pytest": {
+      "before": "9.0.2",
+      "after": "9.2.0"
+    },
+    "ruff": {
+      "before": "0.15.7",
+      "after": "0.17.5"
+    },
+    "setuptools": {
+      "before": "82.0.1",
+      "after": "84.2.1"
+    }
+  },
+  "constrained": [
+    {
+      "name": "h5py",
+      "version": "3.14.0",
+      "latest_version": "3.16.0",
+      "latest_filetype": "wheel"
+    },
+    {
+      "name": "pyglet",
+      "version": "1.5.31",
+      "latest_version": "2.1.19",
+      "latest_filetype": "wheel"
+    }
+  ]
+}

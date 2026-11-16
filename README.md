@@ -10,6 +10,19 @@ An educational experiment in teaching an agent to play **Super Mario World** wit
 
 **No trained Mario agent or gameplay performance is claimed.** The offline smoke environment is synthetic test data, not a Mario simulation. The original experiment captured Snes9x windows and pressed random keys; its TensorFlow/training sections were unfinished.
 
+## Real emulator test and detailed guide
+
+A real **Airstriker** test now complements the synthetic smoke: three seeds, 2,688 recorded transitions, 90 captured PNGs, checkpoint reloads, and random/untrained/short-trained comparisons. Airstriker is the non-commercial test ROM included by Stable Retro; it is a different game from Mario. The 128-step training windows received no positive rewards, so the observed evaluation scores are exploratory integration results, not evidence of robust learning.
+
+- [Detailed project guide](docs/PROJECT_GUIDE.md): architecture, data shapes, model, API, toolchain, setup, recording, migration and limitations.
+- [Experiment report with real screenshots](docs/experiments/2026-11-16-airstriker/REPORT.md): method, per-seed results, raw traces, package updates and provenance.
+
+```sh
+python examples/retro_experiment.py --output runs/airstriker-experiment
+```
+
+The experiment defaults to the included Airstriker ROM, seeds 7/13/29, 128 training steps and 256 evaluation steps per policy. It creates a new output directory and never silently switches to synthetic data. No ROM binary or checkpoint is committed.
+
 ## Requirements and installation
 
 Python **3.13**, 64-bit Linux or macOS Apple Silicon, and a TensorFlow-compatible CPU. Local validation used macOS Apple Silicon; CI targets Ubuntu. Other Python versions, Intel macOS, GPU acceleration, and Windows have not been validated by this project.
@@ -56,7 +69,7 @@ mario-tf evaluate --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7
 
 Use `--state NAME` for an installed integration savestate; otherwise Stable Retro uses its default. Rewards, termination rules, and savestates belong to the selected integration. Actions use its discrete filtered button combinations. No reward OCR or desktop-window detection is required. Missing ROM errors propagate; there is no automatic fallback to synthetic data.
 
-**Verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No game ROM was imported, downloaded, executed, or used for training. Adapter contract tests use a stub and do not validate emulation.
+**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No game ROM was imported, downloaded, executed, or used for training. Adapter contract tests use a stub and do not validate emulation.
 
 ## Model, configuration, and API
 
@@ -94,7 +107,7 @@ Offline tests cover frame semantics, seeds, terminal targets, real weight update
 
 - `src/mario_tensorflow/`: environments, preprocessing, agent/model, train/evaluate loop, CLI.
 - `tests/`: offline behavioral and adapter contract tests.
-- `examples/smoke.py`: executable offline example.
+- `examples/`: executable offline smoke and real-emulator recording examples.
 - `legacy/screen_capture.py`: unchanged historical `mario_bot_tensorflow.py`; archived desktop experiment, outside the supported toolchain.
 - `docs/legacy-experiment.md`: historical notes; [work log](docs/WORK_LOG.md) records modernization and validation.
 - `images/`: existing historical emulator/game screenshots.
@@ -103,6 +116,6 @@ Replace `python mario_bot_tensorflow.py` with the CLI commands above. The histor
 
 ## Limitations and license
 
-This minimal baseline has no replay buffer, target network, frame skipping, tuned reward shaping, benchmark, or solved-game claim. Correlated online updates can be unstable; many more environment steps and algorithm improvements would be needed to investigate gameplay learning. Seeds reproduce local initial conditions but do not guarantee identical results across TensorFlow hardware/platforms. Long training never runs by default.
+This minimal baseline has no replay buffer, target network, frame skipping, tuned reward shaping, full-episode benchmark, or solved-game claim. Correlated online updates can be unstable; many more environment steps and algorithm improvements would be needed to investigate gameplay learning. Seeds reproduce local initial conditions but do not guarantee identical results across TensorFlow hardware/platforms. Long training never runs by default.
 
 Project source code is [MIT licensed](LICENSE), retaining the original 2019 copyright. Nintendo game names, ROMs, and imagery retain their respective owners' rights and are not relicensed by this repository's MIT license. Stable Retro and emulator cores have [separate licenses](https://github.com/Farama-Foundation/stable-retro/blob/master/LICENSES.md). No ROM or pretrained weights are distributed.

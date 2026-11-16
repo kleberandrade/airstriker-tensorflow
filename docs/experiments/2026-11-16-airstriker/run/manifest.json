@@ -1,0 +1,1227 @@
+{
+  "created_utc": "2026-11-16T03:42:36.997451+00:00",
+  "configuration": {
+    "game": "Airstriker-Genesis-v0",
+    "seeds": [
+      7,
+      13,
+      29
+    ],
+    "train_steps": 128,
+    "evaluate_steps": 256,
+    "capture_every": 128
+  },
+  "platform": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.18",
+  "versions": {
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.5.5",
+    "Pillow": "13.0.0",
+    "stable-retro": "1.0.1"
+  },
+  "runs": [
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 7,
+      "elapsed_seconds": 0.12311762500030454,
+      "directory": "seed-7-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 113,
+      "action_counts": {
+        "119": 4,
+        "78": 2,
+        "86": 3,
+        "113": 3,
+        "72": 3,
+        "97": 1,
+        "105": 1,
+        "28": 3,
+        "6": 4,
+        "37": 2,
+        "35": 4,
+        "110": 4,
+        "114": 4,
+        "0": 4,
+        "62": 3,
+        "103": 2,
+        "16": 2,
+        "100": 1,
+        "15": 2,
+        "58": 4,
+        "102": 4,
+        "38": 2,
+        "43": 2,
+        "90": 3,
+        "32": 1,
+        "124": 2,
+        "56": 4,
+        "60": 3,
+        "63": 2,
+        "73": 2,
+        "69": 3,
+        "64": 5,
+        "125": 3,
+        "101": 3,
+        "99": 3,
+        "88": 1,
+        "42": 1,
+        "27": 2,
+        "106": 6,
+        "20": 1,
+        "108": 2,
+        "77": 3,
+        "14": 1,
+        "5": 2,
+        "4": 2,
+        "17": 2,
+        "122": 5,
+        "115": 1,
+        "79": 2,
+        "55": 3,
+        "33": 2,
+        "47": 4,
+        "31": 1,
+        "1": 3,
+        "12": 2,
+        "24": 3,
+        "87": 1,
+        "111": 2,
+        "25": 2,
+        "46": 2,
+        "61": 2,
+        "104": 2,
+        "83": 3,
+        "19": 2,
+        "67": 2,
+        "121": 4,
+        "23": 1,
+        "118": 1,
+        "89": 2,
+        "80": 3,
+        "93": 2,
+        "59": 1,
+        "11": 3,
+        "30": 4,
+        "68": 2,
+        "91": 3,
+        "109": 3,
+        "45": 3,
+        "81": 2,
+        "75": 2,
+        "13": 2,
+        "7": 3,
+        "48": 2,
+        "40": 2,
+        "18": 3,
+        "50": 2,
+        "123": 2,
+        "49": 1,
+        "74": 2,
+        "76": 2,
+        "85": 2,
+        "120": 1,
+        "70": 2,
+        "51": 3,
+        "84": 1,
+        "71": 3,
+        "94": 3,
+        "116": 1,
+        "22": 1,
+        "26": 1,
+        "95": 1,
+        "3": 2,
+        "52": 2,
+        "82": 1,
+        "53": 1,
+        "9": 1,
+        "65": 2,
+        "54": 1,
+        "44": 1,
+        "66": 1,
+        "96": 1,
+        "117": 1,
+        "29": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 2,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 20.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 7,
+      "elapsed_seconds": 0.6700655839958927,
+      "directory": "seed-7-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 12,
+      "action_counts": {
+        "21": 38,
+        "6": 101,
+        "102": 20,
+        "111": 34,
+        "52": 4,
+        "27": 39,
+        "80": 4,
+        "39": 2,
+        "59": 1,
+        "1": 1,
+        "115": 7,
+        "67": 5
+      },
+      "nonzero_rewards": 1,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 20
+      }
+    },
+    {
+      "steps": 128,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": 1.2488995309773132e-06,
+      "phase": "train",
+      "seed": 7,
+      "elapsed_seconds": 1.5875696669972967,
+      "directory": "seed-7-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 0.2905549705028534,
+      "unique_actions": 20,
+      "action_counts": {
+        "21": 9,
+        "6": 29,
+        "62": 3,
+        "39": 13,
+        "103": 1,
+        "17": 1,
+        "64": 1,
+        "77": 3,
+        "104": 1,
+        "102": 34,
+        "52": 20,
+        "83": 3,
+        "115": 2,
+        "48": 1,
+        "122": 2,
+        "110": 1,
+        "114": 1,
+        "111": 1,
+        "15": 1,
+        "109": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 20.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 7,
+      "elapsed_seconds": 0.5901931249973131,
+      "directory": "seed-7-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 14,
+      "action_counts": {
+        "102": 112,
+        "62": 6,
+        "52": 87,
+        "122": 20,
+        "21": 13,
+        "110": 2,
+        "43": 1,
+        "48": 3,
+        "109": 1,
+        "96": 1,
+        "64": 2,
+        "27": 6,
+        "58": 1,
+        "77": 1
+      },
+      "nonzero_rewards": 1,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 20
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 13,
+      "elapsed_seconds": 0.117092041997239,
+      "directory": "seed-13-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 106,
+      "action_counts": {
+        "112": 4,
+        "108": 2,
+        "103": 3,
+        "107": 3,
+        "8": 3,
+        "102": 4,
+        "118": 4,
+        "32": 3,
+        "21": 1,
+        "9": 2,
+        "100": 1,
+        "119": 5,
+        "76": 4,
+        "77": 3,
+        "99": 4,
+        "0": 4,
+        "105": 2,
+        "114": 6,
+        "16": 3,
+        "124": 2,
+        "36": 1,
+        "60": 6,
+        "113": 2,
+        "10": 5,
+        "82": 2,
+        "55": 3,
+        "43": 2,
+        "86": 5,
+        "51": 2,
+        "111": 1,
+        "65": 2,
+        "14": 2,
+        "67": 4,
+        "62": 2,
+        "39": 5,
+        "31": 1,
+        "35": 3,
+        "97": 4,
+        "48": 1,
+        "123": 2,
+        "47": 3,
+        "49": 2,
+        "92": 6,
+        "45": 4,
+        "125": 1,
+        "80": 2,
+        "3": 1,
+        "75": 2,
+        "121": 4,
+        "28": 1,
+        "1": 1,
+        "69": 7,
+        "91": 2,
+        "30": 1,
+        "6": 3,
+        "13": 1,
+        "93": 4,
+        "40": 4,
+        "120": 2,
+        "19": 1,
+        "83": 3,
+        "57": 3,
+        "59": 1,
+        "101": 3,
+        "15": 2,
+        "94": 2,
+        "116": 3,
+        "89": 4,
+        "110": 1,
+        "46": 1,
+        "33": 1,
+        "66": 3,
+        "20": 3,
+        "90": 2,
+        "70": 1,
+        "56": 1,
+        "85": 2,
+        "52": 2,
+        "50": 3,
+        "26": 2,
+        "34": 1,
+        "23": 1,
+        "27": 2,
+        "53": 2,
+        "58": 5,
+        "38": 1,
+        "4": 3,
+        "104": 2,
+        "72": 2,
+        "87": 1,
+        "79": 1,
+        "44": 1,
+        "41": 1,
+        "11": 1,
+        "63": 4,
+        "115": 1,
+        "109": 2,
+        "98": 1,
+        "122": 1,
+        "37": 1,
+        "96": 3,
+        "2": 1,
+        "22": 2,
+        "81": 1,
+        "71": 1,
+        "42": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 13,
+      "elapsed_seconds": 0.6819636250002077,
+      "directory": "seed-13-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 5,
+      "action_counts": {
+        "95": 6,
+        "109": 154,
+        "37": 83,
+        "73": 9,
+        "58": 4
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 128,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": 2.217904465235088e-06,
+      "phase": "train",
+      "seed": 13,
+      "elapsed_seconds": 1.460426624995307,
+      "directory": "seed-13-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 0.34162941575050354,
+      "unique_actions": 19,
+      "action_counts": {
+        "95": 1,
+        "109": 46,
+        "100": 4,
+        "119": 1,
+        "82": 1,
+        "55": 1,
+        "13": 1,
+        "93": 1,
+        "69": 16,
+        "37": 5,
+        "85": 1,
+        "52": 6,
+        "8": 10,
+        "49": 1,
+        "45": 24,
+        "47": 5,
+        "35": 2,
+        "6": 1,
+        "54": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 40.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 13,
+      "elapsed_seconds": 0.5828437089949148,
+      "directory": "seed-13-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 11,
+      "action_counts": {
+        "69": 103,
+        "49": 78,
+        "45": 12,
+        "100": 39,
+        "48": 10,
+        "37": 3,
+        "50": 3,
+        "4": 1,
+        "52": 1,
+        "103": 2,
+        "8": 4
+      },
+      "nonzero_rewards": 2,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 40
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 29,
+      "elapsed_seconds": 0.14454008301254362,
+      "directory": "seed-29-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 109,
+      "action_counts": {
+        "117": 2,
+        "6": 3,
+        "75": 1,
+        "63": 2,
+        "28": 1,
+        "65": 3,
+        "82": 3,
+        "33": 2,
+        "72": 4,
+        "16": 2,
+        "2": 5,
+        "52": 5,
+        "49": 2,
+        "8": 5,
+        "47": 2,
+        "78": 3,
+        "0": 1,
+        "30": 5,
+        "99": 3,
+        "15": 4,
+        "77": 4,
+        "102": 2,
+        "123": 5,
+        "108": 1,
+        "124": 2,
+        "79": 2,
+        "46": 2,
+        "23": 1,
+        "10": 2,
+        "106": 2,
+        "96": 2,
+        "53": 2,
+        "61": 4,
+        "3": 2,
+        "119": 2,
+        "58": 3,
+        "118": 4,
+        "48": 4,
+        "40": 3,
+        "93": 2,
+        "62": 2,
+        "34": 2,
+        "80": 2,
+        "95": 3,
+        "91": 2,
+        "122": 3,
+        "76": 3,
+        "1": 2,
+        "29": 4,
+        "21": 2,
+        "125": 4,
+        "54": 2,
+        "71": 4,
+        "92": 4,
+        "5": 4,
+        "70": 4,
+        "12": 3,
+        "121": 5,
+        "83": 2,
+        "27": 4,
+        "85": 2,
+        "97": 2,
+        "20": 3,
+        "57": 2,
+        "103": 3,
+        "110": 2,
+        "89": 4,
+        "68": 4,
+        "90": 2,
+        "81": 1,
+        "105": 3,
+        "22": 2,
+        "84": 1,
+        "11": 2,
+        "45": 3,
+        "25": 2,
+        "9": 2,
+        "114": 2,
+        "74": 1,
+        "4": 2,
+        "31": 1,
+        "109": 1,
+        "38": 3,
+        "104": 3,
+        "14": 2,
+        "13": 1,
+        "26": 1,
+        "39": 1,
+        "17": 3,
+        "111": 1,
+        "7": 1,
+        "35": 1,
+        "107": 1,
+        "67": 2,
+        "100": 1,
+        "43": 1,
+        "50": 1,
+        "66": 1,
+        "44": 1,
+        "60": 2,
+        "112": 3,
+        "87": 1,
+        "18": 1,
+        "86": 1,
+        "56": 1,
+        "59": 1,
+        "36": 2,
+        "24": 1,
+        "69": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 1,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 29,
+      "elapsed_seconds": 1.2270425419992534,
+      "directory": "seed-29-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 19,
+      "action_counts": {
+        "22": 113,
+        "84": 7,
+        "73": 3,
+        "47": 62,
+        "29": 28,
+        "60": 4,
+        "116": 1,
+        "89": 1,
+        "103": 5,
+        "105": 3,
+        "30": 3,
+        "71": 4,
+        "49": 2,
+        "31": 5,
+        "52": 1,
+        "55": 1,
+        "58": 1,
+        "13": 6,
+        "108": 6
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 128,
+      "episodes": 0,
+      "reward": 0.0,
+      "loss": 1.2388203376626896e-06,
+      "phase": "train",
+      "seed": 29,
+      "elapsed_seconds": 1.8061477500014007,
+      "directory": "seed-29-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 0.26364853978157043,
+      "unique_actions": 18,
+      "action_counts": {
+        "75": 1,
+        "22": 10,
+        "63": 26,
+        "60": 12,
+        "0": 4,
+        "84": 9,
+        "30": 50,
+        "47": 6,
+        "61": 1,
+        "70": 1,
+        "89": 1,
+        "7": 1,
+        "11": 1,
+        "35": 1,
+        "121": 1,
+        "102": 1,
+        "10": 1,
+        "82": 1
+      },
+      "nonzero_rewards": 0,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      }
+    },
+    {
+      "steps": 256,
+      "episodes": 0,
+      "reward": 40.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 29,
+      "elapsed_seconds": 0.8028857500030426,
+      "directory": "seed-29-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 128,
+          "rgb": "frame-000128-reset-001.png",
+          "processed": "frame-000128-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 256,
+          "rgb": "frame-000256-reset-001.png",
+          "processed": "frame-000256-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 15,
+      "action_counts": {
+        "22": 33,
+        "35": 86,
+        "30": 62,
+        "63": 6,
+        "73": 21,
+        "89": 1,
+        "58": 1,
+        "0": 18,
+        "60": 3,
+        "9": 17,
+        "107": 1,
+        "36": 3,
+        "5": 1,
+        "90": 2,
+        "29": 1
+      },
+      "nonzero_rewards": 2,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 40
+      }
+    }
+  ]
+}

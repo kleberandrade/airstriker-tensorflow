@@ -1,0 +1,40 @@
+CRAP Report
+===========
+Languages: python
+
+Function                       Namespace                                            CC    Cov%     CRAP
+-------------------------------------------------------------------------------------------------------
+run                            mario_tensorflow.training                             8 100.0%      8.0
+parse_args                     mario_tensorflow.cli                                  6 100.0%      6.0
+main                           mario_tensorflow.cli                                  5 100.0%      5.0
+_trial                         mario_tensorflow.experiment                           5 100.0%      5.0
+execute                        mario_tensorflow.experiment                           4 100.0%      4.0
+__post_init__                  mario_tensorflow.experiment.ExperimentConfig          4 100.0%      4.0
+_frame                         mario_tensorflow.preprocessing.FrameStack             4 100.0%      4.0
+__init__                       mario_tensorflow.agent.Agent                          3 100.0%      3.0
+step                           mario_tensorflow.recording.RecordedEnvironment        3 100.0%      3.0
+act                            mario_tensorflow.agent.Agent                          2 100.0%      2.0
+make_retro                     mario_tensorflow.environments                         2 100.0%      2.0
+step                           mario_tensorflow.environments.SyntheticEnvironment    2 100.0%      2.0
+_policy                        mario_tensorflow.experiment                           2 100.0%      2.0
+_trace_summary                 mario_tensorflow.experiment                           2 100.0%      2.0
+_numpy_scalar                  mario_tensorflow.recording                            2 100.0%      2.0
+__init__                       mario_tensorflow.recording.RecordedEnvironment        2 100.0%      2.0
+bootstrap_targets              mario_tensorflow.agent                                1 100.0%      1.0
+learn                          mario_tensorflow.agent.Agent                          1 100.0%      1.0
+save                           mario_tensorflow.agent.Agent                          1 100.0%      1.0
+values                         mario_tensorflow.agent.Agent                          1 100.0%      1.0
+_frame                         mario_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+close                          mario_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+reset                          mario_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+_save_manifest                 mario_tensorflow.experiment                           1 100.0%      1.0
+_weights                       mario_tensorflow.experiment                           1 100.0%      1.0
+__init__                       mario_tensorflow.experiment.RandomPolicy              1 100.0%      1.0
+act                            mario_tensorflow.experiment.RandomPolicy              1 100.0%      1.0
+__init__                       mario_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+append                         mario_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+reset                          mario_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+_capture                       mario_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+_write                         mario_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+close                          mario_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+reset                          mario_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
