@@ -69,7 +69,7 @@ mario-tf evaluate --env retro --game SuperMarioWorld-Snes-v0 --steps 32 --seed 7
 
 Use `--state NAME` for an installed integration savestate; otherwise Stable Retro uses its default. Rewards, termination rules, and savestates belong to the selected integration. Actions use its discrete filtered button combinations. No reward OCR or desktop-window detection is required. Missing ROM errors propagate; there is no automatic fallback to synthetic data.
 
-**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No Super Mario World ROM was imported, downloaded, executed, or used for training. The separate Airstriker experiment below validates the shared adapter only. Adapter contract tests use a stub and do not validate emulation.
+**Mario-specific verified limitation:** Stable Retro 1.0.1 installed and listed `SuperMarioWorld-Snes-v0`, but creation failed with `FileNotFoundError: Game not found ... Did you make sure to import the ROM?`. No Super Mario World ROM was imported, downloaded, executed, or used for training. The separate Airstriker experiment validates the shared adapter only. Adapter contract tests use a stub and do not validate emulation.
 
 ## Model, configuration, and API
 
@@ -101,7 +101,7 @@ python -m build
 python -m pip check
 ```
 
-Offline tests cover frame semantics, seeds, terminal targets, real weight updates, checkpoint roundtrip, unchanged evaluation weights, CLI records, and episode resets. CI installs the lock on Python 3.13, runs these checks, executes the smoke example and builds distributions. The CI badge links to the workflow on `master`; a local pass does not imply GitHub Actions has run the unpublished changes.
+Offline tests cover frame semantics, seeds, terminal targets, real weight updates, checkpoint roundtrip, unchanged evaluation weights, CLI records, and episode resets. CI installs the lock on Python 3.13, runs these checks, executes the smoke example and builds distributions. The CI badge links to the workflow on `master`. The published offline suite, smoke example and package build passed on Ubuntu with Python 3.13 ([verified run](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748)). This does not validate Mario gameplay.
 
 ## Layout and migration
 

@@ -51,3 +51,6 @@
 
 - User explicitly authorized pushing this project to its principal branch and following CI through completion. Confirmed through GitHub API that the default branch is `master`; fetched remote changes and found no divergence.
 - User correctly highlighted that the new screenshots depict another game. Made the README opening explicit: new emulator captures are Airstriker on Genesis; Super Mario World on SNES is still unvalidated. Corrected the Mario-specific asset paragraph so it does not incorrectly imply no game ROM was executed at all.
+- Confirmed GitHub default branch `master`; fetched before pushing and found no remote divergence. Pushed the six implementation commits plus the image-label clarification as `bb65d8e`.
+- Remote GitHub Actions run [43800722748](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748) passed on Ubuntu/Python 3.13: pinned install, editable install, lint, format, pytest, synthetic smoke, and wheel/source build. Dependency graph update also passed. No CI failure required a code fix.
+- Updated current documentation to reflect actual publication and remote offline validation while preserving the distinction from unvalidated Mario gameplay.

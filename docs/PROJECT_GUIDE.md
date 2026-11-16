@@ -10,7 +10,7 @@ See the [recorded experiment](experiments/2026-11-16-airstriker/REPORT.md), incl
 
 ## Supported toolchain
 
-The project deliberately supports CPython **3.13**. Validation took place on macOS Apple Silicon with CPU execution; GitHub Actions targets Ubuntu. Linux package resolution was checked, but this local run did not execute on Linux. GPU execution, native Windows and Intel macOS have not been validated.
+The project deliberately supports CPython **3.13**. The real Airstriker experiment ran on macOS Apple Silicon with CPU execution. The offline suite, synthetic smoke and package build also passed on Ubuntu in [GitHub Actions](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748). Real-emulator gameplay was not tested on Linux. GPU execution, native Windows and Intel macOS have not been validated.
 
 The current direct runtime pins are TensorFlow 2.21.0, NumPy 2.5.5 and Pillow 13.0.0. The optional emulator is Stable Retro 1.0.1. Development pins are pytest 9.2.0, pytest-cov 7.1.0, Ruff 0.17.5, build 1.6.1 and setuptools 84.2.1.
 
@@ -176,7 +176,7 @@ The suite checks image shape/range/history, invalid inputs, seeded actions and p
 - TensorFlow CPU profiling warnings on this Mac: recorded as emitted; no GPU was available or used.
 - Unavailable emulator wheel: consult upstream platform build instructions. A successful pip resolution on another platform is not a substitute for running its tests.
 
-GitHub CI installs the lock, runs offline tests, lint, formatting, the synthetic smoke example and package build. It does not currently execute the recorded Airstriker experiment or verify Mario. These changes have not been pushed, so no remote CI success is claimed.
+GitHub CI installs the lock, runs offline tests, lint, formatting, the synthetic smoke example and package build. It does not currently execute the recorded Airstriker experiment or verify Mario. The changes were pushed to `master` with user authorization, and the [published offline CI run passed](https://github.com/kleberandrade/mario-tensorflow/actions/runs/43800722748).
 
 ## Interpretation, limitations and rights
 
