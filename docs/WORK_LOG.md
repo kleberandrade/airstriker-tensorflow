@@ -20,11 +20,11 @@
 - Same mutation command selecting line 9 of `agent.py`: all five selected bootstrap-arithmetic mutants killed. Mutation checking was deliberately scoped to preprocessing and bootstrap arithmetic; no repository-wide mutation score is claimed.
 - Stable Retro 1.0.1 imported and listed `SuperMarioWorld-Snes-v0`. Opening that integration returned `FileNotFoundError: Game not found ... import the ROM`. No ROM was obtained and no Mario integration/gameplay was executed. Adapter tests replace the factory only and are explicitly labeled contract tests.
 - README and archived-document relative links/images checked: none missing. Original MIT notice retained; third-party ROM-download link removed; historical screenshot rights explicitly excluded from MIT relicensing.
-- GitHub About updated successfully via authorized Git credential helper. Exact applied text: **Educational TensorFlow Q-learning experiment for Super Mario World, with checkpoints, evaluation, and an optional Stable Retro integration.**
+- GitHub About updated successfully via authorized Git credential helper and confirmed by API readback. Exact applied text: **Educational TensorFlow Q-learning for Super Mario World, with reproducible offline tests and optional Stable Retro integration.**
 
 ## Limits and ownership
 
 - Keras emits 12 NumPy `__array__(copy=...)` deprecation warnings during checkpoint serialization tests; tests pass. TensorFlow also reports CPU-frequency profiling warnings on this Mac. No warnings were suppressed.
 - There is no replay/target network, trained model, benchmark, GPU test, desktop GUI test, or exact training-resume support. Synthetic results are test plumbing only.
-- During work, a concurrent edit renamed the historical script to `legacy/screen_capture.py` and expanded `pyproject.toml`; these were preserved and verified. Their ownership was not confirmed, so those paths are excluded from my commits and remain available in the working tree/staging area for review.
+- Unexpected edits to the historical-script path and packaging metadata were preserved. The user confirmed there is no other chat working on this project; inspected and adopted the final `legacy/screen_capture.py` and `pyproject.toml` contents into the final packaging commit. Historical script content matches the original exactly.
 - No push, deployment, package publication, or long training was performed.

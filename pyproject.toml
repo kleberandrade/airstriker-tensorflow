@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mario-tensorflow"
+version = "0.2.0"
+description = "Educational TensorFlow Q-learning experiment for Super Mario World"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+license = "MIT"
+authors = [{name = "Kléber de Oliveira Andrade"}]
+dependencies = ["tensorflow==2.21.0", "numpy==2.4.3", "Pillow==12.2.0"]
+
+[project.optional-dependencies]
+retro = ["stable-retro==1.0.1"]
+dev = ["pytest==9.0.2", "pytest-cov==7.1.0", "ruff==0.15.7", "build==1.4.0"]
+
+[project.scripts]
+mario-tf = "mario_tensorflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
