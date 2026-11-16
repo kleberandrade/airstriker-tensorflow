@@ -8,18 +8,18 @@
 
 **Learn how reinforcement learning connects images, actions, rewards and a neural network.** This educational project uses TensorFlow/Keras to control **Airstriker**, a Sega Genesis shooter included with Stable Retro for non-commercial testing.
 
-![Actual Airstriker gameplay captured during checkpoint evaluation](images/airstriker-gameplay.png)
+![Actual Airstriker gameplay after 10000 training steps, seed 13](images/airstriker-long-trained.png)
 
-*Actual emulator capture: seed 13, evaluation step 256, score 40. A screenshot shows a game state; it does not establish that a policy has learned to play well.*
+*New real capture: seed 13, after 10,000 training steps and 6,000 evaluation steps, score 520. This successful seed is not the average: the three-checkpoint mean was below the random baseline. The report includes the zero-reward failure too.*
 
-The project contains a working image pipeline, a small Q-network, bounded training, checkpoint evaluation, seeded comparisons and a recorder. **It is a learning baseline, not a solved-game agent.** The recorded 128-step training windows earned no positive rewards; later evaluation differences are exploratory.
+The project contains a working image pipeline, a small Q-network, bounded training, checkpoint evaluation, seeded comparisons and a recorder. **It is a learning baseline, not a solved-game agent.** The longer experiment trained three networks for 10,000 steps each. Their mean evaluation reward did not exceed the random baseline; the mixed results are part of the lesson.
 
 ## Start here
 
 1. [Run your first experiment](#install-and-run): install the tested environment and execute a short real-emulator run.
 2. [Understand one decision](#how-one-decision-works): follow a frame through the network and back to the game.
 3. [Work through the tutorial](docs/PROJECT_GUIDE.md): inspect real images, calculate a learning target and compare policies fairly.
-4. [Read the evidence](docs/experiments/2026-11-16-airstriker/REPORT.md): screenshots, per-seed results, raw traces, provenance and limitations.
+4. [Read the longer experiment](docs/experiments/2026-11-16-airstriker-long/REPORT.md): screenshots, per-seed results, raw traces, provenance and limitations.
 
 ## Install and run
 
@@ -73,7 +73,7 @@ That example uses an **explicitly synthetic test fixture**, trains for eight ste
 
 The processed image below is one channel of the actual observation used for the gameplay capture above, enlarged by the browser. The model receives four consecutive channels, not this single image alone.
 
-<img src="images/airstriker-model-input.png" alt="Actual 32 by 32 grayscale input channel" width="128" height="128">
+<img src="images/airstriker-long-input.png" alt="Actual 32 by 32 grayscale input channel" width="128" height="128">
 
 The Q-learning target is:
 
@@ -84,16 +84,37 @@ target = reward                                # true terminal transition
 
 For a reward of 2 and best predicted next value of 5, the continuing target is `2 + 0.99 × 5 = 6.95`. If the game truly ends, the target is 2. A time-limit truncation still bootstraps from its final frame. The [tutorial](docs/PROJECT_GUIDE.md) explains why these cases differ and why a model can change weights even when reward is zero.
 
-## What the recorded experiment actually found
+## Longer training versus random actions
 
-Three seeds, 12 runs, **2,688 real transitions and 90 PNGs** were recorded:
+Three independent seeds (7/13/29) received **10,000 training steps each**, about 78× the original smoke budget. Each random, untrained and checkpoint evaluation then received the same **6,000-step budget**.
 
-- Random evaluation rewards: **0, 0, 0**.
-- Untrained greedy network: **20, 0, 0**.
-- Short training windows: **0, 0, 0**.
-- Saved/reloaded checkpoint evaluation: **20, 40, 40**.
+- Random evaluation: **300, 140, 300** points; mean **246.67**.
+- Untrained greedy network: **460, 0, 180**; mean **213.33**.
+- Trained checkpoint: **0, 520, 120**; mean **213.33**.
 
-No complete episode finished. The sample is too small to establish a learning improvement, and the training windows received no positive reward. Treat this as evidence that the integration and measurement pipeline work. Inspect [the full report](docs/experiments/2026-11-16-airstriker/REPORT.md) before drawing performance conclusions.
+Only one checkpoint beat its matching random baseline. The checkpoint mean was 33.33 points below random, with large differences between seeds. This sample does **not** show a consistent learning advantage. Positive training rewards alone did not guarantee a useful greedy policy.
+
+![Fixed-budget comparison: all three seeds and their means](docs/experiments/2026-11-16-airstriker-long/evaluation-comparison.png)
+
+The experiment recorded **84,000 real transitions**, including 30,000 training steps, complete episodes, unfinished tails, new native/processed screenshots and training-reward curves. The [detailed report](docs/experiments/2026-11-16-airstriker-long/REPORT.md) discloses every seed, the failed policy, compressed raw traces, hashes and limitations. The [original short smoke experiment](docs/experiments/2026-11-16-airstriker/REPORT.md) remains available as historical integration evidence; its shorter-budget scores are not directly comparable.
+
+Longer training is explicit and opt-in:
+
+```sh
+python examples/retro_experiment.py --output runs/airstriker-long-reproduction \
+  --seeds 7 13 29 --train-steps 10000 --evaluate-steps 6000 --capture-every 1000
+```
+
+You can audit the published data and regenerate the figures **without retraining**:
+
+```sh
+python -m pip install -e '.[report]'
+python examples/analyze_experiment.py \
+  --source docs/experiments/2026-11-16-airstriker-long \
+  --output runs/long-report --window 1000
+```
+
+The optional report extra pins Matplotlib; the development lock includes it. Read the [tutorial's longer-training lesson](docs/PROJECT_GUIDE.md#11-learn-from-a-longer-run-that-does-not-beat-random) to understand the comparison.
 
 ## Python API
 
@@ -115,12 +136,12 @@ Training writes a `.keras` checkpoint and the CLI writes an adjacent JSON run re
 
 ## Project layout and checks
 
-- `src/airstriker_tensorflow/`: environment, preprocessing, agent/model, training/evaluation, recording, experiment orchestration and CLI.
+- `src/airstriker_tensorflow/`: environment, preprocessing, agent/model, training/evaluation, recording, experiment orchestration, trace analysis and CLI.
 - `examples/`: executable synthetic smoke and real Airstriker comparison.
 - `tests/`: offline behavior, error paths and explicitly labeled adapter-contract tests.
 - `images/`: actual Airstriker screenshots and processed input used in this README.
 - `docs/PROJECT_GUIDE.md`: practical teaching guide, API and experiment methodology.
-- `docs/experiments/2026-11-16-airstriker/`: measured results, 90 PNGs, trace records and asset provenance.
+- `docs/experiments/`: short and longer measured runs, gameplay images, compressed traces, plots and provenance.
 
 ```sh
 ruff check src tests examples

@@ -1,0 +1,48 @@
+CRAP Report
+===========
+Languages: python
+
+Function                       Namespace                                                 CC    Cov%     CRAP
+------------------------------------------------------------------------------------------------------------
+run                            airstriker_tensorflow.training                             8 100.0%      8.0
+_episodes                      airstriker_tensorflow.analysis                             6 100.0%      6.0
+parse_args                     airstriker_tensorflow.cli                                  6 100.0%      6.0
+main                           airstriker_tensorflow.cli                                  5 100.0%      5.0
+_trial                         airstriker_tensorflow.experiment                           5 100.0%      5.0
+_checked_run                   airstriker_tensorflow.analysis                             4 100.0%      4.0
+_paired_difference             airstriker_tensorflow.analysis                             4 100.0%      4.0
+execute                        airstriker_tensorflow.experiment                           4 100.0%      4.0
+__post_init__                  airstriker_tensorflow.experiment.ExperimentConfig          4 100.0%      4.0
+_frame                         airstriker_tensorflow.preprocessing.FrameStack             4 100.0%      4.0
+__init__                       airstriker_tensorflow.agent.Agent                          3 100.0%      3.0
+_phase_statistics              airstriker_tensorflow.analysis                             3 100.0%      3.0
+summarize_trace                airstriker_tensorflow.analysis                             3 100.0%      3.0
+step                           airstriker_tensorflow.recording.RecordedEnvironment        3 100.0%      3.0
+act                            airstriker_tensorflow.agent.Agent                          2 100.0%      2.0
+_reward                        airstriker_tensorflow.analysis                             2 100.0%      2.0
+_trace                         airstriker_tensorflow.analysis                             2 100.0%      2.0
+make_retro                     airstriker_tensorflow.environments                         2 100.0%      2.0
+step                           airstriker_tensorflow.environments.SyntheticEnvironment    2 100.0%      2.0
+_policy                        airstriker_tensorflow.experiment                           2 100.0%      2.0
+_trace_summary                 airstriker_tensorflow.experiment                           2 100.0%      2.0
+_numpy_scalar                  airstriker_tensorflow.recording                            2 100.0%      2.0
+__init__                       airstriker_tensorflow.recording.RecordedEnvironment        2 100.0%      2.0
+bootstrap_targets              airstriker_tensorflow.agent                                1 100.0%      1.0
+learn                          airstriker_tensorflow.agent.Agent                          1 100.0%      1.0
+save                           airstriker_tensorflow.agent.Agent                          1 100.0%      1.0
+values                         airstriker_tensorflow.agent.Agent                          1 100.0%      1.0
+analyze_experiment             airstriker_tensorflow.analysis                             1 100.0%      1.0
+_frame                         airstriker_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+close                          airstriker_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+reset                          airstriker_tensorflow.environments.SyntheticEnvironment    1 100.0%      1.0
+_save_manifest                 airstriker_tensorflow.experiment                           1 100.0%      1.0
+_weights                       airstriker_tensorflow.experiment                           1 100.0%      1.0
+__init__                       airstriker_tensorflow.experiment.RandomPolicy              1 100.0%      1.0
+act                            airstriker_tensorflow.experiment.RandomPolicy              1 100.0%      1.0
+__init__                       airstriker_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+append                         airstriker_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+reset                          airstriker_tensorflow.preprocessing.FrameStack             1 100.0%      1.0
+_capture                       airstriker_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+_write                         airstriker_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+close                          airstriker_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0
+reset                          airstriker_tensorflow.recording.RecordedEnvironment        1 100.0%      1.0

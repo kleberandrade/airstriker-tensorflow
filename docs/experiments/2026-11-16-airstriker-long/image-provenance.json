@@ -1,0 +1,18 @@
+{
+  "images/airstriker-long-trained.png": {
+    "source": "seed-13-trained/frame-006000-reset-001.png",
+    "sha256": "d039afb42f58efeac848f13c252eabd8e71bc9c534ef00491d5789ca4ab16537"
+  },
+  "images/airstriker-long-failure.png": {
+    "source": "seed-7-trained/frame-006000-reset-005.png",
+    "sha256": "7d361e6056bc6f544ea6166310da25bccaf9bad5c543ed778fb591f3146ebe4d"
+  },
+  "images/airstriker-long-random.png": {
+    "source": "seed-7-random/frame-006000-reset-004.png",
+    "sha256": "1f872898abfc15698cc763fc504f04f05890e9016d6eaaf81a3713410a8919e5"
+  },
+  "images/airstriker-long-input.png": {
+    "source": "seed-13-trained/frame-006000-reset-001-processed.png",
+    "sha256": "730975384ee71cdd303205d917dae0fff4aad193b9fb094923682d5ccc7b7e96"
+  }
+}

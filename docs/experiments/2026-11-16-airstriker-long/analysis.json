@@ -1,0 +1,3556 @@
+{
+  "configuration": {
+    "game": "Airstriker-Genesis-v0",
+    "seeds": [
+      7,
+      13,
+      29
+    ],
+    "train_steps": 10000,
+    "evaluate_steps": 6000,
+    "capture_every": 1000
+  },
+  "source_manifest_sha256": "f5e569df8b065bb1a9bea9b8cbacb56b8ced9488f90027ababaad6008c09ab1f",
+  "window_steps": 1000,
+  "total_steps": 84000,
+  "groups": {
+    "random": {
+      "seeds": [
+        7,
+        13,
+        29
+      ],
+      "rewards": [
+        300.0,
+        140.0,
+        300.0
+      ],
+      "mean_reward": 246.66666666666666,
+      "seed_population_sd": 75.42472332656507,
+      "completed_episodes": 10
+    },
+    "train": {
+      "seeds": [
+        7,
+        13,
+        29
+      ],
+      "rewards": [
+        860.0,
+        920.0,
+        900.0
+      ],
+      "mean_reward": 893.3333333333334,
+      "seed_population_sd": 24.94438257849294,
+      "completed_episodes": 15
+    },
+    "trained": {
+      "seeds": [
+        7,
+        13,
+        29
+      ],
+      "rewards": [
+        0.0,
+        520.0,
+        120.0
+      ],
+      "mean_reward": 213.33333333333334,
+      "seed_population_sd": 222.3110933404409,
+      "completed_episodes": 5
+    },
+    "untrained": {
+      "seeds": [
+        7,
+        13,
+        29
+      ],
+      "rewards": [
+        460.0,
+        0.0,
+        180.0
+      ],
+      "mean_reward": 213.33333333333334,
+      "seed_population_sd": 189.2675942210452,
+      "completed_episodes": 10
+    }
+  },
+  "checkpoint_minus_random": [
+    {
+      "seed": 7,
+      "reward_difference": -300.0
+    },
+    {
+      "seed": 13,
+      "reward_difference": 380.0
+    },
+    {
+      "seed": 29,
+      "reward_difference": -180.0
+    }
+  ],
+  "runs": [
+    {
+      "steps": 6000,
+      "episodes": 3,
+      "reward": 300.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 7,
+      "elapsed_seconds": 2.5985132089990657,
+      "directory": "seed-7-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1283,
+          "rgb": "frame-001283-reset-002.png",
+          "processed": "frame-001283-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2760,
+          "rgb": "frame-002760-reset-003.png",
+          "processed": "frame-002760-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4548,
+          "rgb": "frame-004548-reset-004.png",
+          "processed": "frame-004548-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-004.png",
+          "processed": "frame-006000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 126,
+      "action_counts": {
+        "119": 53,
+        "78": 47,
+        "86": 40,
+        "113": 47,
+        "72": 42,
+        "97": 42,
+        "105": 47,
+        "28": 41,
+        "6": 44,
+        "37": 58,
+        "35": 54,
+        "110": 54,
+        "114": 36,
+        "0": 39,
+        "62": 49,
+        "103": 42,
+        "16": 52,
+        "100": 46,
+        "15": 49,
+        "58": 54,
+        "102": 51,
+        "38": 45,
+        "43": 37,
+        "90": 54,
+        "32": 52,
+        "124": 53,
+        "56": 61,
+        "60": 43,
+        "63": 47,
+        "73": 48,
+        "69": 43,
+        "64": 46,
+        "125": 45,
+        "101": 54,
+        "99": 49,
+        "88": 48,
+        "42": 53,
+        "27": 49,
+        "106": 61,
+        "20": 44,
+        "108": 52,
+        "77": 37,
+        "14": 56,
+        "5": 40,
+        "4": 47,
+        "17": 45,
+        "122": 50,
+        "115": 51,
+        "79": 48,
+        "55": 54,
+        "33": 62,
+        "47": 63,
+        "31": 59,
+        "1": 49,
+        "12": 53,
+        "24": 65,
+        "87": 52,
+        "111": 59,
+        "25": 51,
+        "46": 46,
+        "61": 47,
+        "104": 54,
+        "83": 53,
+        "19": 44,
+        "67": 53,
+        "121": 47,
+        "23": 43,
+        "118": 47,
+        "89": 52,
+        "80": 50,
+        "93": 51,
+        "59": 46,
+        "11": 47,
+        "30": 42,
+        "68": 36,
+        "91": 44,
+        "109": 41,
+        "45": 51,
+        "81": 34,
+        "75": 46,
+        "13": 46,
+        "7": 50,
+        "48": 60,
+        "40": 48,
+        "18": 39,
+        "50": 36,
+        "123": 41,
+        "49": 57,
+        "74": 43,
+        "76": 52,
+        "85": 58,
+        "120": 32,
+        "70": 44,
+        "51": 54,
+        "84": 38,
+        "71": 37,
+        "94": 52,
+        "116": 53,
+        "22": 50,
+        "26": 46,
+        "95": 61,
+        "3": 37,
+        "52": 41,
+        "82": 54,
+        "53": 40,
+        "9": 37,
+        "65": 50,
+        "54": 45,
+        "44": 30,
+        "66": 37,
+        "96": 60,
+        "117": 39,
+        "29": 50,
+        "39": 55,
+        "34": 36,
+        "112": 50,
+        "8": 58,
+        "41": 49,
+        "92": 55,
+        "21": 44,
+        "57": 44,
+        "2": 41,
+        "107": 45,
+        "10": 37,
+        "36": 45,
+        "98": 38
+      },
+      "nonzero_rewards": 15,
+      "terminations": 3,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 0,
+        "score": 60
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 300.0,
+        "completed_episodes": [
+          {
+            "return": 0.0,
+            "length": 1283,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 40.0,
+            "length": 1477,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 200.0,
+            "length": 1788,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 60.0,
+          "length": 1452
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 60.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 4,
+      "reward": 460.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 7,
+      "elapsed_seconds": 13.157414542001789,
+      "directory": "seed-7-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1394,
+          "rgb": "frame-001394-reset-002.png",
+          "processed": "frame-001394-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2788,
+          "rgb": "frame-002788-reset-003.png",
+          "processed": "frame-002788-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4182,
+          "rgb": "frame-004182-reset-004.png",
+          "processed": "frame-004182-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5576,
+          "rgb": "frame-005576-reset-005.png",
+          "processed": "frame-005576-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-005.png",
+          "processed": "frame-006000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 16,
+      "action_counts": {
+        "21": 832,
+        "6": 1939,
+        "102": 653,
+        "111": 195,
+        "52": 309,
+        "27": 1360,
+        "80": 44,
+        "39": 19,
+        "59": 14,
+        "1": 98,
+        "115": 459,
+        "67": 39,
+        "100": 18,
+        "25": 9,
+        "70": 8,
+        "46": 4
+      },
+      "nonzero_rewards": 23,
+      "terminations": 4,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 2,
+        "score": 60
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 460.0,
+        "completed_episodes": [
+          {
+            "return": 100.0,
+            "length": 1394,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1394,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1394,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1394,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 60.0,
+          "length": 424
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 80.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 10000,
+      "episodes": 4,
+      "reward": 860.0,
+      "loss": 0.0011662266866601574,
+      "phase": "train",
+      "seed": 7,
+      "elapsed_seconds": 76.29559787501057,
+      "directory": "seed-7-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-001.png",
+          "processed": "frame-002000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-001.png",
+          "processed": "frame-003000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3845,
+          "rgb": "frame-003845-reset-002.png",
+          "processed": "frame-003845-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-002.png",
+          "processed": "frame-004000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-002.png",
+          "processed": "frame-005000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5616,
+          "rgb": "frame-005616-reset-003.png",
+          "processed": "frame-005616-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-003.png",
+          "processed": "frame-006000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 7000,
+          "rgb": "frame-007000-reset-003.png",
+          "processed": "frame-007000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 7174,
+          "rgb": "frame-007174-reset-004.png",
+          "processed": "frame-007174-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 8000,
+          "rgb": "frame-008000-reset-004.png",
+          "processed": "frame-008000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9000,
+          "rgb": "frame-009000-reset-004.png",
+          "processed": "frame-009000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9377,
+          "rgb": "frame-009377-reset-005.png",
+          "processed": "frame-009377-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 10000,
+          "rgb": "frame-010000-reset-005.png",
+          "processed": "frame-010000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 7.745095252990723,
+      "unique_actions": 126,
+      "action_counts": {
+        "21": 102,
+        "6": 122,
+        "62": 37,
+        "39": 53,
+        "103": 83,
+        "17": 22,
+        "64": 131,
+        "77": 34,
+        "104": 12,
+        "102": 62,
+        "52": 1902,
+        "83": 112,
+        "115": 107,
+        "48": 83,
+        "122": 96,
+        "110": 97,
+        "114": 54,
+        "111": 41,
+        "15": 9,
+        "109": 64,
+        "79": 8,
+        "51": 48,
+        "59": 7,
+        "26": 81,
+        "3": 66,
+        "38": 78,
+        "74": 99,
+        "29": 143,
+        "101": 66,
+        "57": 53,
+        "43": 74,
+        "94": 26,
+        "93": 20,
+        "65": 268,
+        "85": 74,
+        "124": 55,
+        "13": 95,
+        "63": 4,
+        "92": 32,
+        "91": 118,
+        "119": 67,
+        "70": 58,
+        "99": 210,
+        "28": 30,
+        "18": 26,
+        "86": 48,
+        "1": 81,
+        "23": 8,
+        "49": 114,
+        "11": 48,
+        "24": 90,
+        "34": 59,
+        "105": 60,
+        "27": 107,
+        "61": 32,
+        "67": 134,
+        "41": 119,
+        "60": 63,
+        "32": 35,
+        "95": 102,
+        "4": 58,
+        "40": 7,
+        "112": 20,
+        "107": 57,
+        "5": 63,
+        "54": 418,
+        "88": 19,
+        "31": 67,
+        "73": 11,
+        "84": 44,
+        "20": 35,
+        "125": 29,
+        "14": 85,
+        "69": 88,
+        "36": 78,
+        "55": 94,
+        "121": 76,
+        "9": 5,
+        "33": 14,
+        "46": 52,
+        "68": 85,
+        "37": 116,
+        "89": 76,
+        "117": 47,
+        "16": 64,
+        "7": 48,
+        "22": 77,
+        "87": 13,
+        "118": 32,
+        "53": 95,
+        "45": 136,
+        "82": 44,
+        "12": 37,
+        "123": 61,
+        "25": 61,
+        "56": 72,
+        "113": 39,
+        "116": 55,
+        "96": 22,
+        "75": 123,
+        "90": 94,
+        "8": 6,
+        "42": 21,
+        "10": 20,
+        "98": 8,
+        "80": 101,
+        "50": 113,
+        "19": 60,
+        "81": 40,
+        "76": 105,
+        "0": 73,
+        "108": 53,
+        "78": 2,
+        "66": 50,
+        "72": 115,
+        "71": 76,
+        "47": 76,
+        "120": 25,
+        "35": 5,
+        "106": 51,
+        "30": 5,
+        "2": 63,
+        "97": 42,
+        "44": 5,
+        "100": 32,
+        "58": 7
+      },
+      "nonzero_rewards": 43,
+      "terminations": 4,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 2,
+        "score": 0
+      },
+      "trace_statistics": {
+        "steps": 10000,
+        "reward": 860.0,
+        "completed_episodes": [
+          {
+            "return": 300.0,
+            "length": 3845,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 200.0,
+            "length": 1771,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 120.0,
+            "length": 1558,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 240.0,
+            "length": 2203,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 0.0,
+          "length": 623
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 120.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 6001,
+            "end": 7000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 7001,
+            "end": 8000,
+            "steps": 1000,
+            "reward": 120.0
+          },
+          {
+            "start": 8001,
+            "end": 9000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 9001,
+            "end": 10000,
+            "steps": 1000,
+            "reward": 80.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 4,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 7,
+      "elapsed_seconds": 10.58349916600855,
+      "directory": "seed-7-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1212,
+          "rgb": "frame-001212-reset-002.png",
+          "processed": "frame-001212-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2424,
+          "rgb": "frame-002424-reset-003.png",
+          "processed": "frame-002424-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3636,
+          "rgb": "frame-003636-reset-004.png",
+          "processed": "frame-003636-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-004.png",
+          "processed": "frame-004000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4848,
+          "rgb": "frame-004848-reset-005.png",
+          "processed": "frame-004848-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-005.png",
+          "processed": "frame-005000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-005.png",
+          "processed": "frame-006000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 1,
+      "action_counts": {
+        "45": 6000
+      },
+      "nonzero_rewards": 0,
+      "terminations": 4,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 0,
+        "score": 0
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 0.0,
+        "completed_episodes": [
+          {
+            "return": 0.0,
+            "length": 1212,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1212,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1212,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1212,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 0.0,
+          "length": 1152
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 0.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 3,
+      "reward": 140.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 13,
+      "elapsed_seconds": 2.471292665999499,
+      "directory": "seed-13-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1634,
+          "rgb": "frame-001634-reset-002.png",
+          "processed": "frame-001634-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-002.png",
+          "processed": "frame-003000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3603,
+          "rgb": "frame-003603-reset-003.png",
+          "processed": "frame-003603-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4914,
+          "rgb": "frame-004914-reset-004.png",
+          "processed": "frame-004914-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-004.png",
+          "processed": "frame-006000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 126,
+      "action_counts": {
+        "112": 56,
+        "108": 47,
+        "103": 47,
+        "107": 48,
+        "8": 48,
+        "102": 46,
+        "118": 51,
+        "32": 74,
+        "21": 49,
+        "9": 50,
+        "100": 48,
+        "119": 54,
+        "76": 42,
+        "77": 49,
+        "99": 48,
+        "0": 60,
+        "105": 41,
+        "114": 51,
+        "16": 46,
+        "124": 39,
+        "36": 44,
+        "60": 55,
+        "113": 49,
+        "10": 43,
+        "82": 55,
+        "55": 47,
+        "43": 61,
+        "86": 48,
+        "51": 56,
+        "111": 55,
+        "65": 46,
+        "14": 60,
+        "67": 42,
+        "62": 43,
+        "39": 62,
+        "31": 52,
+        "35": 44,
+        "97": 52,
+        "48": 44,
+        "123": 43,
+        "47": 45,
+        "49": 51,
+        "92": 43,
+        "45": 53,
+        "125": 49,
+        "80": 54,
+        "3": 54,
+        "75": 40,
+        "121": 41,
+        "28": 38,
+        "1": 34,
+        "69": 49,
+        "91": 39,
+        "30": 44,
+        "6": 51,
+        "13": 43,
+        "93": 54,
+        "40": 46,
+        "120": 33,
+        "19": 49,
+        "83": 61,
+        "57": 53,
+        "59": 51,
+        "101": 39,
+        "15": 61,
+        "94": 47,
+        "116": 51,
+        "89": 55,
+        "110": 53,
+        "46": 32,
+        "33": 50,
+        "66": 51,
+        "20": 44,
+        "90": 37,
+        "70": 50,
+        "56": 47,
+        "85": 47,
+        "52": 44,
+        "50": 50,
+        "26": 41,
+        "34": 40,
+        "23": 47,
+        "27": 43,
+        "53": 54,
+        "58": 49,
+        "38": 27,
+        "4": 54,
+        "104": 40,
+        "72": 40,
+        "87": 54,
+        "79": 48,
+        "44": 42,
+        "41": 50,
+        "11": 49,
+        "63": 57,
+        "115": 56,
+        "109": 40,
+        "98": 50,
+        "122": 37,
+        "37": 47,
+        "96": 48,
+        "2": 42,
+        "22": 49,
+        "81": 45,
+        "71": 55,
+        "42": 53,
+        "73": 51,
+        "5": 45,
+        "54": 43,
+        "106": 53,
+        "7": 50,
+        "78": 46,
+        "17": 41,
+        "64": 47,
+        "25": 47,
+        "117": 55,
+        "12": 45,
+        "74": 42,
+        "24": 44,
+        "61": 39,
+        "68": 55,
+        "84": 45,
+        "95": 40,
+        "18": 40,
+        "88": 46,
+        "29": 41
+      },
+      "nonzero_rewards": 7,
+      "terminations": 3,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 1,
+        "score": 40
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 140.0,
+        "completed_episodes": [
+          {
+            "return": 0.0,
+            "length": 1634,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1969,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1311,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 40.0,
+          "length": 1086
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 40.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 4,
+      "reward": 0.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 13,
+      "elapsed_seconds": 11.017792208993342,
+      "directory": "seed-13-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1340,
+          "rgb": "frame-001340-reset-002.png",
+          "processed": "frame-001340-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2680,
+          "rgb": "frame-002680-reset-003.png",
+          "processed": "frame-002680-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4020,
+          "rgb": "frame-004020-reset-004.png",
+          "processed": "frame-004020-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5360,
+          "rgb": "frame-005360-reset-005.png",
+          "processed": "frame-005360-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-005.png",
+          "processed": "frame-006000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 9,
+      "action_counts": {
+        "95": 94,
+        "109": 3287,
+        "37": 1290,
+        "73": 161,
+        "58": 201,
+        "10": 950,
+        "122": 9,
+        "69": 4,
+        "121": 4
+      },
+      "nonzero_rewards": 0,
+      "terminations": 4,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 2,
+        "lives": 2,
+        "score": 0
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 0.0,
+        "completed_episodes": [
+          {
+            "return": 0.0,
+            "length": 1340,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1340,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1340,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 0.0,
+            "length": 1340,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 0.0,
+          "length": 640
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 0.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 10000,
+      "episodes": 6,
+      "reward": 920.0,
+      "loss": 0.001397228912345679,
+      "phase": "train",
+      "seed": 13,
+      "elapsed_seconds": 51.30024920900178,
+      "directory": "seed-13-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1366,
+          "rgb": "frame-001366-reset-002.png",
+          "processed": "frame-001366-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2950,
+          "rgb": "frame-002950-reset-003.png",
+          "processed": "frame-002950-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4386,
+          "rgb": "frame-004386-reset-004.png",
+          "processed": "frame-004386-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5815,
+          "rgb": "frame-005815-reset-005.png",
+          "processed": "frame-005815-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-005.png",
+          "processed": "frame-006000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 7000,
+          "rgb": "frame-007000-reset-005.png",
+          "processed": "frame-007000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 7624,
+          "rgb": "frame-007624-reset-006.png",
+          "processed": "frame-007624-reset-006-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 8000,
+          "rgb": "frame-008000-reset-006.png",
+          "processed": "frame-008000-reset-006-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9000,
+          "rgb": "frame-009000-reset-006.png",
+          "processed": "frame-009000-reset-006-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9188,
+          "rgb": "frame-009188-reset-007.png",
+          "processed": "frame-009188-reset-007-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 10000,
+          "rgb": "frame-010000-reset-007.png",
+          "processed": "frame-010000-reset-007-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 8.213563919067383,
+      "unique_actions": 126,
+      "action_counts": {
+        "95": 94,
+        "109": 220,
+        "100": 37,
+        "119": 50,
+        "82": 80,
+        "55": 30,
+        "13": 16,
+        "93": 73,
+        "69": 218,
+        "37": 116,
+        "85": 45,
+        "52": 76,
+        "8": 144,
+        "49": 59,
+        "45": 85,
+        "47": 92,
+        "35": 63,
+        "6": 193,
+        "54": 38,
+        "122": 76,
+        "36": 121,
+        "25": 161,
+        "14": 229,
+        "71": 107,
+        "87": 80,
+        "67": 136,
+        "91": 89,
+        "118": 151,
+        "80": 91,
+        "3": 120,
+        "58": 144,
+        "103": 130,
+        "117": 171,
+        "48": 85,
+        "12": 50,
+        "116": 51,
+        "21": 75,
+        "59": 10,
+        "124": 82,
+        "28": 5,
+        "19": 36,
+        "10": 90,
+        "70": 39,
+        "86": 109,
+        "111": 107,
+        "74": 153,
+        "92": 50,
+        "108": 248,
+        "46": 29,
+        "30": 7,
+        "40": 38,
+        "44": 120,
+        "66": 87,
+        "29": 137,
+        "9": 76,
+        "112": 15,
+        "63": 474,
+        "34": 4,
+        "5": 27,
+        "98": 76,
+        "20": 105,
+        "56": 144,
+        "0": 130,
+        "89": 5,
+        "94": 33,
+        "31": 64,
+        "90": 20,
+        "39": 95,
+        "120": 57,
+        "22": 88,
+        "27": 69,
+        "7": 79,
+        "77": 100,
+        "81": 69,
+        "43": 28,
+        "50": 121,
+        "64": 28,
+        "99": 29,
+        "51": 49,
+        "84": 46,
+        "106": 51,
+        "15": 116,
+        "115": 24,
+        "79": 4,
+        "76": 38,
+        "60": 32,
+        "62": 27,
+        "114": 39,
+        "4": 65,
+        "96": 85,
+        "53": 155,
+        "107": 107,
+        "78": 35,
+        "2": 94,
+        "32": 67,
+        "121": 58,
+        "68": 22,
+        "97": 50,
+        "1": 32,
+        "73": 125,
+        "17": 101,
+        "65": 84,
+        "23": 87,
+        "26": 54,
+        "113": 108,
+        "101": 26,
+        "110": 61,
+        "41": 36,
+        "42": 107,
+        "33": 43,
+        "104": 147,
+        "16": 131,
+        "88": 34,
+        "57": 99,
+        "75": 57,
+        "83": 58,
+        "61": 116,
+        "38": 34,
+        "18": 20,
+        "11": 47,
+        "123": 64,
+        "24": 44,
+        "125": 7,
+        "102": 29,
+        "72": 3,
+        "105": 3
+      },
+      "nonzero_rewards": 46,
+      "terminations": 6,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 2,
+        "score": 60
+      },
+      "trace_statistics": {
+        "steps": 10000,
+        "reward": 920.0,
+        "completed_episodes": [
+          {
+            "return": 120.0,
+            "length": 1366,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1584,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 160.0,
+            "length": 1436,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1429,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 160.0,
+            "length": 1809,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 220.0,
+            "length": 1564,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 60.0,
+          "length": 812
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 6001,
+            "end": 7000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 7001,
+            "end": 8000,
+            "steps": 1000,
+            "reward": 140.0
+          },
+          {
+            "start": 8001,
+            "end": 9000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 9001,
+            "end": 10000,
+            "steps": 1000,
+            "reward": 160.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 0,
+      "reward": 520.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 13,
+      "elapsed_seconds": 11.321187542009284,
+      "directory": "seed-13-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-001.png",
+          "processed": "frame-002000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-001.png",
+          "processed": "frame-003000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-001.png",
+          "processed": "frame-004000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-001.png",
+          "processed": "frame-005000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-001.png",
+          "processed": "frame-006000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 10,
+      "action_counts": {
+        "78": 1229,
+        "74": 266,
+        "71": 4196,
+        "2": 145,
+        "33": 3,
+        "58": 38,
+        "122": 67,
+        "6": 50,
+        "16": 1,
+        "65": 5
+      },
+      "nonzero_rewards": 26,
+      "terminations": 0,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 1,
+        "score": 520
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 520.0,
+        "completed_episodes": [],
+        "unfinished_episode": {
+          "return": 520.0,
+          "length": 6000
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 140.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 120.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 4,
+      "reward": 300.0,
+      "loss": null,
+      "phase": "random",
+      "seed": 29,
+      "elapsed_seconds": 2.7063624169968534,
+      "directory": "seed-29-random",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1400,
+          "rgb": "frame-001400-reset-002.png",
+          "processed": "frame-001400-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-002.png",
+          "processed": "frame-002000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2895,
+          "rgb": "frame-002895-reset-003.png",
+          "processed": "frame-002895-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-003.png",
+          "processed": "frame-003000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-003.png",
+          "processed": "frame-004000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4270,
+          "rgb": "frame-004270-reset-004.png",
+          "processed": "frame-004270-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-004.png",
+          "processed": "frame-005000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5857,
+          "rgb": "frame-005857-reset-005.png",
+          "processed": "frame-005857-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-005.png",
+          "processed": "frame-006000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 126,
+      "action_counts": {
+        "117": 53,
+        "6": 45,
+        "75": 49,
+        "63": 44,
+        "28": 53,
+        "65": 45,
+        "82": 43,
+        "33": 51,
+        "72": 49,
+        "16": 40,
+        "2": 44,
+        "52": 52,
+        "49": 45,
+        "8": 56,
+        "47": 46,
+        "78": 51,
+        "0": 52,
+        "30": 51,
+        "99": 55,
+        "15": 41,
+        "77": 47,
+        "102": 41,
+        "123": 59,
+        "108": 47,
+        "124": 44,
+        "79": 69,
+        "46": 50,
+        "23": 50,
+        "10": 46,
+        "106": 36,
+        "96": 42,
+        "53": 52,
+        "61": 57,
+        "3": 44,
+        "119": 48,
+        "58": 44,
+        "118": 51,
+        "48": 52,
+        "40": 49,
+        "93": 46,
+        "62": 42,
+        "34": 53,
+        "80": 45,
+        "95": 38,
+        "91": 46,
+        "122": 58,
+        "76": 49,
+        "1": 47,
+        "29": 45,
+        "21": 44,
+        "125": 51,
+        "54": 42,
+        "71": 59,
+        "92": 53,
+        "5": 58,
+        "70": 58,
+        "12": 44,
+        "121": 55,
+        "83": 59,
+        "27": 47,
+        "85": 61,
+        "97": 34,
+        "20": 48,
+        "57": 33,
+        "103": 60,
+        "110": 45,
+        "89": 49,
+        "68": 49,
+        "90": 41,
+        "81": 45,
+        "105": 35,
+        "22": 37,
+        "84": 53,
+        "11": 42,
+        "45": 47,
+        "25": 51,
+        "9": 45,
+        "114": 42,
+        "74": 42,
+        "4": 39,
+        "31": 39,
+        "109": 54,
+        "38": 45,
+        "104": 41,
+        "14": 48,
+        "13": 44,
+        "26": 44,
+        "39": 43,
+        "17": 46,
+        "111": 44,
+        "7": 36,
+        "35": 61,
+        "107": 48,
+        "67": 55,
+        "100": 47,
+        "43": 59,
+        "50": 54,
+        "66": 44,
+        "44": 42,
+        "60": 55,
+        "112": 43,
+        "87": 40,
+        "18": 55,
+        "86": 54,
+        "56": 38,
+        "59": 48,
+        "36": 46,
+        "24": 37,
+        "69": 53,
+        "64": 33,
+        "32": 43,
+        "73": 42,
+        "113": 54,
+        "55": 41,
+        "101": 50,
+        "41": 56,
+        "115": 44,
+        "94": 50,
+        "88": 42,
+        "51": 45,
+        "116": 54,
+        "98": 51,
+        "37": 55,
+        "42": 45,
+        "19": 49,
+        "120": 53
+      },
+      "nonzero_rewards": 15,
+      "terminations": 4,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 0
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 300.0,
+        "completed_episodes": [
+          {
+            "return": 80.0,
+            "length": 1400,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1495,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 20.0,
+            "length": 1375,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 100.0,
+            "length": 1587,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 0.0,
+          "length": 143
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 0.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 60.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 2,
+      "reward": 180.0,
+      "loss": null,
+      "phase": "untrained",
+      "seed": 29,
+      "elapsed_seconds": 14.738278666991391,
+      "directory": "seed-29-untrained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-001.png",
+          "processed": "frame-002000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2736,
+          "rgb": "frame-002736-reset-002.png",
+          "processed": "frame-002736-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-002.png",
+          "processed": "frame-003000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-002.png",
+          "processed": "frame-004000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-002.png",
+          "processed": "frame-005000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5472,
+          "rgb": "frame-005472-reset-003.png",
+          "processed": "frame-005472-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-003.png",
+          "processed": "frame-006000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 37,
+      "action_counts": {
+        "22": 2098,
+        "84": 65,
+        "73": 179,
+        "47": 757,
+        "29": 1236,
+        "60": 280,
+        "116": 21,
+        "89": 13,
+        "103": 164,
+        "105": 113,
+        "30": 51,
+        "71": 79,
+        "49": 32,
+        "31": 131,
+        "52": 89,
+        "55": 3,
+        "58": 18,
+        "13": 133,
+        "108": 35,
+        "80": 28,
+        "62": 10,
+        "120": 32,
+        "54": 39,
+        "112": 15,
+        "70": 83,
+        "34": 59,
+        "114": 6,
+        "115": 7,
+        "88": 3,
+        "0": 61,
+        "14": 116,
+        "77": 32,
+        "12": 2,
+        "6": 2,
+        "8": 2,
+        "123": 2,
+        "106": 4
+      },
+      "nonzero_rewards": 9,
+      "terminations": 2,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 2,
+        "lives": 3,
+        "score": 20
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 180.0,
+        "completed_episodes": [
+          {
+            "return": 80.0,
+            "length": 2736,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 80.0,
+            "length": 2736,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 20.0,
+          "length": 528
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 40.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 40.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 10000,
+      "episodes": 5,
+      "reward": 900.0,
+      "loss": 0.0012725291308126067,
+      "phase": "train",
+      "seed": 29,
+      "elapsed_seconds": 53.0541763749934,
+      "directory": "seed-29-train",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-001.png",
+          "processed": "frame-002000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2505,
+          "rgb": "frame-002505-reset-002.png",
+          "processed": "frame-002505-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-002.png",
+          "processed": "frame-003000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-002.png",
+          "processed": "frame-004000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4442,
+          "rgb": "frame-004442-reset-003.png",
+          "processed": "frame-004442-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-003.png",
+          "processed": "frame-005000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-003.png",
+          "processed": "frame-006000-reset-003-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6417,
+          "rgb": "frame-006417-reset-004.png",
+          "processed": "frame-006417-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 7000,
+          "rgb": "frame-007000-reset-004.png",
+          "processed": "frame-007000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 8000,
+          "rgb": "frame-008000-reset-004.png",
+          "processed": "frame-008000-reset-004-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 8134,
+          "rgb": "frame-008134-reset-005.png",
+          "processed": "frame-008134-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9000,
+          "rgb": "frame-009000-reset-005.png",
+          "processed": "frame-009000-reset-005-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 9706,
+          "rgb": "frame-009706-reset-006.png",
+          "processed": "frame-009706-reset-006-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 10000,
+          "rgb": "frame-010000-reset-006.png",
+          "processed": "frame-010000-reset-006-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "weight_change_l2": 8.411641120910645,
+      "unique_actions": 126,
+      "action_counts": {
+        "75": 50,
+        "22": 29,
+        "63": 121,
+        "60": 40,
+        "0": 108,
+        "84": 89,
+        "30": 189,
+        "47": 119,
+        "61": 56,
+        "70": 86,
+        "89": 122,
+        "7": 21,
+        "11": 41,
+        "35": 125,
+        "121": 106,
+        "102": 2,
+        "10": 57,
+        "82": 4,
+        "64": 25,
+        "53": 158,
+        "120": 88,
+        "105": 20,
+        "8": 48,
+        "58": 76,
+        "46": 167,
+        "57": 56,
+        "87": 128,
+        "33": 91,
+        "97": 110,
+        "100": 41,
+        "125": 40,
+        "29": 56,
+        "103": 121,
+        "73": 76,
+        "94": 44,
+        "50": 73,
+        "71": 148,
+        "104": 63,
+        "92": 586,
+        "42": 41,
+        "74": 100,
+        "81": 45,
+        "78": 88,
+        "101": 135,
+        "99": 70,
+        "21": 84,
+        "113": 154,
+        "55": 86,
+        "2": 90,
+        "16": 267,
+        "108": 105,
+        "116": 54,
+        "79": 57,
+        "36": 162,
+        "117": 90,
+        "23": 34,
+        "83": 39,
+        "19": 93,
+        "38": 120,
+        "25": 138,
+        "52": 104,
+        "98": 65,
+        "14": 69,
+        "39": 36,
+        "88": 132,
+        "122": 5,
+        "93": 76,
+        "66": 75,
+        "48": 63,
+        "34": 38,
+        "85": 65,
+        "28": 79,
+        "59": 204,
+        "13": 85,
+        "109": 82,
+        "27": 37,
+        "43": 60,
+        "107": 62,
+        "86": 266,
+        "72": 31,
+        "56": 121,
+        "69": 91,
+        "49": 74,
+        "90": 52,
+        "80": 116,
+        "65": 8,
+        "31": 127,
+        "112": 28,
+        "45": 42,
+        "68": 3,
+        "17": 39,
+        "111": 55,
+        "95": 31,
+        "51": 189,
+        "37": 37,
+        "118": 147,
+        "110": 74,
+        "9": 61,
+        "41": 2,
+        "32": 39,
+        "5": 68,
+        "96": 62,
+        "76": 52,
+        "3": 43,
+        "15": 63,
+        "1": 72,
+        "4": 79,
+        "18": 39,
+        "6": 18,
+        "40": 115,
+        "62": 51,
+        "54": 79,
+        "91": 20,
+        "114": 48,
+        "124": 76,
+        "12": 117,
+        "67": 105,
+        "115": 73,
+        "26": 1,
+        "123": 39,
+        "77": 37,
+        "20": 45,
+        "106": 4,
+        "24": 29,
+        "44": 60,
+        "119": 3
+      },
+      "nonzero_rewards": 45,
+      "terminations": 5,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 3,
+        "score": 60
+      },
+      "trace_statistics": {
+        "steps": 10000,
+        "reward": 900.0,
+        "completed_episodes": [
+          {
+            "return": 160.0,
+            "length": 2505,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 180.0,
+            "length": 1937,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 180.0,
+            "length": 1975,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 140.0,
+            "length": 1717,
+            "ended_by": "terminated"
+          },
+          {
+            "return": 180.0,
+            "length": 1572,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 60.0,
+          "length": 294
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 120.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 100.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 80.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 6001,
+            "end": 7000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 7001,
+            "end": 8000,
+            "steps": 1000,
+            "reward": 120.0
+          },
+          {
+            "start": 8001,
+            "end": 9000,
+            "steps": 1000,
+            "reward": 60.0
+          },
+          {
+            "start": 9001,
+            "end": 10000,
+            "steps": 1000,
+            "reward": 180.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    },
+    {
+      "steps": 6000,
+      "episodes": 1,
+      "reward": 120.0,
+      "loss": null,
+      "phase": "trained",
+      "seed": 29,
+      "elapsed_seconds": 11.467117790991324,
+      "directory": "seed-29-trained",
+      "action_count": 126,
+      "captures": [
+        {
+          "step": 0,
+          "rgb": "frame-000000-reset-001.png",
+          "processed": "frame-000000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1,
+          "rgb": "frame-000001-reset-001.png",
+          "processed": "frame-000001-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 1000,
+          "rgb": "frame-001000-reset-001.png",
+          "processed": "frame-001000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 2000,
+          "rgb": "frame-002000-reset-001.png",
+          "processed": "frame-002000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 3000,
+          "rgb": "frame-003000-reset-001.png",
+          "processed": "frame-003000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4000,
+          "rgb": "frame-004000-reset-001.png",
+          "processed": "frame-004000-reset-001-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 4140,
+          "rgb": "frame-004140-reset-002.png",
+          "processed": "frame-004140-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 5000,
+          "rgb": "frame-005000-reset-002.png",
+          "processed": "frame-005000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        },
+        {
+          "step": 6000,
+          "rgb": "frame-006000-reset-002.png",
+          "processed": "frame-006000-reset-002-processed.png",
+          "shape": [
+            224,
+            320,
+            3
+          ]
+        }
+      ],
+      "unique_actions": 3,
+      "action_counts": {
+        "80": 5863,
+        "45": 113,
+        "24": 24
+      },
+      "nonzero_rewards": 6,
+      "terminations": 1,
+      "truncations": 0,
+      "final_info": {
+        "gameover": 9,
+        "lives": 2,
+        "score": 40
+      },
+      "trace_statistics": {
+        "steps": 6000,
+        "reward": 120.0,
+        "completed_episodes": [
+          {
+            "return": 80.0,
+            "length": 4140,
+            "ended_by": "terminated"
+          }
+        ],
+        "unfinished_episode": {
+          "return": 40.0,
+          "length": 1860
+        },
+        "reward_windows": [
+          {
+            "start": 1,
+            "end": 1000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 1001,
+            "end": 2000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 2001,
+            "end": 3000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 3001,
+            "end": 4000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 4001,
+            "end": 5000,
+            "steps": 1000,
+            "reward": 20.0
+          },
+          {
+            "start": 5001,
+            "end": 6000,
+            "steps": 1000,
+            "reward": 20.0
+          }
+        ]
+      },
+      "finite_learning_metrics": true
+    }
+  ]
+}

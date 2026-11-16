@@ -1,0 +1,77 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+W0000 00:00:1794802433.106899 1325417 cpu_utils.cc:145] Failed to get CPU frequency: 0 Hz
+W0000 00:00:1794802433.249028 1325417 op_level_cost_estimator.cc:743] Invalid device specifications for CPU: goo.gle/debugproto   type: "CPU" model: "0" num_cores: 8 environment { key: "cpu_instruction_set" value: "ARM NEON" } environment { key: "eigen" value: "3.5.0" } l1_cache_size: 16384 l2_cache_size: 524288 l3_cache_size: 524288 memory_size: 268435456
+[
+  {
+    "seed": 7,
+    "phase": "random",
+    "reward": 300.0,
+    "steps": 6000
+  },
+  {
+    "seed": 7,
+    "phase": "untrained",
+    "reward": 460.0,
+    "steps": 6000
+  },
+  {
+    "seed": 7,
+    "phase": "train",
+    "reward": 860.0,
+    "steps": 10000
+  },
+  {
+    "seed": 7,
+    "phase": "trained",
+    "reward": 0.0,
+    "steps": 6000
+  },
+  {
+    "seed": 13,
+    "phase": "random",
+    "reward": 140.0,
+    "steps": 6000
+  },
+  {
+    "seed": 13,
+    "phase": "untrained",
+    "reward": 0.0,
+    "steps": 6000
+  },
+  {
+    "seed": 13,
+    "phase": "train",
+    "reward": 920.0,
+    "steps": 10000
+  },
+  {
+    "seed": 13,
+    "phase": "trained",
+    "reward": 520.0,
+    "steps": 6000
+  },
+  {
+    "seed": 29,
+    "phase": "random",
+    "reward": 300.0,
+    "steps": 6000
+  },
+  {
+    "seed": 29,
+    "phase": "untrained",
+    "reward": 180.0,
+    "steps": 6000
+  },
+  {
+    "seed": 29,
+    "phase": "train",
+    "reward": 900.0,
+    "steps": 10000
+  },
+  {
+    "seed": 29,
+    "phase": "trained",
+    "reward": 120.0,
+    "steps": 6000
+  }
+]

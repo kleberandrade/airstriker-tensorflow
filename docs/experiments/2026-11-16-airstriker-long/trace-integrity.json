@@ -1,0 +1,50 @@
+{
+  "seed-7-random/transitions.jsonl.gz": {
+    "uncompressed_sha256": "a555687d59639fd629eac009efcce01d5ff68366471b41123fc0fcc4f2a9b7f6",
+    "compressed_sha256": "59d19fb9dbc53565a4108f0188fcaecc880077cb335f67105bb3f1abcde59764"
+  },
+  "seed-7-untrained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "b6bdf866c96fccfc099dd0bb85929e6192c23507fa2513aabea93e8cec102ea8",
+    "compressed_sha256": "456e9a28d285bc61d9c44945808e22d19291160abdbe920b1a439ab849d885e6"
+  },
+  "seed-7-train/transitions.jsonl.gz": {
+    "uncompressed_sha256": "693b57a8b09d917b2d0a18fed5e3c3bf0bcb40f9287c5add3abe4107ad7456a2",
+    "compressed_sha256": "d47afd7fe91095c6625d215bdc84f94ed27bc30a0ed31cee05cee768d61399dd"
+  },
+  "seed-7-trained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "c553f6f91e91546fcaa2a5a33bf573887892ab50b51a0768ca45d68339ecc979",
+    "compressed_sha256": "92538dfc7766d1e52754a507b09c87ee6b136b65b81da8d44f47e1eec355fcd5"
+  },
+  "seed-13-random/transitions.jsonl.gz": {
+    "uncompressed_sha256": "03911209f96bb7ee52b57c84dd2a21d9e8840bc491cad1f07085ebaaf621e01e",
+    "compressed_sha256": "b9dbf90cb4f725b123dc4396e2dea77d9c355c3cf43e9e4d9f98371bd4f074c5"
+  },
+  "seed-13-untrained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "01b54b872685323f28f849737312a68fd0643b371a1bf3e22db56b21aff8f962",
+    "compressed_sha256": "d8affcbedcf6445a18e6a32a3eb4b1a17e54331d3e2f2a2b8b1320c599999e6d"
+  },
+  "seed-13-train/transitions.jsonl.gz": {
+    "uncompressed_sha256": "882efec197f10a887db54e3e7e0851d5c975a2213608574b9414ed300b453945",
+    "compressed_sha256": "30cc19325efe16d2816da37efd1820b435d3ad118a8d217ee8c59b54e7927192"
+  },
+  "seed-13-trained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "8c3d0e8698ff955b01f9c639433fb8fd00b10c8fc473257b6e6b6cd8b089ddd4",
+    "compressed_sha256": "547a4ba7009a3f50a4377d5cf5bcfbdfd1cb8922ebccff48b9ffde8cacdf54e4"
+  },
+  "seed-29-random/transitions.jsonl.gz": {
+    "uncompressed_sha256": "7a3ab6a79e2413809d725ba1befca2fafce8d61ef6b714fd1011616d20814478",
+    "compressed_sha256": "f7f3783c1965c97e4928759277ced755796869c6c3cf105a7631e1f86e16b6bc"
+  },
+  "seed-29-untrained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "687e9acc0695b540a7a1a0efcdf9ef25fc04fdad984dd48e78aea16aba0ac649",
+    "compressed_sha256": "1b3e4da3ef04a13b7c3e23154e1ef48b821c948a7d8a16ef9586fb30cf6f80d2"
+  },
+  "seed-29-train/transitions.jsonl.gz": {
+    "uncompressed_sha256": "4b0f92123fa0c0d157aaa4df46092fe89882ee5f87d23217fe5326778cb7f259",
+    "compressed_sha256": "822d9d776dd66e92c0eccdd083d8c19cd3a00bb40e55c42ca7b9669faf830861"
+  },
+  "seed-29-trained/transitions.jsonl.gz": {
+    "uncompressed_sha256": "bb1a63af841b3864f419dde34a786893c8b8974ad24512d714e2e36ecb387938",
+    "compressed_sha256": "0070be7dcae0691eaca2aadffc384654ce8e01edd0f80b13b75bb88a90496b58"
+  }
+}

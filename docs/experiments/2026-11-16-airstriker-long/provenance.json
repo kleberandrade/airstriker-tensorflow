@@ -1,0 +1,59 @@
+{
+  "base_git_revision": "72ffe4b5214df872f9723b350373da691bcb6ec7",
+  "working_tree_clean": true,
+  "rom_sha1": "a8be7b0ca850119b167f9644e6a4a22e983d61a4",
+  "expected_rom_sha1": "a8be7b0ca850119b167f9644e6a4a22e983d61a4",
+  "integration_metadata": {
+    "default_state": "Level1",
+    "whitelist": {
+      "data.json": [
+        "suspicious type >u2 for lives"
+      ]
+    }
+  },
+  "scenario": {
+    "done": {
+      "condition": "all",
+      "variables": {
+        "gameover": {
+          "op": "equal",
+          "reference": 1
+        },
+        "lives": {
+          "op": "zero"
+        }
+      }
+    },
+    "reward": {
+      "variables": {
+        "score": {
+          "reward": 1.0
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "src/airstriker_tensorflow/__init__.py": "b64606cb7fb10890c2db0f39409cb506227f4ec78e62c0093e6e898b3e3749a6",
+    "src/airstriker_tensorflow/agent.py": "7e56c1bc5eb8476d818fc8be5096e774a92df32bcd3a8e74f496c8a567f38fe7",
+    "src/airstriker_tensorflow/cli.py": "72c0d23710233dc138b28f419e80ca6db31e13e4a69eac030e14c7bb26c17eca",
+    "src/airstriker_tensorflow/environments.py": "639d3c9a3c983afc5bce7c8dd164abdb1153d8dc14a82117b631b056e31d265f",
+    "src/airstriker_tensorflow/experiment.py": "f930503fc38d0947a64a3d59abb479a0c0d123633508d7957641d16cf7e62dd2",
+    "src/airstriker_tensorflow/preprocessing.py": "2135b749fca038e255ac66cdfe225a77ad1c718718a4d5f7d66410d8893ef2f5",
+    "src/airstriker_tensorflow/recording.py": "18c3e4ddc585eae918db7938d1e1e49d728ea1828b2a87db2d4368f0cce07bd1",
+    "src/airstriker_tensorflow/training.py": "2ee9d31090aaaeed76991519a411b5c32ed461fefeda7f5f71d51a6bc5f8e57f"
+  },
+  "rom_source": "Airstriker by Electrokinesis, included by Stable Retro for non-commercial testing",
+  "local_checkpoint_sha256": {
+    "runs/airstriker-long-2026-11-16-10k/seed-7.keras": "36d0babf8d087a79f2738cd3a41fd09e40b9c746b4411a7ad387888c2720869b",
+    "runs/airstriker-long-2026-11-16-10k/seed-13.keras": "b7629c49c2e73e89d63c306920996a008961d03660fa749183edd6c6084dae37",
+    "runs/airstriker-long-2026-11-16-10k/seed-29.keras": "ca8a620ea86304e03b84c083fcbba89962ce2ff383a0257281526c244b5e5026"
+  },
+  "collection_source_unchanged": true,
+  "reporting_versions": {
+    "matplotlib": "3.11.2"
+  },
+  "reporting_source_sha256": {
+    "src/airstriker_tensorflow/analysis.py": "72d8787b85331c97fb1a2505405b85baf0280fc7d126edac06c4338dfd799fbf",
+    "examples/analyze_experiment.py": "4ee391b6db359c471ca09b355cdf7e73579372e7ca3ec7432fb25c159157a6d0"
+  }
+}

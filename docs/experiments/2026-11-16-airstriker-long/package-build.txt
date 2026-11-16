@@ -1,0 +1,610 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing src/airstriker_tensorflow.egg-info/PKG-INFO
+writing dependency_links to src/airstriker_tensorflow.egg-info/dependency_links.txt
+writing entry points to src/airstriker_tensorflow.egg-info/entry_points.txt
+writing requirements to src/airstriker_tensorflow.egg-info/requires.txt
+writing top-level names to src/airstriker_tensorflow.egg-info/top_level.txt
+reading manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/airstriker_tensorflow.egg-info/PKG-INFO
+writing dependency_links to src/airstriker_tensorflow.egg-info/dependency_links.txt
+writing entry points to src/airstriker_tensorflow.egg-info/entry_points.txt
+writing requirements to src/airstriker_tensorflow.egg-info/requires.txt
+writing top-level names to src/airstriker_tensorflow.egg-info/top_level.txt
+reading manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+running check
+creating airstriker_tensorflow-0.3.0
+creating airstriker_tensorflow-0.3.0/docs
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+creating airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+creating airstriker_tensorflow-0.3.0/examples
+creating airstriker_tensorflow-0.3.0/images
+creating airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+creating airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+creating airstriker_tensorflow-0.3.0/tests
+copying files to airstriker_tensorflow-0.3.0...
+copying LICENSE -> airstriker_tensorflow-0.3.0
+copying MANIFEST.in -> airstriker_tensorflow-0.3.0
+copying README.md -> airstriker_tensorflow-0.3.0
+copying pyproject.toml -> airstriker_tensorflow-0.3.0
+copying requirements-dev.lock -> airstriker_tensorflow-0.3.0
+copying docs/PROJECT_GUIDE.md -> airstriker_tensorflow-0.3.0/docs
+copying docs/WORK_LOG.md -> airstriker_tensorflow-0.3.0/docs
+copying docs/experiments/2026-11-16-airstriker/REPORT.md -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/artifacts-sha256.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/complexity.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/dependency-constraints.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/dependency-updates.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/duplication.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/execution.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/offline-tests.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/package-build.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/provenance.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/recorder-mutations.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/requirements-after.lock -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker/requirements-before.lock -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker
+copying docs/experiments/2026-11-16-airstriker-long/REPORT.md -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/analysis-mutations.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/analysis.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/evaluation-comparison.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/evaluation-comparison.svg -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/execution.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/image-provenance.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/manifest.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/offline-tests.txt -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/provenance.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/requirements.lock -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/trace-integrity.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/training-rewards.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/training-rewards.svg -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-001634-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-001634-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-003000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-003000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-003603-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-003603-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-004914-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-004914-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-006000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/frame-006000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-random/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-001366-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-001366-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-002950-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-002950-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-004386-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-004386-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-005815-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-005815-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-006000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-006000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-007000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-007000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-007624-reset-006-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-007624-reset-006.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-008000-reset-006-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-008000-reset-006.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-009000-reset-006-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-009000-reset-006.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-009188-reset-007-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-009188-reset-007.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-010000-reset-007-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/frame-010000-reset-007.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-train/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-002000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-002000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-003000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-003000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-004000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-004000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-005000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-005000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-006000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/frame-006000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-trained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-001340-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-001340-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-002680-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-002680-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-004020-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-004020-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-005360-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-005360-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-006000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/frame-006000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-13-untrained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-001400-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-001400-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-002895-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-002895-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-004270-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-004270-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-005857-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-005857-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-006000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/frame-006000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-random/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-002000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-002000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-002505-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-002505-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-003000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-003000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-004000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-004000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-004442-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-004442-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-005000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-005000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-006000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-006000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-006417-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-006417-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-007000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-007000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-008000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-008000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-008134-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-008134-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-009000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-009000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-009706-reset-006-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-009706-reset-006.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-010000-reset-006-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/frame-010000-reset-006.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-train/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-002000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-002000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-003000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-003000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-004000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-004000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-004140-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-004140-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-005000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-005000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-006000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/frame-006000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-trained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-002000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-002000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-002736-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-002736-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-003000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-003000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-004000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-004000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-005000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-005000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-005472-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-005472-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-006000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/frame-006000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-29-untrained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-001283-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-001283-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-002760-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-002760-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-004548-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-004548-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-006000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/frame-006000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-random/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-random
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-002000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-002000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-003000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-003000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-003845-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-003845-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-004000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-004000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-005000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-005000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-005616-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-005616-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-006000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-006000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-007000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-007000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-007174-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-007174-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-008000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-008000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-009000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-009000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-009377-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-009377-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-010000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/frame-010000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-train/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-train
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-001212-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-001212-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-002424-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-002424-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-003636-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-003636-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-004000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-004000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-004848-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-004848-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-005000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-005000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-006000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/frame-006000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-trained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-001000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-001000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-001394-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-001394-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-002000-reset-002-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-002000-reset-002.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-002788-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-002788-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-003000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-003000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-004000-reset-003-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-004000-reset-003.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-004182-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-004182-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-005000-reset-004-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-005000-reset-004.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-005576-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-005576-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-006000-reset-005-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/frame-006000-reset-005.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker-long/seed-7-untrained/transitions.jsonl.gz -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker-long/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/manifest.json -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-random/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-train/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-trained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-13-untrained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-13-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-random/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-train/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-trained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-29-untrained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-29-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-random/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-random
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-train/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-train
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-trained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-trained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000000-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000000-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000001-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000001-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000128-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000128-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000256-reset-001-processed.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/frame-000256-reset-001.png -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying docs/experiments/2026-11-16-airstriker/run/seed-7-untrained/transitions.jsonl -> airstriker_tensorflow-0.3.0/docs/experiments/2026-11-16-airstriker/run/seed-7-untrained
+copying examples/analyze_experiment.py -> airstriker_tensorflow-0.3.0/examples
+copying examples/retro_experiment.py -> airstriker_tensorflow-0.3.0/examples
+copying examples/smoke.py -> airstriker_tensorflow-0.3.0/examples
+copying images/airstriker-gameplay.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-long-failure.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-long-input.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-long-random.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-long-trained.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-model-input.png -> airstriker_tensorflow-0.3.0/images
+copying images/airstriker-start.png -> airstriker_tensorflow-0.3.0/images
+copying src/airstriker_tensorflow/__init__.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/agent.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/analysis.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/cli.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/environments.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/experiment.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/preprocessing.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/recording.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow/training.py -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow
+copying src/airstriker_tensorflow.egg-info/PKG-INFO -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying src/airstriker_tensorflow.egg-info/SOURCES.txt -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying src/airstriker_tensorflow.egg-info/dependency_links.txt -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying src/airstriker_tensorflow.egg-info/entry_points.txt -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying src/airstriker_tensorflow.egg-info/requires.txt -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying src/airstriker_tensorflow.egg-info/top_level.txt -> airstriker_tensorflow-0.3.0/src/airstriker_tensorflow.egg-info
+copying tests/test_analysis.py -> airstriker_tensorflow-0.3.0/tests
+copying tests/test_cli.py -> airstriker_tensorflow-0.3.0/tests
+copying tests/test_experiment.py -> airstriker_tensorflow-0.3.0/tests
+copying tests/test_pipeline.py -> airstriker_tensorflow-0.3.0/tests
+copying tests/test_recording.py -> airstriker_tensorflow-0.3.0/tests
+copying tests/test_retro_contract.py -> airstriker_tensorflow-0.3.0/tests
+Writing airstriker_tensorflow-0.3.0/setup.cfg
+Creating tar archive
+removing 'airstriker_tensorflow-0.3.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/airstriker_tensorflow.egg-info/PKG-INFO
+writing dependency_links to src/airstriker_tensorflow.egg-info/dependency_links.txt
+writing entry points to src/airstriker_tensorflow.egg-info/entry_points.txt
+writing requirements to src/airstriker_tensorflow.egg-info/requires.txt
+writing top-level names to src/airstriker_tensorflow.egg-info/top_level.txt
+reading manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/analysis.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/recording.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/__init__.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/experiment.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/cli.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/preprocessing.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/environments.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/agent.py -> build/lib/airstriker_tensorflow
+copying src/airstriker_tensorflow/training.py -> build/lib/airstriker_tensorflow
+running egg_info
+writing src/airstriker_tensorflow.egg-info/PKG-INFO
+writing dependency_links to src/airstriker_tensorflow.egg-info/dependency_links.txt
+writing entry points to src/airstriker_tensorflow.egg-info/entry_points.txt
+writing requirements to src/airstriker_tensorflow.egg-info/requires.txt
+writing top-level names to src/airstriker_tensorflow.egg-info/top_level.txt
+reading manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/airstriker_tensorflow.egg-info/SOURCES.txt'
+installing to build/bdist.macosx-26.0-arm64/wheel
+running install
+running install_lib
+creating build/bdist.macosx-26.0-arm64/wheel
+creating build/bdist.macosx-26.0-arm64/wheel/airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/analysis.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/recording.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/__init__.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/experiment.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/cli.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/preprocessing.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/environments.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/agent.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+copying build/lib/airstriker_tensorflow/training.py -> build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow
+running install_egg_info
+Copying src/airstriker_tensorflow.egg-info to build/bdist.macosx-26.0-arm64/wheel/./airstriker_tensorflow-0.3.0-py3.13.egg-info
+running install_scripts
+creating build/bdist.macosx-26.0-arm64/wheel/airstriker_tensorflow-0.3.0.dist-info/WHEEL
+creating '/Users/kleber/Projects/airstriker-tensorflow/dist/.tmp-p1l18ibz/airstriker_tensorflow-0.3.0-py3-none-any.whl' and adding 'build/bdist.macosx-26.0-arm64/wheel' to it
+adding 'airstriker_tensorflow/__init__.py'
+adding 'airstriker_tensorflow/agent.py'
+adding 'airstriker_tensorflow/analysis.py'
+adding 'airstriker_tensorflow/cli.py'
+adding 'airstriker_tensorflow/environments.py'
+adding 'airstriker_tensorflow/experiment.py'
+adding 'airstriker_tensorflow/preprocessing.py'
+adding 'airstriker_tensorflow/recording.py'
+adding 'airstriker_tensorflow/training.py'
+adding 'airstriker_tensorflow-0.3.0.dist-info/licenses/LICENSE'
+adding 'airstriker_tensorflow-0.3.0.dist-info/METADATA'
+adding 'airstriker_tensorflow-0.3.0.dist-info/WHEEL'
+adding 'airstriker_tensorflow-0.3.0.dist-info/entry_points.txt'
+adding 'airstriker_tensorflow-0.3.0.dist-info/top_level.txt'
+adding 'airstriker_tensorflow-0.3.0.dist-info/RECORD'
+removing build/bdist.macosx-26.0-arm64/wheel
+Successfully built airstriker_tensorflow-0.3.0.tar.gz and airstriker_tensorflow-0.3.0-py3-none-any.whl

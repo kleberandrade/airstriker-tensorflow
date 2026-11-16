@@ -164,7 +164,7 @@ Use a fresh output directory: the runner refuses to overwrite earlier evidence. 
 
 All phases reset the same game/default savestate/seed. This makes starting conditions comparable. Multiple seeds expose sensitivity to initialization; three seeds are still too few for a robust conclusion.
 
-The recorded rewards for seeds 7/13/29 were random `[0, 0, 0]`, untrained `[20, 0, 0]`, training `[0, 0, 0]`, and checkpoint evaluation `[20, 40, 40]`. No episode finished. These numbers validate collection and comparison, but cannot establish convergence or reliable skill.
+The original 128-step smoke experiment recorded rewards for seeds 7/13/29 as random `[0, 0, 0]`, untrained `[20, 0, 0]`, training `[0, 0, 0]`, and checkpoint evaluation `[20, 40, 40]`. No episode finished. These numbers validate collection and comparison, but cannot establish convergence or reliable skill.
 
 **Exercise:** imagine reporting only the checkpoint scores. What would readers miss? They would not know that an untrained network already earned points, the training windows earned none, and no complete episode finished. Baselines and negative results prevent misleading conclusions.
 
@@ -196,6 +196,8 @@ The [recorded report](experiments/2026-11-16-airstriker/REPORT.md) includes nati
 - `cli.py`: parsing, metadata and guaranteed environment cleanup.
 - `recording.py`: transparent wrapper that saves exact observations and trace events.
 - `experiment.py`: reproducible control policies and multi-seed orchestration.
+- `analysis.py`: audited reward totals, complete-episode returns, unfinished tails and fixed-step windows.
+- `analysis.py`: checked trace accounting, completed/unfinished episodes, reward windows and seed comparisons.
 - `examples/`: runnable offline smoke and real-emulator comparison.
 - `tests/`: offline behavior and error cases. Synthetic fixtures and factory replacements are explicitly labeled.
 
@@ -244,6 +246,35 @@ Before adding complexity, state a hypothesis and change one factor. Useful follo
 - Were there enough seeds and completed episodes?
 - Did reward increase during training, and is evaluation improvement reproducible?
 - Could a change in preprocessing, action mapping or checkpoint loading explain the result?
+
+## 11. Learn from a longer run that does not beat random
+
+More training steps are a resource budget, not a guarantee of improvement. We trained fresh models for 10,000 steps each (seeds 7/13/29), leaving the small online Q-learning algorithm unchanged. Random, untrained and checkpoint policies each received 6,000 evaluation steps from the same default savestate.
+
+The random rewards were `[300, 140, 300]`; checkpoint rewards were `[0, 520, 120]`. Their means were 246.67 and 213.33 respectively. The untrained-network mean was also 213.33. One successful seed therefore does not justify claiming that longer training beat the baseline.
+
+![All seed results rather than only the best screenshot](experiments/2026-11-16-airstriker-long/evaluation-comparison.png)
+
+During training, the three models collected 860, 920 and 900 points. Seed 7 nevertheless chose the same action on every greedy evaluation step and earned zero. Exploration during training and a greedy saved policy are different behaviors. Positive training reward, changing weights and finite loss diagnostics are insufficient evidence of good evaluation performance.
+
+A fixed 6,000-step budget can contain several complete episodes and an unfinished final episode. The headline total includes both. Seed 13's 520 checkpoint points all belonged to an unfinished episode, so its mean **completed-episode** return is undefined. Treating that value as a complete-episode result would mislead readers.
+
+Read the [full longer-run report](experiments/2026-11-16-airstriker-long/REPORT.md) for every episode return, unfinished tail, source hashes, action histograms, new screenshots and training windows. There are only three seeds and one starting savestate; no statistical significance or unseen-state generalization is asserted.
+
+Regenerate the analysis from the committed compressed traces:
+
+```sh
+python -m pip install -e '.[report]'
+python examples/analyze_experiment.py \
+  --source docs/experiments/2026-11-16-airstriker-long \
+  --output runs/long-report --window 1000
+```
+
+The analyzer rejects mismatches between raw trace totals and the manifest. It reads `.jsonl` and `.jsonl.gz`, separates complete episodes from the unfinished tail, and produces `analysis.json` plus PNG/SVG figures. It does not interact with the emulator. Matplotlib is optional for runtime users and included in the development lock. On restricted systems, set `MPLCONFIGDIR` and `XDG_CACHE_HOME` to writable directories.
+
+**Exercise:** compare all three differences, `[-300, +380, -180]`, before reading the mean. What happens to your conclusion if you publish only seed 13? You hide two losses and falsely imply consistency. Decide on the seed/budget protocol before looking at the results, then report failures alongside successes.
+
+The original smoke scores used only 256 evaluation steps; the new totals use 6,000. Comparing their raw totals as if they were equal-budget performance would be invalid. A useful next experiment should change one justified factor, such as replay, target estimates or visual detail, while keeping the evaluation protocol fixed. Do not quietly tune after seeing these results and label the new outcome as the same experiment.
 
 ## Toolchain, troubleshooting and rights
 
