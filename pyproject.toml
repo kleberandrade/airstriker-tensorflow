@@ -3,9 +3,9 @@ requires = ["setuptools==84.2.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mario-tensorflow"
-version = "0.2.0"
-description = "Educational TensorFlow Q-learning experiment for Super Mario World"
+name = "airstriker-tensorflow"
+version = "0.3.0"
+description = "Educational TensorFlow Q-learning experiment for Airstriker"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"
 license = "MIT"
@@ -17,7 +17,7 @@ retro = ["stable-retro==1.0.1"]
 dev = ["pytest==9.2.0", "pytest-cov==7.1.0", "ruff==0.17.5", "build==1.6.1"]
 
 [project.scripts]
-mario-tf = "mario_tensorflow.cli:main"
+airstriker-tf = "airstriker_tensorflow.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

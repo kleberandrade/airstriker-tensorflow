@@ -4,12 +4,13 @@ import argparse
 import json
 from pathlib import Path
 
-from mario_tensorflow.experiment import ExperimentConfig, execute
+from airstriker_tensorflow.environments import DEFAULT_GAME
+from airstriker_tensorflow.experiment import ExperimentConfig, execute
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--game", default="Airstriker-Genesis-v0")
+    parser.add_argument("--game", default=DEFAULT_GAME)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seeds", type=int, nargs="+", default=[7, 13, 29])
     parser.add_argument("--train-steps", type=int, default=128)

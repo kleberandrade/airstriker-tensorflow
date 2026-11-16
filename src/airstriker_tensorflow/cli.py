@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .agent import Agent
-from .environments import SyntheticEnvironment, make_retro
+from .environments import DEFAULT_GAME, SyntheticEnvironment, make_retro
 from .training import run
 
 
@@ -13,7 +13,7 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=["train", "evaluate"])
     parser.add_argument("--env", required=True, choices=["synthetic", "retro"])
-    parser.add_argument("--game", default="SuperMarioWorld-Snes-v0")
+    parser.add_argument("--game", default=DEFAULT_GAME)
     parser.add_argument("--state", help="Stable Retro savestate name; default from integration")
     parser.add_argument("--steps", type=int, default=32)
     parser.add_argument("--seed", type=int, default=0)

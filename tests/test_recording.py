@@ -6,8 +6,8 @@ import numpy as np
 import pytest
 from PIL import Image
 
-from mario_tensorflow.environments import SyntheticEnvironment
-from mario_tensorflow.recording import RecordedEnvironment
+from airstriker_tensorflow.environments import SyntheticEnvironment
+from airstriker_tensorflow.recording import RecordedEnvironment
 
 
 def test_recorder_preserves_transitions_and_saves_real_observations(tmp_path):

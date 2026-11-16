@@ -12,14 +12,14 @@ from time import perf_counter
 import numpy as np
 
 from .agent import Agent
-from .environments import make_retro
+from .environments import DEFAULT_GAME, make_retro
 from .recording import RecordedEnvironment
 from .training import run
 
 
 @dataclass(frozen=True)
 class ExperimentConfig:
-    game: str = "Airstriker-Genesis-v0"
+    game: str = DEFAULT_GAME
     seeds: tuple[int, ...] = (7, 13, 29)
     train_steps: int = 128
     evaluate_steps: int = 256

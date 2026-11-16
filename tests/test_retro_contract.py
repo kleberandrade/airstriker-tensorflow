@@ -4,9 +4,9 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from mario_tensorflow.agent import Agent
-from mario_tensorflow.environments import make_retro
-from mario_tensorflow.training import run
+from airstriker_tensorflow.agent import Agent
+from airstriker_tensorflow.environments import make_retro
+from airstriker_tensorflow.training import run
 
 
 def test_retro_factory_selects_discrete_rgb_actions(monkeypatch):

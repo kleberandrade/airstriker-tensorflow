@@ -1,1 +1,0 @@
-"""Educational TensorFlow Mario experiment."""

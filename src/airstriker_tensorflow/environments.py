@@ -2,6 +2,8 @@
 
 import numpy as np
 
+DEFAULT_GAME = "Airstriker-Genesis-v0"
+
 
 class SyntheticEnvironment:
     """Test fixture only: three actions, random RGB frames, eight-step episodes."""

@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from mario_tensorflow.cli import main
+from airstriker_tensorflow.cli import main
 
 
 def test_cli_train_evaluate_and_metadata(tmp_path, capsys):
@@ -37,8 +37,8 @@ def test_cli_rejects_invalid_training_configuration(arguments):
 
 
 def test_failed_checkpoint_load_closes_environment(monkeypatch, tmp_path):
-    from mario_tensorflow import cli
-    from mario_tensorflow.environments import SyntheticEnvironment
+    from airstriker_tensorflow import cli
+    from airstriker_tensorflow.environments import SyntheticEnvironment
 
     env = SyntheticEnvironment()
     closed = []
@@ -47,3 +47,10 @@ def test_failed_checkpoint_load_closes_environment(monkeypatch, tmp_path):
     with pytest.raises(ValueError, match="not found"):
         main(["evaluate", "--env", "synthetic", "--checkpoint", str(tmp_path / "missing.keras")])
     assert closed == [True]
+
+
+def test_default_game_is_the_included_airstriker_integration():
+    from airstriker_tensorflow.cli import parse_args
+
+    args = parse_args(["train", "--env", "retro", "--checkpoint", "agent.keras"])
+    assert args.game == "Airstriker-Genesis-v0"

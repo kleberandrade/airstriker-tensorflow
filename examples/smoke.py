@@ -1,9 +1,9 @@
-"""Offline pipeline check. This synthetic fixture does not emulate Mario."""
+"""Offline pipeline check. This synthetic fixture does not emulate Airstriker."""
 
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from mario_tensorflow.cli import main
+from airstriker_tensorflow.cli import main
 
 with TemporaryDirectory() as directory:
     checkpoint = str(Path(directory) / "smoke.keras")

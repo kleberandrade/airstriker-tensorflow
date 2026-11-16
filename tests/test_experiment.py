@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-from mario_tensorflow.environments import SyntheticEnvironment
-from mario_tensorflow.experiment import ExperimentConfig, execute
+from airstriker_tensorflow.environments import SyntheticEnvironment
+from airstriker_tensorflow.experiment import ExperimentConfig, execute
 
 
 def test_experiment_saves_results_and_is_explicitly_injected_offline(tmp_path):
@@ -45,7 +45,7 @@ def test_experiment_rejects_invalid_limits(options):
 
 
 def test_recorder_output_failure_closes_the_underlying_environment(tmp_path, monkeypatch):
-    from mario_tensorflow import experiment
+    from airstriker_tensorflow import experiment
 
     closed = []
 
